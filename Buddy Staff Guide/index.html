@@ -6,6 +6,7 @@
     <title>index</title>
     <link rel="stylesheet" href="zelato.css">
     <style>
+
         .container{
             display:flex;
             justify-content:center;
@@ -13,90 +14,103 @@
             perspective: 1000;
         }
 
-        /* 글자 영역 css */
+        /* 이너 박스 */
+        .innerBox {
+            border: 3px solid white;
+            width: 340px;
+            height: 620px;
+            border-radius: 10px;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+        }
 
+        /* 글자 영역 css */
         .text {
             text-align: center;
             position: absolute;
-            top: 128px;
+            top: 100px;
+            /* border: 1px solid black; */
         }
 
         .lg-text{
-            color:black;
+            color:white;
             font-size: 1.5rem;
-            font-weight:bold;
-            margin-bottom:15px;
+            font-weight: 900;
+            margin-bottom: 20px;
         }
 
         .sm-text{
             color:hotpink;
             font-size:0.7rem;
             font-style: italic;
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
         }
 
         #dynamic{
-            display:inline-block;
-            position:relative
+            display: inline-block;
+            position: relative
         }
 
         #dynamic::after{
-            content:"";
-            position:absolute;
-            background-color:black;
-            right:-10px;
-            width:3px;
-            height:100%;
-            display:block;
-            top:0px
+            content: "";
+            position: absolute;
+            background-color: white;
+            right: -10px;
+            width: 3px;
+            height: 100%;
+            display: block;
+            top: 0px
         }
 
         #dynamic.active::after{
             display:none
         }
 
-
         /* 큐브 영역 css */
-
         .cube{
             position: absolute;
-            width:128px;
-            height:128px;
+            width: 160px;
+            height: 160px;
             transform-style: preserve-3d;
-            transition: all 1s;
+            transition: all 2s;
+            top: 210px;
         }
 
         .cube img{
-            width:128px;
-            height:128px;
+            width: 160px;
+            height: 160px;
             position:absolute;
-            background-color: rgb(255, 192, 0);
+            background-color: rgb(255, 213, 87);
         }
 
         .cube img:nth-child(1){
-            transform:translatez(64px)
+            transform:translatez(30px)
         }
 
         .cube img:nth-child(2){
-            transform:rotatex(90deg) translatez(64px)
+            transform:rotatex(90deg) translatez(30px)
         }
 
         .cube img:nth-child(3){
-            transform:rotatex(180deg) translatez(64px)
+            transform:rotatex(180deg) translatez(30px)
         }
 
         .cube img:nth-child(4){
-            transform:rotatex(270deg) translatez(64px)
+            transform:rotatex(270deg) translatez(30px)
         }
 
         /* 버튼 영역 css */
-
         .btn {
             position: relative;
-            top: 150px;
+            top: 170px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-gap: 20px;   
+            font-size: 17px;
+            font-weight: 600;
+            text-align: center;
         }
 
         .btn a {
@@ -106,34 +120,36 @@
 
         .btn div {
             padding: 10px;
-            background-color: pink;
-            border-radius: 20px;
+            background-color: rgb(255, 213, 220);
+            border-radius: 30px;
             border: 1px solid black;
         }
-
-        
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- 텍스트 영역 -->
-        <div class="text">
-            <p id="dynamic" class="lg-text"></p> 
-            <p class="sm-text">Welcome to your BUDDY DAY party</p>
-        </div>
+        <div class="innerBox">
+            <!-- 텍스트 영역 -->
+            <div class="text">
+                <p id="dynamic" class="lg-text"></p> 
+                <p class="sm-text">Welcome to your BUDDY DAY party</p>
+            </div>
 
-        <!-- 큐브 영역 -->
-        <div class="cube">
-            <img src="img/cakes/cake1.png">
-            <img src="img/cakes/cake2.png">
-            <img src="img/cakes/cake3.png">
-            <img src="img/cakes/cake4.png">
-        </div>
+            <!-- 큐브 영역 -->
+            <div class="cube">
+                <img src="img/cakes/cake1.png">
+                <img src="img/cakes/cake2.png">
+                <img src="img/cakes/cake3.png">
+                <img src="img/cakes/cake4.png">
+            </div>
 
-        <!-- 버튼 영역 -->
-        <div class="btn">
-            <div class="terms"><a href="terms.html">TERMS</a></div>
-            <div class="guide"><a href="guide.html">GUIDE</a></div>
+            <!-- 버튼 영역 -->
+            <div class="btn">
+                <div class="about"><a href="about.html">ABOUT</a></div>
+                <div class="terms"><a href="terms.html">TERMS</a></div>
+                <div class="guide"><a href="guide.html">GUIDE</a></div>
+                <div class="calendar"><a href="calendar.html">CALENDAR</a></div>
+            </div>
         </div>
     </div>
 
@@ -146,7 +162,7 @@
           deg -= 90;
           document.querySelector('.cube').style.transform
           = 'rotatex(' + deg + 'deg)';
-        }, 2000);
+        }, 3500);
 
         // 글자 영역 js
         let target = document.querySelector('#dynamic');
