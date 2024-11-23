@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link rel="stylesheet" href="zelato.css">
+    <style>
+        .container{
+            display:flex;
+            justify-content:center;
+            align-items: center;
+            perspective: 1000;
+        }
+
+        /* 글자 영역 css */
+
+        .text {
+            text-align: center;
+            position: absolute;
+            top: 128px;
+        }
+
+        .lg-text{
+            color:black;
+            font-size: 1.5rem;
+            font-weight:bold;
+            margin-bottom:15px;
+        }
+
+        .sm-text{
+            color:hotpink;
+            font-size:0.7rem;
+            font-style: italic;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        #dynamic{
+            display:inline-block;
+            position:relative
+        }
+
+        #dynamic::after{
+            content:"";
+            position:absolute;
+            background-color:black;
+            right:-10px;
+            width:3px;
+            height:100%;
+            display:block;
+            top:0px
+        }
+
+        #dynamic.active::after{
+            display:none
+        }
+
+
+        /* 큐브 영역 css */
+
+        .cube{
+            position: absolute;
+            width:128px;
+            height:128px;
+            transform-style: preserve-3d;
+            transition: all 1s;
+        }
+
+        .cube img{
+            width:128px;
+            height:128px;
+            position:absolute;
+            background-color: rgb(255, 192, 0);
+        }
+
+        .cube img:nth-child(1){
+            transform:translatez(64px)
+        }
+
+        .cube img:nth-child(2){
+            transform:rotatex(90deg) translatez(64px)
+        }
+
+        .cube img:nth-child(3){
+            transform:rotatex(180deg) translatez(64px)
+        }
+
+        .cube img:nth-child(4){
+            transform:rotatex(270deg) translatez(64px)
+        }
+
+        /* 버튼 영역 css */
+
+        .btn {
+            position: relative;
+            top: 150px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;   
+        }
+
+        .btn a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .btn div {
+            padding: 10px;
+            background-color: pink;
+            border-radius: 20px;
+            border: 1px solid black;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 텍스트 영역 -->
+        <div class="text">
+            <p id="dynamic" class="lg-text"></p> 
+            <p class="sm-text">Welcome to your BUDDY DAY party</p>
+        </div>
+
+        <!-- 큐브 영역 -->
+        <div class="cube">
+            <img src="img/cakes/cake1.png">
+            <img src="img/cakes/cake2.png">
+            <img src="img/cakes/cake3.png">
+            <img src="img/cakes/cake4.png">
+        </div>
+
+        <!-- 버튼 영역 -->
+        <div class="btn">
+            <div class="terms"><a href="terms.html">TERMS</a></div>
+            <div class="guide"><a href="guide.html">GUIDE</a></div>
+        </div>
+    </div>
+
+      <script>
+
+        // 큐브 영역 js
+        let deg = 0;
+    
+        setInterval(()=>{
+          deg -= 90;
+          document.querySelector('.cube').style.transform
+          = 'rotatex(' + deg + 'deg)';
+        }, 2000);
+
+        // 글자 영역 js
+        let target = document.querySelector('#dynamic');
+
+            // 랜덤 문장
+        function randomString(){
+        let songArr=["HAPPY BUDDY DAY", "BE MY BUDDY", "COME TO MY BUD-DAY", "LET'S BE FRIENDS", "I LIKE YOU", "ZELATO'S BUDDY","UNFORGETTABLE B-DAY", "WHEN'S YOUR B-DAY?", "BUDDY'S B-DAY"];
+        let selectString = songArr[Math.floor(Math.random() * songArr.length)];
+        let selectStringArr = selectString.split("");
+
+        return selectStringArr;
+        }
+
+            // 타이핑 리셋
+        function typingReset(){
+        target.textContent = ""
+        dynamic(randomString());
+        }
+
+            // IF~ELSE : 한 글자씩 추출
+        function dynamic(random){
+        console.log(random);
+        if(random.length > 0){
+            target.textContent += random.shift();
+            setTimeout(function(){
+            dynamic(random);
+            },80);
+        } else{
+            setTimeout(typingReset, 3000);
+        }
+        }
+
+        dynamic(randomString());
+
+
+            // 커서 깜빡임 효과
+        function blink(){
+        target.classList.toggle("active");
+        
+        }
+        setInterval(blink, 500)
+      </script>
+</body>
+</html>
