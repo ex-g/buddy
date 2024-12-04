@@ -10,7 +10,19 @@
     <script type="text/javascript" src="jquery-2.2.4.min.js"></script>
     <script type="text/javascript" src="prefixfree.min.js"></script>
     <style>
-        /* 버튼 디자인 */
+        /* 화면 */
+        #screen {
+            margin: 0;
+            z-index: 2; 
+            width: 100%; 
+            height: 471px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: scroll;
+        }
+
+        /* 버튼 */
         a {
             text-decoration: none;
             color: black;
@@ -22,19 +34,9 @@
             background-color: rgb(243, 226, 208);
             font-size: 12px;
             font-weight: 500;
-            margin: 0px 5px 0px 5px;
+            margin: 0px 5px 2px 5px;
             border-radius: 20px;
             line-height: 60px;
-        }
-
-        #screen {
-            z-index: 2; 
-            width: 100%; 
-            height: 471px;
-            background-color: pink;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
         /* 버튼별 테마 */
@@ -42,7 +44,7 @@
             background-color: green;
         }
         #screen.plan { 
-            background-color: burlywood;    
+            background-color: rgb(236, 173, 92);    
         }
         #screen.game {
             background-color: brown;
@@ -51,8 +53,120 @@
             background-color: lightblue;
         }
 
-        /* MISSIO : 카드 */
+        .non-click {
+            background-color: rgb(243, 226, 208);
 
+        }
+
+        .click {
+            background-color: brown;
+            color: white;
+            font-weight: 900;
+            transform: rotate(5deg) scale(1.1);
+            transition: all 0.7s
+        }
+
+        /* 3. PLAN */
+        ul {
+            margin-left: 20px;
+            margin-top: 20px;
+            list-style: none;
+            position: relative;
+            padding: 1px 100px;
+            color: #fff;
+            font-size: 13px;
+
+            /* 중간 dashed 선 */
+            &:before {
+                    content: '';
+                    width: 1px;
+                    height: 100%;
+                    position: absolute;
+                    border-left: 2px dashed black;
+                }
+            
+        }
+
+        /* 항목 */
+        li {
+            position: relative;
+            margin-left: 30px;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 14px;
+            border-radius: 6px;
+            width: 210px;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.08);
+        
+            /* 중간중간 떨어지게 하는 것 */
+            &:not(:first-child) {
+                margin-top: 60px;
+            }
+
+            /* 하얀 선 */
+            > span {
+                width: 2px;
+                height: 100%;
+                background: #fff;
+                left: -30px;
+                top: 0;
+                position: absolute;
+
+                &:before, &:after {
+                    content: '';
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    border: 2px solid #fff;
+                    position: absolute;
+                    background: #86b7e7;
+                    left: -5px;
+                    top: 0;
+                }
+
+
+            }
+
+            span:after{
+                top: 100%;
+            }
+                    
+            > div {
+                margin-left: 10px
+            }
+            
+        }
+        
+        div {
+            .title, .type {
+                font-weight: 600;
+                font-size: 12px;
+            }
+            .info {
+                font-weight: 300;
+            }
+            > div {
+                margin-top: 5px;
+            }
+        }
+
+        span.number {
+            height: 100%;
+            span {
+                position: absolute;
+                font-size: 10px;
+                left: -35px;
+                font-weight: bold;
+                &:first-child {
+                    top: 0;
+                }
+                &:last-child {
+                    top: 100%;
+                }
+            }
+        }
+
+
+        /* 4. MISSIO : 카드 */
         .card {
             width: 140px;
             height: 140px;
@@ -63,10 +177,6 @@
             background: none;
         }
 
-        .card:hover {
-            transform: rotateX(180deg);
-        }
-
         .front, .back {
             position: absolute;
             width: 100%;
@@ -82,41 +192,19 @@
             transform: rotateX(180deg);
         }
 
-        #mission {
-            display: none;
-        }
-
+        /* 버튼 컨트롤 */
+        #plan.info, #plan.mission, #plan.game, 
         #mission.info, #mission.plan, #mission.game {
             display: none;
         }
 
-        #mission.mission {
+        #plan.plan, #mission.mission {
             display: block;
         }
 
-        /* .card {
-            position : absolute;
-            width: 100%;
-            height: 100%;
-            transform-style: preserve-3d;
-            transition: all 0.5s ease;
+        #plan, #mission {
+            display: none;
         }
-        .card:hover{
-            transform: rotateX(180deg);
-        }
-        .front, .back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: white;
-            border: black solid 1px;
-            border-radius: 15px;
-            box-shadow: 2px 2px 5px;
-            backface-visibility: hidden;
-        }
-        .back {
-            transform: rotateX(180deg);
-        } */
     </style>
 </head>
 <body>
@@ -153,17 +241,60 @@
         <!-- 바뀌는 영역 -->
         <div id="screen">
 
+            <!-- 3. PLAN -->
+            <ul id="plan">
+                <li>
+                    <div>
+                        <div class="title">Codify</div>
+                        <div class="info">Hi</div>
+                        <div class="type">체육대회</div>
+                    </div>
+    
+                    <span class="number">
+                        <span>10:00</span>
+                        <span>12:00</span>
+                    </span>
+                </li>
+                
+                <li>
+                    <div>
+                        <div class="title">Codify</div>
+                        <div class="info">hello</div>
+                        <div class="type">oh yeah</div>    
+                    </div>
+    
+                    <span class="number">
+                        <span>13:00</span>
+                        <span>14:00</span>
+                    </span>
+                </li>
+    
+                <li>
+                    <div>
+                        <div class="title">Codify</div>
+                        <div class="info">hello</div>
+                        <div class="type">oh yeah</div>    
+                    </div>
+    
+                    <span class="number">
+                        <span>13:00</span>
+                        <span>14:00</span>
+                    </span>
+                </li>
+            </ul>
+            
+
             <!-- 4. MISSION -->
             <table id="mission">
                 <tr>
                     <td>
-                        <div class="card">
+                        <div class="card" id="mission-game">
                             <div class="front">게임</div>
                             <div class="back">보물찾기</div>
                         </div>
                     </td>
                     <td>
-                        <div class="card">
+                        <div class="card" id="mission-letter">
                             <div class="front">편지</div>
                             <div class="back">페어에게 편지쓰기!</div>
                         </div>
@@ -171,13 +302,13 @@
                 </tr>
                 <tr>
                     <td>
-                        <div class="card">
+                        <div class="card" id="mission-food">
                             <div class="front">음식</div>
                             <div class="back">페어와 저녁 먹기</div>
                         </div>
                     </td>
                     <td>
-                        <div class="card">
+                        <div class="card" id="mission-gift">
                             <div class="front">선물</div>
                             <div class="back">페어에게 어울리는 선물</div>
                         </div>
@@ -189,26 +320,68 @@
         <!-- Bottom -->
         <table id="bottom">
             <tr>
-                <td class="btn" ><a class="info" href="#"><div>INFO</div></a></td>
-                <td class="btn"><a class="plan" href="#"><div>PLAN</div></a></td>
-                <td class="btn"><a class="game" href="#"><div>GAME</div></a></td>
-                <td class="btn"><a class="mission" href="#"><div>MISSION</div></a></td>
+                <td class="btn" ><a class="info" href="#"><div class="btn-info non-click">INFO</div></a></td>
+                <td class="btn"><a class="plan" href="#"><div class="btn-plan non-click">PLAN</div></a></td>
+                <td class="btn"><a class="game" href="#"><div class="btn-game non-click">GAME</div></a></td>
+                <td class="btn"><a class="mission" href="#"><div class="btn-mission non-click">MISSION</div></a></td>
             </tr>
         </table>
             
         <script>
-        // nav 버튼 클릭 시 화면 테마 변경
+        // 하단 버튼 클릭 시 화면 테마 변경
         $("#bottom td").on("click", function(){
 
             var className = $(this).children("a").attr("class");
-            // console.log(className);
+
             $("#bottom td").removeClass();
             $(this).addClass("on");
+
+            // 화면
             $("#screen").removeClass();
             $("#screen").addClass(className);
+
+            // 3. PLAN
+            $('#plan').removeClass();
+            $('#plan').addClass(className);
+
+            // 4. MISSION
             $("#mission").removeClass();
             $("#mission").addClass(className);
+
         })
+
+        // 하단 버튼 클릭 시 버튼 색상 변경
+        const nonClick = document.querySelectorAll(".non-click");
+
+        function handleClick(event) {
+            // div에서 모든 "click 클래스 제거"
+            nonClick.forEach((e) => {
+                e.classList.remove("click");
+            });
+
+            event.target.classList.add("click");
+            }
+
+        nonClick.forEach((e) => {
+            e.addEventListener("click", handleClick);
+        });
+
+        // 플립 카드
+        document.querySelector('#mission-game').addEventListener('click', click);
+        document.querySelector('#mission-letter').addEventListener('click', click);
+        document.querySelector('#mission-food').addEventListener('click', click);
+        document.querySelector('#mission-gift').addEventListener('click', click);
+
+        function click(event) {
+            let elem = event.currentTarget;
+            if (elem.style.transform == "rotateX(180deg)") {
+                elem.style.transform = "rotateX(0deg)";
+            } else {
+                elem.style.transform = "rotateX(180deg)";
+            }
+        }
+
+        
         </script>
     </div>
 </body>
