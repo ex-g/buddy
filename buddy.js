@@ -1,10 +1,10 @@
 // // 시간 js
+
 const makeTimer = () => {
     var now = new Date();
     var hr = now.getHours();
     var min = now.getMinutes();
-
-    ampm = hr >= 12 ? "pm" : "am";
+    ampm = hr >= 12 ? "PM" : "AM";
     hr = hr % 12;
     hNum = hr ? hr : 12;
 
@@ -14,11 +14,11 @@ const makeTimer = () => {
     } else {
         mNum = "0" + min;
     }
-
     document.querySelector('.hour').innerHTML = `${hNum}`;
     document.querySelector('.min').innerHTML = `${mNum}`;
-    // document.querySelector('.sec').innerHTML = `${sec}`;
     document.querySelector('.diff').innerHTML = ampm;
 }
 
-setInterval(makeTimer, 1000)
+window.onload = makeTimer;
+
+setInterval(makeTimer, 1000);

@@ -9,7 +9,223 @@
     <script type="text/javascript" src="buddy.js"></script>
     
     <style>
+        .container {
+            background-color: rgb(164, 7, 7);
+        }
 
+        #first-header {
+            color: white;
+            > i {
+                color: white;
+            }
+        }
+
+        /* hbd */
+        .hbd {
+            position: absolute;
+            animation: hbd-x 10s ease-in-out alternate infinite 0s both;
+            z-index: 5;
+            > img {
+                width: 100px;
+                margin: 40px;
+                animation: hbd-y 7s linear infinite 0s both;
+            }
+        }
+
+        .b {
+            animation-delay: 2s;
+            > img {
+                animation-delay: 2s;
+            }
+        }
+
+        .d {
+            animation-delay: 4s;
+            > img {
+                animation-delay: 4s;
+            }
+        }
+
+        @keyframes hbd-x {
+            0% {
+                transform: translatex(-200px);
+            }
+            100% {
+                transform: translateX(200px);
+            }
+        }
+
+        @keyframes hbd-y {
+            25% {
+            transform: translatey(50px);
+            }
+            0%, 50%, 100% {
+            transform: translatey(0);
+            }
+            75% {
+            transform: translatey(70px);
+            }
+        }  
+
+        /* 오브제 */
+        .object img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .cake img {
+            width: 350px;
+            z-index : 2
+        }
+
+        .dog img {
+            width: 250px;
+            top: 0px;
+            left: 150px;
+            animation: dog-ani 8s ease-in-out infinite 0s both;
+            z-index: 1  
+        }
+
+        .camera img {
+            width: 200px;
+            top: 500px;
+            left: -20px;
+            animation: camera-ani 15s ease-in-out infinite 0s both;
+            z-index: 4;
+            
+        }
+
+        .donut img {
+            width: 200px;
+            top: 470px;
+            left: 180px;
+            animation: donut-ani 30s ease-in-out infinite 0s both;
+            z-index: 5
+        }
+
+        @keyframes dog-ani {
+            0% {
+                transform: rotate(0deg) scale(1.0);
+            } 50% {
+                transform: rotate(10deg) scale(1.1);
+            } 100% {
+                transform: rotate(0deg) scale(1.0);
+            }
+        }
+
+        @keyframes camera-ani {
+            0% {
+                transform: rotate(0deg) scale(1.0);
+            } 50% {
+                transform: rotate(-10deg) scale(1.1);
+            } 100% {
+                transform: rotate(0deg) scale(1.0);
+            }
+        }
+
+        @keyframes donut-ani {
+            0% {
+                transform: rotate(0deg) scale(1.0);
+            } 50% {
+                transform: rotate(360deg) scale(1.1);
+            } 100% {
+                transform: rotate(0deg) scale(1.0);
+            }
+        }
+
+        /* sticker */
+        .sticker img {
+            position: absolute;
+            width: 70px;
+            z-index: 101
+        }
+
+        .mini-cake img {
+            width: 50px;
+            top: 380px;
+            left: 315px;
+            transform: rotate(20deg);
+        }
+
+        .smile img {
+            width: 80px;
+            top: 80px;
+            left: -10px;
+            transform: rotate(-30deg);
+        }
+
+        .stars img {
+            width: 50px;
+            top: 240px;
+            left: 310px;
+        }
+
+        .star img {
+            width: 50px;
+            top: 530px;
+            left: 10px;
+            transform: rotate(-30deg);
+        }
+
+        .buddy1 img {
+            width: 60px;
+            top: 380px;
+            left: -12px;
+            transform: rotate(-5deg);
+        }
+
+        .buddy2 img {
+            width: 80px;
+            top: 90px;
+            left: 280px;
+            /* transform: rotate(-30deg); */
+        }
+
+        /* 유리 */
+        .glass {
+            width: 300px;
+            height: 450px;
+            background-color: white;
+            border-radius: 3px;
+
+            position: absolute;
+            top: 52%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            background: linear-gradient(135deg, rgba(109, 92, 92, 0.6), rgba(7, 0, 0, 0.345) 40%);
+            /* background: white; */
+            /* opacity: 0.3; */
+            backdrop-filter: blur(7px);
+            -webkit-backdrop-filter: blur(7px);
+            box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
+              0 2px 2px rgba(0,0,0,0.11), 
+              0 4px 4px rgba(0,0,0,0.11), 
+              0 8px 8px rgba(0,0,0,0.11), 
+              0 16px 16px rgba(0,0,0,0.11), 
+              0 32px 32px rgba(0,0,0,0.11);
+              z-index: 100;
+
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              overflow-y: scroll;
+        }
+
+        /* 설명 */
+        .exp {
+            font-size: 14px;
+            line-height: 25px;
+            padding: 20px;
+            color: white;
+            position: absolute;
+            top: 20px;
+            padding-bottom: 40px;
+            > h2 {
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -42,7 +258,88 @@
             <!-- 그리드 맞춤용 빈 영역 -->
             <p></p>
         </header>
-            
+
+        <!-- 배경 사진 -->
+         <!-- <img src="img/about/about2.jpg"> -->
+
+        <!-- HBD -->
+        <div class="hbd h">
+            <img src="img/about/hbd1.png">
+        </div>
+        <div class="hbd b">
+            <img src="img/about/hbd2.png">
+        </div>        
+        <div class="hbd d">
+            <img src="img/about/hbd3.png">
+        </div>
+
+        <!-- 오브제 -->
+        <div class="object cake">
+            <img src="img/about/cake.png">
+        </div>
+        <div class="object dog">
+            <img src="img/about/dog.png">
+        </div>
+        <div class="object camera">
+            <img src="img/about/camera.png">
+        </div>
+        <div class="object donut">
+            <img src="img/about/donut.png">
+        </div>
+
+        <!-- sticker -->
+         <div class="sticker mini-cake">
+            <img src="img/about/sticker1.png">
+         </div>
+         <div class="sticker smile">
+            <img src="img/about/sticker2.png">
+         </div>
+         <div class="sticker stars">
+            <img src="img/about/sticker3.png">
+         </div>
+         <div class="sticker star">
+            <img src="img/about/sticker4.png">
+         </div>
+         <div class="sticker buddy1">
+            <img src="img/about/sticker5.png">
+         </div>
+         <div class="sticker buddy2">
+            <img src="img/about/sticker6.png">
+         </div>
+
+        <!-- 유리 -->
+        <div class="glass">
+            <div class="exp">
+
+                <h2>BUDDY</h2><br>
+
+                &nbsp&nbsp&nbsp&nbsp&nbspBuddy Team of HUFS ISO plans and celebrates Buddy Program, which is multinational 1 and 1 matching program. 
+                Buddy team arranges various activities in Buddy Program every semester. <br><br>
+    
+                &nbsp&nbsp&nbsp&nbsp&nbspBuddy Program, the representative program of ISO, is to fulfill the globalization in HUFS 
+                at this very university via cultural and emotional experiences with about 150 ~ 200 multinational students every semester. <br><br>
+                
+                &nbsp&nbsp&nbsp&nbsp&nbspOur team members do our best aiming to help the every participant experience various cultures and make unforgettable memory. <br><br>
+
+                <br><hr><br><br>
+
+                &nbsp&nbsp&nbsp&nbsp&nbsp한국외국어대학교 국제학생회의 Buddy팀은 
+            매 학기 다양한 활동들로 구성된 다국적 1:1 매칭 
+            프로그램인 ‘Buddy Program’을 기획 및 운영하는 팀입니다.<br><br>
+
+            &nbsp&nbsp&nbsp&nbsp&nbspISO가 가장 자랑스럽게 내세울 수 있는 Buddy Program은 매 학기 150~200명에 
+            달하는 학생들과 함께 한국과 국제학생들의 정서 및 문화 교류, 아울러 한국외국어대학교의  국제화 제고에 일조하고 있습니다.<br><br>
+
+            &nbsp&nbsp&nbsp&nbsp&nbspBuddy Team의 팀원들은 이러한 목표를 
+            가지고 외국인 교환학생과 본교생 모두에게 
+            다양한 문화 체험 기회를 제공하고 소중한 인연을 만들어 갈 수 있도록 최선을 다하고 있습니다. 
+            <br><br><br><hr><br><br>
+
+            <h5>25-1 BUDDY</h5>
+                <h6>김예지 서민주<br>
+                구정현 김세연 박지혜 우수현 이아림 이현종 정재연 차정현</h6>
+            </div>
+        </div> 
     </div>
 </body>
 </html>

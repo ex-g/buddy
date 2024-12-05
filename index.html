@@ -11,38 +11,40 @@
         /* calendar */
         #calendar {
             display: flex;
-            height: 110px;
+            height: 130px;
             margin: 10px 10px 0px 10px;
             border-radius: 20px;
             background-color: rgb(154, 23, 23);
-            color: white;
+            color: rgba(253, 243, 206, 0.932);
+            font-family:'Times New Roman', Times, serif;
+            border: 6px solid white;
         }
 
         .day-date {
-            width: 35%;
-            /* position: absolute; */
+            width: 45%;
         }
 
         #first-day {
             font-weight: 900;
             font-size: 20px;
-            padding: 20px 0px 0px 10px;
+            padding: 15px 0px 0px 0px;
         }
 
         #first-date {
             font-size: 60px;
             position: absolute;
-            top: 65px;
-            left: 60px;
+            top: 75px;
+            left: 72px;
         }
 
         .cal {
-            width: 65%;
+            width: 50%;
         }
 
-        .year-month {
-            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            padding: 2px 0px;
+        .month {
+            /* font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+            padding: 5px 0px;
+            display: absolute;
         }
 
         .grid {
@@ -57,7 +59,6 @@
 
         .dateBoard div {
             border-radius: 5px;
-            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
         }
         
 
@@ -106,7 +107,7 @@
                             <div id="first-date"></div>
                         </section>
                         <section class="cal">
-                            <div class="year-month"></div>
+                            <div class="month"></div>
 
                             <div class="grid days">
                                 <div class="day">S</div>
@@ -134,7 +135,7 @@
             <!-- 첫 번째 줄 -->
             <tr>
 
-                <td colspan="2"><a href="b1.html"><img src="img/widgets/widget01.jpg"></a></td>
+                <td colspan="2"><a href="b1.html"><img src="img/widgets/widget01.png"></a></td>
                 <td colspan="2"><img src="img/widgets/widget02.jpg"></td>
 
 
@@ -152,7 +153,7 @@
             <tr>
                 <td class="sm-pic"><a href="about.html"><img src="img/widgets/widget04.png"></a></td>
                 <td class="sm-pic"><a href="staff.html"><img src="img/widgets/widget05.jpg"></a></td>
-                <td rowspan="3" colspan="2"><a href="b2.html"><img src="img/widgets/widget03.jpg"></a></td>
+                <td rowspan="3" colspan="2"><a href="b2.html"><img src="img/widgets/widget03.png"></a></td>
             </tr>
             <tr>
                 <td>ABOUT</td>
@@ -189,19 +190,23 @@
     <script>
         // 달력 js
         let weekDay = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
+        let months = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', "SEPTEMBER", 'OCTOBER', 'NOVEMBER', 'DECEMBER']
 
         const makeCalendar = (date) => {
             const currentYear = new Date(date).getFullYear();
             const currentMonth = new Date(date).getMonth() + 1;
             const currentDate = new Date(date).getDate() ;
-            const currentDay = new Date(date).getDay();
+            const currentDay = new Date(date).getDay() ;
             const lastDay = new Date(currentYear, currentMonth, 0).getDate();
 
             let htmlDummy = '';
 
             for (let i = 1; i <= lastDay; i++) {
-                if (i == currentDate) {
-                    htmlDummy += `<div style="background-color: white; color: black">${i}</div>`
+
+                if (i < currentDate) {
+                    htmlDummy += `<div style="color: rgba(186, 175, 79, 0.566)">${i}</div>`
+                } else if (i == currentDate) {
+                    htmlDummy += `<div style="background-color: rgba(253, 243, 206, 0.932); color: rgb(154, 23, 23)">${i}</div>`
                 } else {
                     htmlDummy += `<div>${i}</div>`;
                 }
@@ -218,7 +223,7 @@
             document.querySelector('#first-day').innerHTML = `${weekDay[currentDay]}`;
             document.querySelector('#first-date').innerHTML = `${showDate}`;
             document.querySelector('.dateBoard').innerHTML = htmlDummy;
-            document.querySelector('.year-month').innerHTML = `${currentYear}년 ${currentMonth}월`;
+            document.querySelector('.month').innerHTML = `${months[currentMonth - 1]}`;
         }
 
         const date = new Date();
