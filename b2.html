@@ -5,179 +5,163 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ABOUT</title>
     <link rel="stylesheet" href="buddy.css">
+    <link rel="stylesheet" href="b-day.css">
     <script src="https://kit.fontawesome.com/77dc09b73f.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="buddy.js"></script>
     <script type="text/javascript" src="jquery-2.2.4.min.js"></script>
     <script type="text/javascript" src="prefixfree.min.js"></script>
     <style>
-        /* 화면 */
-        #screen {
-            margin: 0;
-            z-index: 2; 
-            width: 100%; 
+        /* 1. INFO */
+        #info {
+            width: 100%;
             height: 490px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: scroll;
-        }
-
-        /* 버튼 */
-        a {
-            text-decoration: none;
-            color: black;
-            -webkit-tap-highlight-color : transparent;
-        }
-
-        td div {
-            width: 60px;
-            height: 60px;
-            background-color: rgb(243, 226, 208);
-            font-size: 12px;
-            font-weight: 500;
-            margin: 0px 5px 2px 5px;
-            border-radius: 20px;
-            line-height: 60px;
-        }
-
-        /* 버튼별 테마 */
-        #screen.info {
-            background-color: green;
-        }
-        #screen.plan { 
-            background-color: rgb(114, 26, 26); 
-        }
-        #screen.game {
-            background-color: brown;
-        }
-        #screen.mission {
-            background-color: lightblue;
-        }
-
-        .non-click {
-            background-color: rgb(243, 226, 208);
-
-        }
-
-        .click {
-            background-color: brown;
+            top: 55px;
+            background-color: rgb(203, 145, 140);
+            overflow-y: scroll;
+            overflow-x: hidden;
+            position: absolute;
             color: white;
-            font-weight: 900;
-            transform: rotate(5deg) scale(1.1);
-            transition: all 0.7s
-        }
 
-        /* 3. PLAN */
-
-        ul.plan {
-            margin-bottom: 100px;
-            margin-top: 1200px;
-        }
-        ul {
-            margin-left: 20px;
-            margin-top: 20px;
-            list-style: none;
-            position: relative;
-            padding: 1px 100px;
-            color: #fff;
-            font-size: 13px;
-
-            /* 중간 dashed 선 */
-            &:before {
-                    content: '';
-                    width: 1px;
-                    height: 100%;
-                    position: absolute;
-                    border-left: 2px dashed black;
-                }
-            
-        }
-
-        /* 항목 */
-        li {
-            position: relative;
-            display: flex;
-            /* justify-content: center; */
-            align-items: center;
-            margin-left: 30px;
-            background-color: rgba(255, 255, 255, 0.2);
-            padding: 20px;
-            border-radius: 6px;
-            width: 220px;
-            /* height: 120px; */
-            box-shadow: 0 0 4px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.08);
-        
-            /* 중간중간 떨어지게 하는 것 */
-            &:not(:first-child) {
-                margin-top: 60px;
+            > .title {
+                font-size: 20px;
+                text-align: center;
+                margin-top: 20px;
             }
-
-            /* 하얀 선 */
-            > span {
-                width: 2px;
-                /* height: 100%; */
-                background: #fff;
-                left: -30px;
-                top: 0;
+            > .basic {
+                font-size: 10px;
+                text-align: center;
+            }
+            > img {
                 position: absolute;
-
-                &:before, &:after {
-                    content: '';
-                    width: 8px;
-                    height: 8px;
-                    border-radius: 50%;
-                    border: 2px solid #fff;
-                    position: absolute;
-                    background: #f0be07;
-                    left: -5px;
-                    top: 0;
-                }
-
-
+                width: 230px;
             }
-
-            span:after{
-                top: 100%;
+            > #info-img1 {
+                left: -70px;
+                top: 150px;
             }
-                    
-            > div {
-                margin-left: 10px
-            }
-            
-        }
-        
-        div {
-            .title, .type {
-                font-weight: 600;
-                font-size: 14px;
-                padding-bottom: 10px;
+            > #info-img2 {
+                top: 470px;
+                right: -70px;
             }
             .info {
-                font-weight: 300;
+                width: 200px;
+                height: 60px;
+                font-size: 9px;
+                position: absolute;
+                padding: 15px;
+                line-height: 17px;
             }
-            > div {
-                margin-top: 5px;
+            .act1 {
+                right: 0px;
+            }
+            .act2 {
+                top: 400px;
+            }
+            .info-title {
+                font-size: 20px;
+                padding-bottom: 10px;
+            }
+            .info-exp {
+                padding-bottom: 20px;
             }
         }
 
-        span.number {
-            height: 100%;
-            span {
-                position: absolute;
-                font-size: 10px;
-                left: -40px;
-                font-weight: bold;
-                &:first-child {
-                    top: 0;
-                }
-                &:last-child {
-                    top: 100%;
-                }
-            }
+        hr {
+            height: 0.8px;
+            border: 0;
+            background: white;
+            margin: 20px;
+        }
+
+         /* 3. GAME */
+         #game {
+            position: absolute;
+            width: 100%;
+            height: 490px;
+            background-color: rgb(168, 0, 28);
+            overflow: hidden;
+        }
+        img {
+            position: absolute;
+        }
+        .spy {
+            width: 100%;
+            bottom: -50px;
+        }
+        .sticker {
+            width: 50px;
+            z-index: 5;
+        }
+        .stk1 {
+            transform: rotate(5deg);
+            top: 10px;
+            right: 10px;
+            width: 70px;
+        }
+        .stk2 {
+            transform: rotate(8deg);
+            top: 100px;
+            right: 30px;
+            width: 100px;
+        }
+        .stk3 {
+            transform: rotate(40deg);
+            top: 10px;
+            left: 10px;
+            width: 60px;
+        }
+        .stk4 {
+            top: 260px;
+            left: -20px;
+            width: 90px;
+        }
+
+        .msg {
+            width: 340px;
+        }
+        .msg1 {
+            width: 340px;
+            top: 210px;
+            right: -30px;
+            transform: rotate(10deg);
+            z-index: 2;
+        }
+        .msg2 {
+            width: 340px;
+            top: -10px;
+            left: -10px;
+            transform: rotate(-10deg);
+            z-index: 1;
+        }
+
+        .exp {
+            position: absolute;
+            z-index: 10;
+            font-size: 9px;
+        }
+
+        .exp-kor {
+            width: 320px;
+            height: 100px;
+            transform: rotate(-10deg);
+            top: 50px;
+            left: 10px;
+            line-height: 15px;
+        }
+
+        .exp-eng {
+            line-height: 12px;
+            font-size: 8px;
+            width: 280px;
+            height: 100px;
+            transform: rotate(10deg);
+            top: 250px;
+            right: 6px;
         }
 
 
         /* 4. MISSIO : 카드 */
+
 
         table {
             height: 350px;
@@ -207,20 +191,6 @@
 
         .back {
             transform: rotateX(180deg);
-        }
-
-        /* 버튼 컨트롤 */
-        #plan.info, #plan.mission, #plan.game, 
-        #mission.info, #mission.plan, #mission.game {
-            display: none;
-        }
-
-        #plan.plan, #mission.mission {
-            display: block;
-        }
-
-        #plan, #mission {
-            display: none;
         }
     </style>
 </head>
@@ -258,122 +228,180 @@
         <!-- 바뀌는 영역 -->
         <div id="screen">
 
-            <!-- 3. PLAN -->
-            <ul id="plan">
-                <li style="height: 220px;">
-                    <div>
-                        <img src="img/b2/station.png" style="width: 160px; margin-bottom: 20px;">
-                        <div class="title">집합 및 이동</div>
-                        <div class="info">
-                            - 출석 체크 (5번 출구)<br>
-                            - 일정 리마인드<br>
-                            - 조계사로 이동
-                        </div>
-                        <!-- <div class="type">체육대회</div> -->
+            <!-- 1. INFO -->
+            <div id="info">
+                <div class="title">Happy Healing Day to You!</div>
+                <div class="basic">날짜 : 5/3~5/4 | 집결 장소 : 종각역 5번 출구</div>
+                <hr>
+                <img src="img/b2/info1.png" id="info-img1">
+                <div class="info act1">
+                    <div class="info-title">JOGYESA | 조계사</div>
+                    <div class="info-exp">
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspBUDDY DAY 2의 첫 번째 방문 장소는, 서울의 도심인 종로 한가운데에 위치한 '조계사'입니다. 조계사는 조선불교의 자주화와 민족자존 회복을 염원하는 스님들에 의해 '각황사'란 이름으로 1910년에 최초 창건되었으며, 불교정화운동 이후 '조계사'로 이름이 바뀌어 현재에 이르고 있습니다.<br>
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp사찰 안내를 시작으로 페어와 함께 연등 만들기, 단주 만들기 등의 체험을 하며 조계사에서 휴식과 여유를 느껴보아요! 사찰 안내 중에는 조별 활동으로 '스파이를 찾아라'도 준비되어 있습니다. <br>
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp점심식사 이후에는 페어와 함께 불교중앙박물관과 우정총국도 방문해보세요!
                     </div>
-    
-                    <span class="number">
-                        <span>9:40</span>
-                        <span>9:55</span>
-                    </span>
-                </li>
-                
-                <li style="height: 240px;">
-                    <div>
-                        <div class="title">Group Contents</div>
-                        <div class="info">
-                            - 사찰 안내<br>
-                            - '스파이를 찾아라' 진행
-                        </div>
-                        <!-- <div class="type">oh yeah</div> -->
+                </div>
+                <img src="img/b2/info2.png" id="info-img2">
+                <div class="info act2">
+                    <div class="info-title">SeMoCA | <br><br>서울 공예 박물관</div>
+                    <div class="info-exp" id="info-exp2">
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspBUDDY DAY 2의 두 번째 방문 장소는, 한국 최초의 공립 공예 박물관인 '서울 공예 박물관'입니다. 서울 공예 박물관은 서울시에서 (구)풍문여고 건물 5개 동을 리모델링하여 2021년 7월 건축되었습니다. 이곳에서는 공예품뿐만 아니라, 공예와 관련된 지식과 기록, 사람, 환경 등을 연구하고 공유함으로써 공예가 지닌 다양한 가치를 경험할 수 있습니다.<br>
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspBUDDY 팀이 준비한 공예 박물관의 '보물찾기' 콘텐츠를 페어와 함께 즐겨보세요! 이후에는 데일리 미션에도 참여하면서 페어와 행복한 하루를 만들 수 있습니다.
                     </div>
-    
-                    <span class="number">
-                        <span>10:00</span>
-                        <span>11:00</span>
-                    </span>
-                </li>
-    
-                <li style="height: 120px;">
-                    <div>
-                        <div class="title">Pair Contents</div>
-                        <div class="info">
-                            - 연등 만들기<br>
-                            - 단주 만들기
-                        </div>
-                        <!-- <div class="type"></div>     -->
-                    </div>
-    
-                    <span class="number">
-                        <span>11:00</span>
-                        <span>11:30</span>
-                    </span>
-                </li>
-
-                <li style="height: 120px;">
-                    <div>
-                        <div class="title">Lunch (공양)</div>
-                        <div class="info">
-                            - 12:40분까지 자유시간<br>
-                            - (추천) 중앙 불교 박물관<br>
-                            - (추천) 우정총국
-                        </div>
-                        <!-- <div class="type"></div>     -->
-                    </div>
-    
-                    <span class="number">
-                        <span>11:30</span>
-                        <span>12:00</span>
-                    </span>
-                </li>
-
-                <li style="height: 40px;">
-                    <div>
-                        <div class="title" style="margin-top: 15px">End of Temple Stay</div>
-                        <div class="info">
-                        </div>
-                        <!-- <div class="type"></div>     -->
-                    </div>
-    
-                    <span class="number">
-                        <span>12:40</span>
-                        <span>12:50</span>
-                    </span>
-                </li>
-
-                <li style="height: 240px;">
-                    <div>
-                        <div class="title">서울 공예 박물관</div>
-                        <div class="info">
-                            - 데일리 미션 리마인드<br>
-                            - '보물찾기' 진행<br>
-                        </div>
-                        <!-- <div class="type"></div>     -->
-                    </div>
-    
-                    <span class="number">
-                        <span>13:00</span>
-                        <span>14:00</span>
-                    </span>
-                </li>
-
-                <li>
-                    <div>
-                        <div class="title">Daily Mission</div>
-                        <div class="info">
-                            - BUDDY DAY 2 종료<br>
-                            - 데일리 미션 시작
-                        </div>
-                        <!-- <div class="type"></div>     -->
-                    </div>
-    
-                    <span class="number">
-                        <span>14:00</span>
-                        <span>23:59</span>
-                    </span>
-                </li>
-            </ul>
+                </div>
+             </div>
             
+            <!-- 2. PLAN -->
+            <div class="wrapper">
+                <ul id="plan">
+                    <li style="height: 190px;">
+                        <div id="first">
+                            <img src="img/b2/station.png">
+                            <div class="title">집합 및 이동</div>
+                            <div class="info">
+                                - 출석 체크 (5번 출구)<br>
+                                - 일정 리마인드<br>
+                                - 조계사로 이동
+                            </div>
+                            <!-- <div class="type">체육대회</div> -->
+                        </div>
+        
+                        <span class="number">
+                            <span>9:40</span>
+                            <span>9:55</span>
+                        </span>
+                    </li>
+                    
+                    <li style="height: 240px;">
+                        <div>
+                            <div class="title">Group Contents</div>
+                            <div class="info">
+                                - 사찰 안내<br>
+                                - '스파이를 찾아라' 진행
+                            </div>
+                            <!-- <div class="type">oh yeah</div> -->
+                        </div>
+        
+                        <span class="number">
+                            <span>10:00</span>
+                            <span>11:00</span>
+                        </span>
+                    </li>
+        
+                    <li style="height: 120px;">
+                        <div>
+                            <div class="title">Pair Contents</div>
+                            <div class="info">
+                                - 연등 만들기<br>
+                                - 단주 만들기
+                            </div>
+                            <!-- <div class="type"></div>     -->
+                        </div>
+        
+                        <span class="number">
+                            <span>11:00</span>
+                            <span>11:30</span>
+                        </span>
+                    </li>
+    
+                    <li style="height: 120px;">
+                        <div>
+                            <div class="title">Lunch (공양)</div>
+                            <div class="info">
+                                - 12:40분까지 자유시간<br>
+                                - (추천) 중앙 불교 박물관<br>
+                                - (추천) 우정총국
+                            </div>
+                            <!-- <div class="type"></div>     -->
+                        </div>
+        
+                        <span class="number">
+                            <span>11:30</span>
+                            <span>12:00</span>
+                        </span>
+                    </li>
+    
+                    <li style="height: 40px;">
+                        <div>
+                            <div class="title" style="margin-top: 15px">End of Temple Stay</div>
+                            <div class="info">
+                            </div>
+                            <!-- <div class="type"></div>     -->
+                        </div>
+        
+                        <span class="number">
+                            <span>12:40</span>
+                            <span>12:50</span>
+                        </span>
+                    </li>
+    
+                    <li style="height: 240px;">
+                        <div>
+                            <div class="title">서울 공예 박물관</div>
+                            <div class="info">
+                                - 데일리 미션 리마인드<br>
+                                - '보물찾기' 진행<br>
+                            </div>
+                            <!-- <div class="type"></div>     -->
+                        </div>
+        
+                        <span class="number">
+                            <span>13:00</span>
+                            <span>14:00</span>
+                        </span>
+                    </li>
+    
+                    <li>
+                        <div>
+                            <div class="title">Daily Mission</div>
+                            <div class="info">
+                                - BUDDY DAY 2 종료<br>
+                                - 데일리 미션 시작
+                            </div>
+                            <!-- <div class="type"></div>     -->
+                        </div>
+        
+                        <span class="number">
+                            <span>14:00</span>
+                            <span>23:59</span>
+                        </span>
+                    </li>
+                </ul>
+                
+            </div>
+
+            <!-- 3. GAME -->
+            <div id="game">
+                <img src="img/b2/game/spy.jpg" class="spy">
+                <img src="img/b2/game/sticker1.png" class="sticker stk1">
+                <img src="img/b2/game/sticker2.png" class="sticker stk2">
+                <img src="img/b2/game/sticker3.png" class="sticker stk3">
+                <img src="img/b2/game/sticker4.png" class="sticker stk4">
+                <img src="img/b2/game/msg1.png" class="msg msg1">
+                <img src="img/b2/game/msg2.png" class="msg msg2">
+
+                <div class="exp exp-kor">
+                    1. 조 당 한 페어씩 '스파이 페어'로 지정됩니다.<br>
+                    2. 스파이 페어를 제외한 모든 페어는, 사찰 안내 중 '비밀 미션'을 수행합니다.<br>
+                    3. 스파이 페어는 비밀 미션에 대해 알지 못합니다.<br>
+                    4. 각 조의 스파이 페어를 알아내 조장에게 알리세요! (12:30분부터 선착순)<br><br>
+
+                    To. 스파이 페어<br>
+                    센스를 발휘해 미션을 알아내, 들키지 마십시오.
+                </div>
+
+                <div class="exp exp-eng">
+                    1. One pair per group is designated as a ‘Spy-pair’. <br>
+                    2. All pairs except the Spy-pair perform a ‘secret mission’ during the temple introduction.<br> 
+                    3. The Spy-pair doesn't know about the secret mission. <br>
+                    4. Find out each group’s Spy-pair and inform the team leader! (First-come, first-served basis from 12:30 pm) <br><br>
+
+                    To. Spy-pair <br>
+                    Use your senses to figure out the mission and avoid getting caught.
+                </div>
+                
+             </div>
 
             <!-- 4. MISSION -->
             <table id="mission">
@@ -419,6 +447,9 @@
         </table>
             
         <script>
+        window.onload = function() {
+            $('.btn-info').addClass('click');
+        };
         // 하단 버튼 클릭 시 화면 테마 변경
         $("#bottom td").on("click", function(){
 
@@ -430,10 +461,18 @@
             // 화면
             $("#screen").removeClass();
             $("#screen").addClass(className);
-
-            // 3. PLAN
+            
+            // 1. INFO
+            $('#info').removeClass();
+            $('#info').addClass(className);
+            
+            // 2. PLAN
             $('#plan').removeClass();
             $('#plan').addClass(className);
+
+            // 3. GAME
+            $('#game').removeClass();
+            $('#game').addClass(className);
 
             // 4. MISSION
             $("#mission").removeClass();

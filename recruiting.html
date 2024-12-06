@@ -12,18 +12,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 70%;
+            height: 95%;
             text-align: center;
-        }
-
-        #exp {
-            font-weight: 700;
-        }
-
-        #prev {
-            font-size: 10px;
-            padding-top: 10px;
-            color: rgb(137, 135, 135);
         }
 
         img {
@@ -33,6 +23,31 @@
         a {
             text-decoration: none;
         }
+
+        .alimi {
+            padding-top: 30px;
+            > i {
+                padding-top: 30px;
+            }
+        }
+
+        button {
+            background-color: brown;
+            padding: 10px;
+            margin: 20px;
+            color: white;
+            border-radius: 6px;
+            border: none;
+            font-size: 10px;
+            cursor: pointer;
+        }
+
+        hr {
+            height: 0.8px;
+            border: 0;
+            background: rgb(155, 151, 151);
+        }
+
     </style>
 </head>
 <body>
@@ -68,16 +83,32 @@
 
         <table>
             <tr>
+                <td style="font-size: 15px;">아직 모집 기간이 아닙니다.</td>
+            </tr>
+            <tr>
                 <td><img src="img/recruiting.png"></td>
             </tr>
             <tr>
-                <td><p id="exp">아직 모집 기간이 아닙니다.</p></td>
+                <td>BUDDY 프로그램이 끝나는 시점에 신입 스태프 모집이 시작됩니다.<br></td>
             </tr>
             <tr>
                 <td>
                     <a href="https://www.instagram.com/p/DCkEWUwBaUV/?igsh=MTJtM3RyaGpxM3J5Mg==">
-                        <p id="prev">지난 공지 보러 가기 (instagram)</p>
+                        <button>지난 공지</button>
                     </a>
+                </td>
+            </tr>
+            <tr>
+                <td><hr></td>
+            </tr>
+            <tr>
+                <td class="alimi">
+                    2025-2 ISO 스태프 설명회 및 모집에 관한 알림을 신청해보세요!<br><br>
+                    <i class="fa-solid fa-bell" style="font-size: 30px; color: brown; padding-bottom: 10px"></i><br>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc0j4TvsQQgkRHHLlhxuawfdOkoW8XxPXyvZoghiZ6vBUKZxA/viewform?usp=header"><button>알림 신청</button></a><br><br>
+                    
+                    
+                    
                 </td>
             </tr>
         </table>
