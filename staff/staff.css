@@ -1,0 +1,75 @@
+.container {
+    background-color: rgb(129, 23, 23);
+}
+.wrapper {
+    /* background-color: pink; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+}
+
+/* 헤더 */
+#first-header {
+    color: white;
+}
+
+#first-header i {
+    color: white;
+}
+
+/* 카드 */
+.flip-outer {
+    perspective: 3000px;
+    width: 200px;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.flip-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: card-rotate 20s linear infinite 3s both;
+    
+}
+
+img {
+    width: 200px;
+    height: 117px;
+    border-radius: 10px;
+
+}
+
+.front {
+    width: 100%;
+    position: absolute;
+}
+
+.back {
+    width: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+@keyframes card-rotate {
+    0% {
+        transform:rotateY(0deg);
+    } 40% {
+        transform:rotateY(-360deg);
+    } 100% {
+        transform:rotateY(-360deg);
+    }
+}
+
+.box {
+    width: 150px;
+    height: 150px;
+    background-color: rgb(244, 232, 220);
+    margin: 5px;
+    position: relative;
+}

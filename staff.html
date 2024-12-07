@@ -12,44 +12,93 @@
         .wrapper {
             width: 300px;
             height: 540px;
+            padding-top: 15px;
+            padding-bottom: 15px;
             position: absolute;
             top: 55%;
             left: 50%;
             transform: translate(-50%, -50%);
             overflow: scroll;
-            border: 1px solid black;
-            background-color: rgb(249, 244, 228);
-            border-radius: 10px;
+            background-color: rgb(246, 244, 240);
+            border-radius: 3px;
+            box-shadow: 2px 2px 2px 2px gray;
         }
-        table:nth-child(1) {
-            margin-top: 140px;
-            padding: 0;
-            height: 10px;
+
+        .up {
+            font-size: 10px;
+            text-align: center;
+            > h1 {
+            background-color: rgb(139, 28, 28);
+            color: white;
+            padding: 5px;
+            }
         }
-        table:nth-child(2) {
-            height: 490px;
-        }
-        table:nth-child(3) {
-            height: 10px;
-            position: absolute;
-            bottom: -12px;
-        }
+
         td {
             width: 100px;
             height: 70px;
-            background-color: rgb(249, 244, 228);
+            background-color: rgb(246, 244, 240);
             text-align: center;
+        }
+
+        .table1 {
+            width: 100%;
+            height: 120px;
+        }
+
+        .exp {
+            border-top: 0.5px solid rgb(201, 189, 189);
+            border-bottom: 0.5px solid rgb(201, 189, 189);
+            background-color: white;
+            display: grid;
+            grid-template-columns: 1fr 4fr;
             padding: 10px;
+            margin-top: 10px;
         }
+
+        .table2 {
+            margin: 0;
+            height: 80px;
+        }
+
+        .table3 {
+            height: 200px;
+        }
+
+        .table4 {
+            height: 110px;
+        }
+
         img {
-            width: 50px;
+            width: 45px;
         }
+
+        img:active {
+            transform: scale(1.2);
+            transition: all 0.5s
+        }
+
         .role td, .name td {
             height: 10px;
             padding: 0px;
         }
         .blank {
             width: 50px;
+        }
+        button {
+            border-radius: 6px;
+            border: none;
+            padding: 5px;
+            width: 60px;
+            background-color: brown;
+            color: white;
+            font-size: 10px;
+        }
+
+        .btn {
+            line-height: 15px;
+            width: 90px;
+            height: 70px;
         }
     </style>
 </head>
@@ -85,98 +134,117 @@
         </header>
 
         <div class="wrapper">
-            <table>
-                <tr>
-                    <td colspan="6">
-                        2025-1 ISO BUDDY<br><br>
-                        <h1>Choose Your Favorite <br>Ice Cream!</h1>
-                    </td>
-                </tr>
+            <div class="up">
+                2025-1 ISO BUDDY<br><br>
+                <h1>Choose Your Favorite <br>Ice Cream!</h1>
+            </div>
+
+            <table class="table1">
                 <tr>
                     <td class="blank"></td>
-                    <td class="tile" colspan="2"><img src="img/staff/iceCream/ice1.png"></td>
-                    <td class="tile" colspan="2"><img src="img/staff/iceCream/ice2.png"></td>
+                    <td class="tile"><a href="staff/staff1.html"><img src="img/staff/iceCream/ice1.png"></a></td>
+                    <td class="tile"><a href="staff/staff2.html"><img src="img/staff/iceCream/ice2.png"></a></td>
                     <td class="blank"></td>
                 </tr>
                 <tr class="role">
                     <td class="blank"></td>
-                    <td class="tile" colspan="2">BUDDY Leader</td>
-                    <td class="tile" colspan="2">BUDDY Vice Leader</td>
+                    <td class="tile">BUDDY Leader</td>
+                    <td class="tile">BUDDY Vice Leader</td>
                     <td class="blank"></td>
                 </tr>
                 <tr class="name">
                     <td class="blank"></td>
-                    <td class="tile" colspan="2">김예지</td>
-                    <td class="tile" colspan="2">서민주</td>
+                    <td class="tile">김예지</td>
+                    <td class="tile">서민주</td>
                     <td class="blank"></td>
                 </tr>
-                <tr>
-                    <td colspan="6">
-                        <h3>2025-1 한국외대(서울) 국제학생회 : 버디 프로그램<br>
-                        2025-1 HUFS ISO SEOUL : BUDDY PROGRAM<br><br></h3>
-                        
-                        <p style="font-size: 8px">
-                            1:1로 매칭된 외국인 친구와 함께 '체육대회'와 '템플 스테이'를 즐겨볼까요? <br>
+                </table>
+
+                <div class="exp-btn">
+
+                    <div class="exp">
+                        <h6>25-1 <br>BUDDY</h6>
+                        <p style="font-size: 7px">
+                            1:1 매칭된 외국인 친구와 '체육대회'와 '템플 스테이'를 즐겨볼까요? <br>
                             ISO의 가장 자랑스러운 공식 행사인 BUDDY 프로그램을 만나보세요!<br><br>
-                        
+                            
+                            Enjoy ‘Athletic competitions’ and ‘Temple stay’ with foreign friends!<br>
+                            Meet ISO’s proudest official event, the BUDDY program!
+                        </p>
+                    </div>
     
     
-                        <span class="btn">신청하기(한국인)</span>
-                        <span class="btn">신청하기(Foreigner, kor.)</span>
-                        <span class="btn">Apply(Foreigner, eng.)</span>
-                    </p>
-                    </td>
-                </tr>
-                </table>
-                <table>
+                    <table class="btn-table table2">
+                        <tr>
+                            <td class="btn">
+                                <span style="font-size: 8px">한국인</span><br>
+                                <button>신청</button>
+                            </td>
+                            <td class="btn">
+                                <span style="font-size: 8px">Foreigner (KOR)</span><br>
+                                <button>신청</button>
+                            </td>
+                            <td class="btn">
+                                <span style="font-size: 8px">Foreigner (ENG)</span><br>
+                                <button>Apply</button>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+
+                
+
+                <table class="table3">
                     <tr>
-                        <td class="tile" colspan="2"><img src="img/staff/iceCream/ice3.png"></td>
-                        <td class="tile" colspan="2"><img src="img/staff/iceCream/ice4.png"></td>
-                        <td class="tile" colspan="2"><img src="img/staff/iceCream/ice5.png"></td>
+                        <td class="tile"><a href="staff/staff3.html"><img src="img/staff/iceCream/ice3.png"></a></td>
+                        <td class="tile"><a href="staff/staff4.html"><img src="img/staff/iceCream/ice4.png"></a></td>
+                        <td class="tile"><a href="staff/staff5.html"><img src="img/staff/iceCream/ice5.png"></a></td>
                     </tr>
                     <tr class="role">
-                        <td class="tile" colspan="2">Group 1</td>
-                        <td class="tile" colspan="2">Group 2</td>
-                        <td class="tile" colspan="2">Group 3</td>
+                        <td class="tile">Group 1</td>
+                        <td class="tile">Group 2</td>
+                        <td class="tile">Group 3</td>
                     </tr>
                     <tr class="role">
-                        <td class="tile" colspan="2">구정현</td>
-                        <td class="tile" colspan="2">김세연</td>
-                        <td class="tile" colspan="2">박지혜</td>
+                        <td class="tile">구정현</td>
+                        <td class="tile">김세연</td>
+                        <td class="tile">박지혜</td>
                     </tr>
                     <tr>
-                        <td class="tile" colspan="2"><img src="img/staff/iceCream/ice6.png"></td>
-                        <td class="tile" colspan="2"><img src="img/staff/iceCream/ice7.png"></td>
-                        <td class="tile" colspan="2"><img src="img/staff/iceCream/ice8.png"></td>
+                        <td class="tile"><a href="staff/staff6.html"><img src="img/staff/iceCream/ice6.png"></a></td>
+                        <td class="tile"><a href="staff/staff7.html"><img src="img/staff/iceCream/ice7.png"></a></td>
+                        <td class="tile"><a href="staff/staff8.html"><img src="img/staff/iceCream/ice8.png"></a></td>
                     </tr>
                     <tr class="role">
-                        <td class="tile" colspan="2">Group 4</td>
-                        <td class="tile" colspan="2">Group 5</td>
-                        <td class="tile" colspan="2">Group 6</td>
+                        <td class="tile">Group 4</td>
+                        <td class="tile">Group 5</td>
+                        <td class="tile">Group 6</td>
                     </tr>
                     <tr class="name">
-                        <td class="tile" colspan="2">우수현</td>
-                        <td class="tile" colspan="2">이아림</td>
-                        <td class="tile" colspan="2">이현종</td>
+                        <td class="tile">우수현</td>
+                        <td class="tile">이아림</td>
+                        <td class="tile">이현종</td>
                     </tr>
                 </table>
-                <table>
+
+                <table class="table4">
                     <tr>
                         <td class="blank"></td>
-                        <td class="tile" colspan="2"><img src="img/staff/iceCream/ice9.png"></td>
-                        <td class="tile" colspan="2"><img src="img/staff/iceCream/ice10.png"></td>
+                        <td class="tile"><a href="staff/staff9.html"><img src="img/staff/iceCream/ice9.png"></a></td>
+                        <td class="tile"><a href="staff/staff10.html"><img src="img/staff/iceCream/ice10.png"></a></td>
                         <td class="blank"></td>
                     </tr>
                     <tr class="role">
                         <td class="blank"></td>
-                        <td class="tile" colspan="2">Group 7</td>
-                        <td class="tile" colspan="2">Group 8</td>
+                        <td class="tile">Group 7</td>
+                        <td class="tile">Group 8</td>
                         <td class="blank"></td>
                     </tr>
                     <tr class="name">
                         <td class="blank"></td>
-                        <td class="tile" colspan="2">정재연</td>
-                        <td class="tile" colspan="2">차정현</td>
+                        <td class="tile">정재연</td>
+                        <td class="tile">차정현</td>
                         <td class="blank"></td>
                     </tr>
                 </table>
