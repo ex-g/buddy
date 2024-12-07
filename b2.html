@@ -177,27 +177,32 @@
         }
 
         tbody {
-            margin-top: -95px;
-            margin-left: 1px;
+            margin-top: -30px;
+            margin-left: 3px;
         }
 
         .notice {
             width: 300px;
-            height: 80px;
+            height: 143px;
             background-color: white;
-            opacity: 0.9;
+            opacity: 0.95;
             color: rgb(64, 63, 63);
-            font-size: 10px; line-height: 17px;
+            font-size: 11px; 
+            line-height: 17px;
             text-align: left;
             padding: 20px;
             border-radius: 10px;
             overflow-y: scroll;
         }
 
+        h1 {
+            color: rgb(42, 42, 173);
+        }
+
         .card {
             width: 140px;
             height: 140px;
-            margin-top: 10px;
+            margin-top: 8px;
             transform-style: preserve-3d;
             transition: all 1s ease;
             background: none;
@@ -208,7 +213,7 @@
             position: absolute;
             width: 140px;
             height: 140px;
-            background-color: white;
+            background-color: whitesmoke;
             opacity: 0.8;
             border: black solid 1px;
             border-radius: 10px;
@@ -216,11 +221,31 @@
             backface-visibility: hidden;
             margin: 0;
             padding: 0;
+            font-size: 9px;
+            line-height: 11px;
+            color: black;
+            > h1 {
+                font-size: 16px;
+                line-height: 80px;
+            }
         }
 
         .back {
             transform: rotateX(180deg);
             backface-visibility: hidden;
+            opacity: 1;
+            padding: 10px;
+            font-size: 9px;
+            text-align: left;
+            overflow-y: scroll;
+            > h3 {
+                text-align: center;
+            }
+            > hr {
+                background: rgb(59, 58, 58);
+                height: 1px;
+                border: 0;
+            }
         }
     </style>
 </head>
@@ -437,24 +462,24 @@
 
             <div class="wallpaper" id="mission">
 
-                <img src="img/b2/background4.jpg">
+                <img src="img/b2/background6.jpg">
 
                 <table> 
                     <tr>
                         <td colspan="2">
                             <div class="notice">
-                                [ NOTICE ]<br><br>
-                                1. This daily mission is not included in the BUDDY program completion requirements.<br>
-                                2. Fairwell Day snacks will be provided to all pairs who complete 4 daily missions.<br>
-                                3. All mission locations except #GAME are recommended by the Buddy team leaders, and you may perform them elsewhere.<br>
-                                4. Certification is not possible after 23:59 PM.<br>
+                                <h3>[ NOTICE ]</h3><br>
+                                1. This daily mission is not included in the BUDDY program completion requirements.<br><br>
+                                2. Fairwell Day snacks will be provided to all pairs who complete 4 daily missions.<br><br>
+                                3. All mission locations except #GAME are recommended by the Buddy team leaders, and you may perform them elsewhere.<br><br>
+                                4. Certification is not possible after 23:59 PM.<br><br>
                                 5. Mission certification must be done by a Korean participant.<br><br>
                                 <hr style="background-color: gray; height: 0.5px; border: 0">
-                                <br>[ 공지 ]<br><br>
-                                1. 본 데일리 미션은 BUDDY 프로그램 수료조건에 포함되지 않습니다.<br>
-                                2. 데일리 미션 4개를 수행한 모든 페어에게 페어웰날 간식이 제공될 예정입니다.<br>
-                                3. #GAME을 제외한 모든 미션 장소는 팀장단의 추천일 뿐, 다른 곳에서 수행하셔도 무방합니다.<br>
-                                4. 당일 오후 23:59분 이후에는 인증이 불가능합니다.<br>
+                                <br><h3>[ 공지 ]</h3><br>
+                                1. 본 데일리 미션은 BUDDY 프로그램 수료조건에 포함되지 않습니다.<br><br>
+                                2. 데일리 미션 4개를 수행한 모든 페어에게 페어웰날 간식이 제공될 예정입니다.<br><br>
+                                3. #GAME을 제외한 모든 미션 장소는 팀장단의 추천일 뿐, 다른 곳에서 수행하셔도 무방합니다.<br><br>
+                                4. 당일 오후 23:59분 이후에는 인증이 불가능합니다.<br><br>
                                 5. 미션 인증은 한국인 참가자가 진행합니다.
                             </div>
                         </td>
@@ -465,28 +490,76 @@
                     <tr>
                         <td>
                             <div class="card" id="mission-game">
-                                <div class="front">게임</div>
-                                <div class="back">보물찾기</div>
+                                <div class="front">
+                                    <br><br><br><h1>#GAME</h1>
+                                    Seoul Craft Museum<br>
+                                    서울 공예 박물관
+                                </div>
+                                <div class="back">
+                                    <h3>Treasure Hunt</h3><br><br>
+                                    Guess the names of the treasures in the museum!<br><br>
+                                    <h5>Auth: Submit Google Form (10 more questions correctly)</h5>
+                                    <hr>
+                                    <h3>페어와 보물찾기</h3><br>
+                                    박물관의 보물들 이름을 맞춰보세요!<br><br>
+                                    <h5>인증 : 구글폼 제출 (10개 이상)</h5>
+                                </div>
                             </div>
                         </td>
                         <td>
                             <div class="card" id="mission-letter">
-                                <div class="front">편지</div>
-                                <div class="back">페어에게 편지쓰기</div>
+                                <div class="front">
+                                    <br><br><br><h1>#LETTER</h1>
+                                    Seoul Craft Museum<br>
+                                    서울 공예 박물관
+                                </div>
+                                <div class="back">
+                                    <h3>Write a letter</h3><br><br>
+                                    Write a to your pair on a pretty postcard. <br><br>
+                                    <h5>Auth: send a photo to your group leader.</h5>
+                                    <hr>
+                                    <h3>페어에게 편지 쓰기</h3><br>
+                                    엽서에 페어를 위한 편지를 써주세요.<br><br>
+                                    <h5>인증 : 조장에게 엽서 2장이 나온 인증샷 전달</h5>
+                                </div>
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <div class="card" id="mission-food">
-                                <div class="front">음식</div>
-                                <div class="back">페어와 저녁 먹기</div>
+                                <div class="front">
+                                    <br><br><br><h1>#FOOD</h1>
+                                    Hello, Insa-dong<br>
+                                    안녕, 인사동
+                                </div>
+                                <div class="back">
+                                        <h3>Dinner with Fair </h3><br><br>
+                                        Find a delicious restaurant in Insadong<br><br>
+                                        <h5>Auth: send a photo to your group leader.</h5>
+                                        <hr>
+                                        <h3>페어와 저녁 먹기</h3><br>
+                                        인사동의 맛집에서 저녁 시간을 보내요!<br><br>
+                                        <h5>인증 : 조장에게 페어와 음식이 나온 인증샷 전달</h5>
+                                </div>
                             </div>
                         </td>
                         <td>
                             <div class="card" id="mission-gift">
-                                <div class="front">선물</div>
-                                <div class="back">페어에게 어울리는 선물</div>
+                                <div class="front">
+                                    <br><br><br><h1>#GIFT</h1>
+                                    Hello, Insa-dong<br>
+                                    안녕, 인사동
+                                </div>
+                                <div class="back">
+                                    <h3>Gift to Fair</h3><br><br>
+                                    Gift one item that matches the pair.<br><br>
+                                    <h5>Auth: send a photo to your group leader.</h5>
+                                    <hr>
+                                    <h3>페어에게 선물하기</h3><br>
+                                    페어에게 어울리는 물건 1개를 선물해 주세요.<br><br>
+                                    <h5>인증 : 조장에게 페어와 선물이 나온 인증샷 전달</h5>
+                                </div>
                             </div>
                         </td>
                     </tr>
