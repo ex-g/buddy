@@ -78,6 +78,7 @@
             position: absolute;
             width: 100%;
             height: 490px;
+            top: 55px;
             background-color: rgb(168, 0, 28);
             overflow: hidden;
         }
@@ -161,36 +162,65 @@
 
 
         /* 4. MISSION : 카드 */
-
+        #mission img {
+            width: 100%;
+            height: 490px;
+            position: absolute;
+            top: 60px;
+            left: 0px;
+            object-fit: cover;
+        }
 
         table {
             height: 350px;
+            perspective: 3000px;
+        }
+
+        tbody {
+            margin-top: -95px;
+            margin-left: 1px;
+        }
+
+        .notice {
+            width: 300px;
+            height: 80px;
+            background-color: white;
+            opacity: 0.9;
+            color: rgb(64, 63, 63);
+            font-size: 10px; line-height: 17px;
+            text-align: left;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-y: scroll;
         }
 
         .card {
             width: 140px;
             height: 140px;
-            margin: 5px;
-            margin-top: 20px;
-            border-radius: 20px;
+            margin-top: 10px;
             transform-style: preserve-3d;
-            transition: all 0.5s ease;
+            transition: all 1s ease;
             background: none;
+            position: relative;
         }
 
         .front, .back {
             position: absolute;
-            width: 100%;
-            height: 100%;
+            width: 140px;
+            height: 140px;
             background-color: white;
+            opacity: 0.8;
             border: black solid 1px;
-            border-radius: 15px;
+            border-radius: 10px;
             box-shadow: 2px 2px 5px;
             backface-visibility: hidden;
+            margin: 0;
+            padding: 0;
         }
 
         .back {
             transform: rotateX(180deg);
+            backface-visibility: hidden;
         }
     </style>
 </head>
@@ -404,36 +434,65 @@
              </div>
 
             <!-- 4. MISSION -->
-            <table id="mission">
-                <tr>
-                    <td>
-                        <div class="card" id="mission-game">
-                            <div class="front">게임</div>
-                            <div class="back">보물찾기</div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="card" id="mission-letter">
-                            <div class="front">편지</div>
-                            <div class="back">페어에게 편지쓰기!</div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="card" id="mission-food">
-                            <div class="front">음식</div>
-                            <div class="back">페어와 저녁 먹기</div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="card" id="mission-gift">
-                            <div class="front">선물</div>
-                            <div class="back">페어에게 어울리는 선물</div>
-                        </div>
-                    </td>
-                </tr>
-            </table>
+
+            <div class="wallpaper" id="mission">
+
+                <img src="img/b2/background4.jpg">
+
+                <table> 
+                    <tr>
+                        <td colspan="2">
+                            <div class="notice">
+                                [ NOTICE ]<br><br>
+                                1. This daily mission is not included in the BUDDY program completion requirements.<br>
+                                2. Fairwell Day snacks will be provided to all pairs who complete 4 daily missions.<br>
+                                3. All mission locations except #GAME are recommended by the Buddy team leaders, and you may perform them elsewhere.<br>
+                                4. Certification is not possible after 23:59 PM.<br>
+                                5. Mission certification must be done by a Korean participant.<br><br>
+                                <hr style="background-color: gray; height: 0.5px; border: 0">
+                                <br>[ 공지 ]<br><br>
+                                1. 본 데일리 미션은 BUDDY 프로그램 수료조건에 포함되지 않습니다.<br>
+                                2. 데일리 미션 4개를 수행한 모든 페어에게 페어웰날 간식이 제공될 예정입니다.<br>
+                                3. #GAME을 제외한 모든 미션 장소는 팀장단의 추천일 뿐, 다른 곳에서 수행하셔도 무방합니다.<br>
+                                4. 당일 오후 23:59분 이후에는 인증이 불가능합니다.<br>
+                                5. 미션 인증은 한국인 참가자가 진행합니다.
+                            </div>
+                        </td>
+                    </tr>
+
+                    <br>
+
+                    <tr>
+                        <td>
+                            <div class="card" id="mission-game">
+                                <div class="front">게임</div>
+                                <div class="back">보물찾기</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="card" id="mission-letter">
+                                <div class="front">편지</div>
+                                <div class="back">페어에게 편지쓰기</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="card" id="mission-food">
+                                <div class="front">음식</div>
+                                <div class="back">페어와 저녁 먹기</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="card" id="mission-gift">
+                                <div class="front">선물</div>
+                                <div class="back">페어에게 어울리는 선물</div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
         </div>
 
         <!-- Bottom -->
