@@ -11,6 +11,13 @@
     <script type="text/javascript" src="jquery-2.2.4.min.js"></script>
     <script type="text/javascript" src="prefixfree.min.js"></script>
     <style>
+        #first-header {
+            background-color: darkgreen;
+            color: white;
+            > i {
+                color: white;
+            }
+        }
         /* 버튼 */
         .click {
             background-color: darkgreen;
@@ -21,62 +28,86 @@
             width: 100%;
             height: 490px;
             top: 55px;
-            background-color: darkgreen;
-            overflow-y: scroll;
-            overflow-x: hidden;
+            overflow-y: hidden;
             position: absolute;
-            color: white;
-
-            > .title {
-                font-size: 20px;
-                text-align: center;
-                margin-top: 20px;
-            }
-            > .basic {
-                font-size: 10px;
-                text-align: center;
-            }
             > img {
                 position: absolute;
-                width: 230px;
+                width: 100%;
+                z-index: 1;
             }
-            > #info-img1 {
-                left: -70px;
-                top: 150px;
-            }
-            > #info-img2 {
-                top: 470px;
-                right: -70px;
-            }
-            .info {
-                width: 200px;
-                height: 60px;
-                font-size: 9px;
+            > .tape {
+                width: 40px;
+                height: 50px;
+                background-color: rgb(154, 154, 100);
                 position: absolute;
-                padding: 15px;
-                line-height: 17px;
+                z-index: 5;
+                left: 160px;
+                top: 20px;
+                opacity: 0.8;
+                transform: rotate(10deg);
             }
-            .act1 {
-                right: 0px;
+            > .paper {
+                width: 290px;
+                height: 410px;
+                top: 52%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: rgb(241, 244, 218);
+                color: darkgreen;
+                font-weight: 600;
+                padding: 20px;
+                
+                z-index: 4;
+                position: absolute;
+                
+                text-align: center;
+                line-height: 20px;
+                overflow-y: scroll;
+
+                box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
+                0 2px 2px rgba(0,0,0,0.11), 
+                0 4px 4px rgba(0,0,0,0.11), 
+                0 8px 8px rgba(0,0,0,0.11), 
+                0 16px 16px rgba(0,0,0,0.11), 
+                0 32px 32px rgba(0,0,0,0.11);
+                > div {
+                    font-size: 12px;
+                    > span {
+                        font-size: 15px;
+                        display: block;
+                        background-color: darkgreen;
+                        border-radius: 6px;
+                        color: white;
+                        padding: 5px;
+                    }
+                }
+                > h1 {
+                    font-size: 20px;
+                    padding: 20px 0px;
+                }
+                > img {
+                    width: 230px;
+                    padding: 30px 20px;
+                }
+
             }
-            .act2 {
-                top: 400px;
-            }
-            .info-title {
-                font-size: 20px;
-                padding-bottom: 10px;
-            }
-            .info-exp {
-                padding-bottom: 20px;
+        }
+
+        .supplies, .emergency {
+            text-align: left;
+            > .sm-title {
+                text-align: center;
             }
         }
 
         hr {
-            height: 0.8px;
+            background: darkgreen;
+            height: 1px;
+            width: 70%;
             border: 0;
-            background: white;
-            margin: 20px;
+            margin-left: 40px;
         }
+
 
         /* 2. PLAN */
         ul.plan {
@@ -92,10 +123,81 @@
          #game {
             position: absolute;
             width: 100%;
-            height: 490px;
-            background-color: rgb(168, 0, 28);
+            height: 495px;
+            background-color: darkgreen;
             overflow: hidden;
         }
+
+        /* 4. MISSION */
+        #mission {
+            width: 100%;
+            height: 490px;
+            top: 55px;
+            overflow-y: hidden;
+            position: absolute;
+            > img {
+                position: absolute;
+                width: 100%;
+                z-index: 5;
+            }
+            > .wrap{
+                z-index: 6;
+                position: absolute; 
+                display: inline-block;
+                > .booth {
+                    position: absolute;
+                    width: 50px;
+                    height: 50px;
+                    padding: 2px 16px;
+                    cursor: pointer;
+                    background: darkgreen; 
+                    padding: 10px; 
+                    border-radius: 50%; 
+                    color: rgb(241, 244, 218); 
+                    text-align: center;
+                    font-size: 30px;
+                }
+            }
+        }
+        .tooltip{
+            position:absolute; 
+            width: 150px;
+            left:0px; 
+            top:60px; 
+            background: rgb(241, 244, 218); 
+            padding: 10px; 
+            border-radius:5px; 
+            color: darkgreen; 
+            font-weight: 700;
+            text-align: center; 
+            display: none;
+            font-size: 10px;
+        }
+
+        .tooltip:after {
+            display: block; 
+            content: ''; 
+            position: absolute; 
+            top: -7px; 
+            left:15px; 
+            width: 0px; 
+            height: 0px; 
+            border-top: 8px solid none; 
+            border-left: 8psolid transparent; 
+            border-right: 8px solid transparent; 
+            border-bottom: 8px solid rgb(241, 244, 218);
+        } 
+        .wrap:hover .tooltip{display: block;}
+
+        #wrap1 { top: 10px; left: 100px; }
+        #wrap2 { top: 10px; left: 200px; }
+        #wrap3 { top: 130px; left: 100px; }
+        #wrap4 { top: 130px; left: 200px; }
+        #wrap5 { top: 250px; left: 100px; }
+        #wrap6 { top: 250px; left: 200px; }
+        #wrap7 { top: 380px; left: 100px; }
+        #wrap8 { top: 380px; left: 200px; }
+
     </style>
 </head>
 <body>
@@ -134,26 +236,47 @@
 
             <!-- 1. INFO -->
             <div id="info">
-                <div class="title">Happy Boost Day to You!</div>
-                <div class="basic">날짜 : 5/3~5/4 | 집결 장소 : 종각역 5번 출구</div>
-                <hr>
-                <img src="img/b2/info1.png" id="info-img1">
-                <div class="info act1">
-                    <div class="info-title">JOGYESA | 조계사</div>
-                    <div class="info-exp">
-                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspBUDDY DAY 2의 첫 번째 방문 장소는, 서울의 도심인 종로 한가운데에 위치한 '조계사'입니다. 조계사는 조선불교의 자주화와 민족자존 회복을 염원하는 스님들에 의해 '각황사'란 이름으로 1910년에 최초 창건되었으며, 불교정화운동 이후 '조계사'로 이름이 바뀌어 현재에 이르고 있습니다.<br>
-                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp사찰 안내를 시작으로 페어와 함께 연등 만들기, 단주 만들기 등의 체험을 하며 조계사에서 휴식과 여유를 느껴보아요! 사찰 안내 중에는 조별 활동으로 '스파이를 찾아라'도 준비되어 있습니다. <br>
-                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp점심식사 이후에는 페어와 함께 불교중앙박물관과 우정총국도 방문해보세요!
+                <img src="img/b1/background2.jpg">
+                <div class="tape"></div>
+                <div class="paper">
+                    <h1 class="title">Happy Boost Day to You!</h1>
+                    <div class="basic" style="font-size: 12px">
+                        0329 | 10:30 ~ 15:30 | HUFS Playground
                     </div>
-                </div>
-                <img src="img/b2/info2.png" id="info-img2">
-                <div class="info act2">
-                    <div class="info-title">SeMoCA | <br><br>서울 공예 박물관</div>
-                    <div class="info-exp" id="info-exp2">
-                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspBUDDY DAY 2의 두 번째 방문 장소는, 한국 최초의 공립 공예 박물관인 '서울 공예 박물관'입니다. 서울 공예 박물관은 서울시에서 (구)풍문여고 건물 5개 동을 리모델링하여 2021년 7월 건축되었습니다. 이곳에서는 공예품뿐만 아니라, 공예와 관련된 지식과 기록, 사람, 환경 등을 연구하고 공유함으로써 공예가 지닌 다양한 가치를 경험할 수 있습니다.<br>
-                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspBUDDY 팀이 준비한 공예 박물관의 '보물찾기' 콘텐츠를 페어와 함께 즐겨보세요! 이후에는 데일리 미션에도 참여하면서 페어와 행복한 하루를 만들 수 있습니다.
+                    <img src="img/b1/sports.png">
+                    <br>
+                    <div class="supplies">
+                        <span class="sm-title">{ Notice }</span><br>
+                        1. Wear comfortable clothing.<br><br>
+                        2. 1 bottle of water will be provided.<br><br>
+                        3. if you need to leave the event for any reason, make sure to inform your team leader.<br>
                     </div>
+                    <br>
+                    <div class="emergency">
+                        <span class="sm-title">{ Emergency }</span><br>
+                        1. Be sure to inform your group leader or nearby ISO staff in cas of an emergency and ask for help.<br><br>
+                        2. If the probelm cannot be resolved with first-aid supplies, go to the nearest emergency room.
+                        (All expenses of the emergency room are the of participant's responsibility.)<br><br>
+                        3. Kyung Hee University Emergency Medical Center 
+                        (23 Kyunghee-ro, Dongdaemun-gu, Seoul, Kyung Hee Medical Center : 02-958-8114)
+                    </div>
+                    <br><br><hr><br><br>
+                    <div class="supplies">
+                        <span class="sm-title">{ 준비물 및 안내 }</span><br>
+                        1. 편한 복장 착용<br><br>
+                        2. 1인당 생수 1병 제공<br><br>
+                        3. 자리 이탈 시 조장에게 알리기
+                    </div>
+                    <br><br>
+                    <div class="emergency">
+                        <span class="sm-title">{ 긴급상황 }</span><br>
+                        1. 긴급 상황 발생 시 조장이나 ISO 스태프에게 도움 청하기<br><br>
+                        2. 구급 상비약으로 해결되지 않는 경우 응급실로 이동 (응급실 발생 비용은 참가자 개인 부담)<br><br>
+                        3. 경희대학교 응급의료센터 (서울 동대문구 경희대로 23 경희의료원 : 02-958-8114)<br><br>
+                    </div>
+                    
                 </div>
+                
              </div>
             
             <!-- 2. PLAN -->
@@ -244,36 +367,41 @@
              </div>
 
             <!-- 4. MISSION -->
-            <table id="mission">
-                <tr>
-                    <td>
-                        <div class="card" id="mission-game">
-                            <div class="front">게임</div>
-                            <div class="back">보물찾기</div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="card" id="mission-letter">
-                            <div class="front">편지</div>
-                            <div class="back">페어에게 편지쓰기!</div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="card" id="mission-food">
-                            <div class="front">음식</div>
-                            <div class="back">페어와 저녁 먹기</div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="card" id="mission-gift">
-                            <div class="front">선물</div>
-                            <div class="back">페어에게 어울리는 선물</div>
-                        </div>
-                    </td>
-                </tr>
-            </table>
+            <div id="mission">
+                <img src="img/b1/background3.png">
+                <div class="wrap" id="wrap1">
+                    <i class="fa-brands fa-superpowers booth"></i>
+                    <div class="tooltip">부스1 : 제기 차기</div>
+                </div>
+                <div class="wrap" id="wrap2">
+                    <i class="fa-solid fa-child-reaching booth"></i>
+                    <div class="tooltip">부스2 : 몸으로 말해요</div>
+                </div>
+                <div class="wrap" id="wrap3">
+                    <i class="fa-regular fa-circle-check booth"></i>
+                    <div class="tooltip">부스3 : 젤리 맛 맞추기</div>
+                </div>
+                <div class="wrap" id="wrap4">
+                    <i class="fa-solid fa-hat-wizard booth"></i>
+                    <div class="tooltip">부스4 : 페어와 마법상자</div>
+                </div>
+                <div class="wrap" id="wrap5">
+                    <i class="fa-solid fa-0 booth"></i>
+                    <div class="tooltip">부스5 : 스도쿠</div>
+                </div>
+                <div class="wrap" id="wrap6">
+                    <i class="fa-solid fa-pen-clip booth"></i>
+                    <div class="tooltip">부스6 : 페어에게 편지쓰기</div>
+                </div>
+                <div class="wrap" id="wrap7">
+                    <i class="fa-solid fa-camera booth"></i>
+                    <div class="tooltip">부스7 : 페어와 사진찍기</div>
+                </div>
+                <div class="wrap" id="wrap8">
+                    <i class="fa-solid fa-wand-magic-sparkles booth"></i>
+                    <div class="tooltip">부스8 : 투호 던지기</div>
+                </div>
+            </div>
         </div>
 
         <!-- Bottom -->
@@ -282,7 +410,7 @@
                 <td class="btn" ><a class="info" href="#"><div class="btn-info non-click">INFO</div></a></td>
                 <td class="btn"><a class="plan" href="#"><div class="btn-plan non-click">PLAN</div></a></td>
                 <td class="btn"><a class="game" href="#"><div class="btn-game non-click">GAME</div></a></td>
-                <td class="btn"><a class="mission" href="#"><div class="btn-mission non-click">MISSION</div></a></td>
+                <td class="btn"><a class="mission" href="#"><div class="btn-mission non-click">BOOTH</div></a></td>
             </tr>
         </table>
             
