@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAIR CONTENTS</title>
+    <link rel="stylesheet" href="buddy.css">
+    <script src="https://kit.fontawesome.com/77dc09b73f.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="buddy.js"></script>
+    <script type="text/javascript" src="jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="prefixfree.min.js"></script>
+
+    <style>
+        /* 버튼 */
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        button {
+            background-color: rgb(243, 226, 208);
+            border-radius: 10px;
+            border: 1px solid gray;
+        }
+
+        .click {
+            background-color: brown;
+            border-radius: 10px;
+            color: white;
+            transition: all 0.7s;
+            padding: 10px 20px;
+        }
+
+        /* 버튼 컨트롤 */
+        #happy.buddy, #happy.day,
+        #buddy.happy, #buddy.day,
+        #day.happy, #day.buddy
+            {
+            display: none;
+        }
+
+        #happy.happy, #buddy.buddy, #day.day {
+            display: flex;
+        }
+
+        #happy, #buddy, #day {
+            display: none;
+        }
+
+        /* pair contents 설명 */
+        .exp {
+            width: 320px;
+            height: 100px;
+            border: 1px solid gray;
+            border-radius: 6px;
+            margin: 20px;
+            padding: 15px;
+            overflow-y: scroll;
+            line-height: 17px;
+            > p {
+                font-size: 12px;
+                > span {
+                    background-color: lightyellow;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        nav {
+            width: 50px;
+            height: 300px;
+            margin: 20px;
+            > button > a > div {
+                padding: 10px;
+                font-size: 12px;
+                font-weight: 700;
+            }
+            > #btn-happy, #btn-buddy {
+                margin-bottom: 20px;
+            }
+        }
+
+        #happy, #buddy, #day {
+            width: 250px;
+            height: 308px;
+            position: absolute;
+            top: 200px;
+            right: 20px;
+            border-radius: 6px;
+            /* border: 1px solid gray; */
+            overflow: auto;
+            scroll-snap-type: x mandatory;
+        }
+
+        .contents-happy {
+            background-color: pink;
+        }
+
+        .contents-buddy {
+            background-color: lightblue;
+        }
+
+        .contents-day {
+            background-color: lightyellow;
+        }
+
+        .mission {
+            width: 90%;
+            height: 100%;
+            padding: 80px;
+            margin: 0px 10px;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+        }
+
+        #level-exp {
+            width: 320px;
+            height: 100px;
+            margin: 20px;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid gray;
+            overflow: scroll;
+            > p {
+                font-size: 12px;
+                line-height: 17px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+       <!-- header1 -->
+       <header id="first-header">
+            <div id="title">HAPPY BUDDY DAY !</div>
+            <i class="fa-solid fa-wifi"></i>
+            <!-- 시계 -->
+            <div class="time">
+                <span class="hour">00</span> : <span class="min">00</span>
+                <!-- : <span class="sec">00</span>  -->
+                <span class="diff">pm</span>
+            </div>
+            <span>&nbsp</span>
+            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-comment"></i>
+            <i class="fa-solid fa-battery-full"></i>
+        </header>
+        <!-- header2 -->
+        <header id="second-header">
+            <!-- 뒤로 가기 -->
+            <a href="index.html">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+
+            <!-- 제목 -->
+            <h3>PAIR CONTENTS</h3>
+
+            <!-- 그리드 맞춤용 빈 영역 -->
+            <a href="img/missionBoard.png" download><i class="fa-solid fa-download"></i></a>
+        </header>
+        <div class="exp">
+            <h3>What is Pair Contents?</h3><br>
+            <p>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbspPair content consists of 24 missions composed by the BUDDY team.
+                The mission level is divided into three: <span>low (Happy), medium (Buddy), and high (Day).</span>
+                The minimum number of missions that must be completed to obtain a certificate issued by OIAM is <b>18</b>.
+                Get closer to your pair through the fun missions of pair content!<br><br>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp페어 콘텐츠는 BUDDY팀이 직접 구성한 24개의 미션으로 이루어져 있습니다.
+                미션의 난이도는 <span>하(Happy)·중(Buddy)·상(Day)</span> 3개로 나뉘어져 있습니다.
+                OIAM에서 발급하는 수료증을 얻기 위해 수행해야 미션의 최소 개수는 <b>18개</b>입니다.
+                페어 콘텐츠의 즐거운 미션들을 통해 페어에게 더 가까이 다가가 보세요!
+            </p>
+        </div>
+
+        <nav>
+            <button class="btn" id="btn-happy"><a href="#" class="happy"><div class="btn-happy non-click">H<br>A<br>P<br>P<br>Y</div></a></button><br>
+            <button class="btn" id="btn-buddy"><a href="#" class="buddy"><div class="btn-buddy non-click">B<br>U<br>D<br>D<br>Y</div></a></button><br>
+            <button class="btn" id="btn-day"><a href="#" class="day"><div class="btn-day non-click">&nbsp<br>D<br>A<br>Y<br>&nbsp</div></a></button>
+        </nav>
+
+        <div class="contents">
+
+            <!-- 1. Happy Mission -->
+            <div id="happy" class="happy">
+                <div class="mission contents-happy">Happy Mission 1</div>
+                <div class="mission contents-happy">Happy Mission 2</div>
+                <div class="mission contents-happy">Happy Mission 3</div>
+                <div class="mission contents-happy">Happy Mission 4</div>
+                <div class="mission contents-happy">Happy Mission 5</div>
+                <div class="mission contents-happy">Happy Mission 6</div>
+                <div class="mission contents-happy">Happy Mission 7</div>
+                <div class="mission contents-happy">Happy Mission 8</div>
+                <div class="mission contents-happy">Happy Mission 9</div>
+                <div class="mission contents-happy">Happy Mission 10</div>
+            </div>
+
+            <!-- 2. Buddy Mission -->
+            <div id="buddy">
+                <div class="mission contents-buddy">Buddy Mission 1</div>
+                <div class="mission contents-buddy">Buddy Mission 2</div>
+                <div class="mission contents-buddy">Buddy Mission 3</div>
+                <div class="mission contents-buddy">Buddy Mission 4</div>
+                <div class="mission contents-buddy">Buddy Mission 5</div>
+                <div class="mission contents-buddy">Buddy Mission 6</div>
+            </div>
+
+            <!-- 3. Day Mission -->
+            <div id="day">
+                <div class="mission contents-day">Day Mission 1</div>
+                <div class="mission contents-day">Day Mission 2</div>
+                <div class="mission contents-day">Day Mission 3</div>
+                <div class="mission contents-day">Day Mission 4</div>
+                <div class="mission contents-day">Day Mission 5</div>
+                <div class="mission contents-day">Day Mission 6</div>
+                <div class="mission contents-day">Day Mission 7</div>
+                <div class="mission contents-day">Day Mission 8</div>
+            </div>
+        </div>
+
+        <div id="level-exp">
+            <h3 class="level-exp-h3"></h3><br>
+            <p class="level-exp"></p>
+        </div>
+
+        <script>
+
+            window.onload = function() {
+                $('.btn-happy').addClass('click');
+
+                let levelTitle = "Happy Mission";
+                let htmlDummy = "\
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbspThe Happy missions, which are at difficulty level 'low', consists of 10 missions that can be easily completed in a short period of time with a pair, including non-face-to-face missions. \
+                    Since this is the easiest mission to complete, try solving it on the official BUDDY program event day or online!<br><br>\
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp난이도 '하'에 해당하는 Happy 미션은 비대면 미션을 포함하여 페어와 짧은 시간 안에 쉽게 수행할 수 있는 10개의 미션으로 구성되어 있습니다.\
+                    가장 쉽게 할 수 있는 미션인 만큼, BUDDY 프로그램의 공식 행사날이나 온라인상에서 미션을 해결해보세요!\
+                    ";
+                // 미션
+                $('.level-exp-h3').html(levelTitle);
+                $(".level-exp").html(htmlDummy);
+            };
+
+            // nav 버튼 클릭 시 미션 변경
+            $("nav button").on("click", function(){
+
+                var className = $(this).children("a").attr("class");
+                
+                let levelTitle = "";
+                let htmlDummy = "";
+
+                if (className == "happy") {
+                    levelTitle = "Happy Mission";
+                    htmlDummy += "\
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbspThe Happy missions, which are at difficulty level 'low', consists of 10 missions that can be easily completed in a short period of time with a pair, including non-face-to-face missions. \
+                    Since this is the easiest mission to complete, try solving it on the official BUDDY program event day or online!<br><br>\
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp난이도 '하'에 해당하는 Happy 미션은 비대면 미션을 포함하여 페어와 짧은 시간 안에 쉽게 수행할 수 있는 10개의 미션으로 구성되어 있습니다.\
+                    가장 쉽게 할 수 있는 미션인 만큼, BUDDY 프로그램의 공식 행사날이나 온라인상에서 미션을 해결해보세요!\
+                    ";
+                } else if (className == "buddy") {
+                    levelTitle = "Buddy Mission";
+                    htmlDummy += "\
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbspThe Buddy missions, which are of 'medium' difficulty level, consists of 6 missions that can be completed in a relatively short period of time by meeting the pair in person. \
+                    While doing Buddy missions, spend time talking with your pair and becoming closer!<br><br>\
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp난이도 '중'에 해당하는 Buddy 미션은 페어를 직접 만나 비교적 짧은 시간 안에 수행할 수 있는 6개의 미션으로 구성되어 있습니다.\
+                    Buddy 미션을 수행하면서 페어와 이야기를 나누며 더 친해지는 시간을 가져보아요!\
+                    ";
+                } else {
+                    levelTitle = "Day Mission";
+                    htmlDummy += "\
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbspDay missions, which are of 'high' difficulty level, consist of 8 missions that allow you to have fun with your pair for a day or half a day. \
+                    Spend a day making unforgettable memories with your pair through Day Missions!<br><br>\
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp난이도 '상'에 해당하는 Day 미션은 하루 혹은 반나절의 시간 동안 페어와 함께 즐거운 시간을 보낼 수 있는 8개의 미션으로 구성되어 있습니다. \
+                    Day 미션을 통해 페어와 잊지 못할 추억을 만드는 하루를 보내보세요!\
+                    ";
+                }
+
+                $("nav button").removeClass();
+                $(this).addClass("on");
+                console.log($(this).attr('class'));
+
+                // 미션
+                $('.level-exp-h3').html(levelTitle);
+                $(".level-exp").html(htmlDummy);
+
+                // 1. HAPPY
+                $('#happy').removeClass();
+                $('#happy').addClass(className);
+
+                // 2. BUDDY
+                $('#buddy').removeClass();
+                $('#buddy').addClass(className);
+
+                // 3. DAY
+                $('#day').removeClass();
+                $('#day').addClass(className);
+
+            })
+
+            // nav 버튼 클릭 시 버튼 색상 변경
+            const nonClick = document.querySelectorAll(".non-click");
+
+            function handleClick(event) {
+                // button에서 모든 "click 클래스 제거"
+                nonClick.forEach((e) => {
+                    e.classList.remove("click");
+                });
+
+                event.target.classList.add("click");
+                }
+
+            nonClick.forEach((e) => {
+                e.addEventListener("click", handleClick);
+            });
+        </script>
+    </div>
+</body>
+</html>
