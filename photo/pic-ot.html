@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHOTO : OT</title>
+    <link rel="stylesheet" href="../buddy.css">
+    <script src="https://kit.fontawesome.com/77dc09b73f.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="../prefixfree.min.js"></script>
+    <script type="text/javascript" src="../masonry.pkgd.min.js"></script>
+    <style>
+
+        .grid {
+            position: absolute;
+            padding: 20px 15px;
+            width: 360px;
+            /* background-color: pink; */
+        }
+
+         #columns{
+            column-width: 100px;
+            column-gap: 15px;
+        }
+        #columns figure{
+            display: inline-block;
+            border-radius: 10px;
+        }
+        #columns figure img{
+            width: 100px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            /* box-shadow: 2px 2px 3px rgba(0,0,0,0.5); */
+        }
+        /* #columns figure figcaption{
+            border-top: 1px solid rgba(0,0,0,0.2);
+            padding: 0px;
+            margin-top: 10px;
+        } */
+
+        /* 이미지 크게 보기 */
+        .bigPictureWrapper {
+			position: absolute;
+			display: none;
+			justify-content: center;
+			align-items: center;
+			top: 0%;
+			width: 100%;
+			height: 100%;
+			z-index: 100;
+			background:rgba(255,255,255,0.5);
+		}
+		.bigPicture {
+			position: relative;
+			display:flex;
+			justify-content: center;
+			align-items: center;
+		}
+		
+		.bigPicture img {
+			width:300px;
+		}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- header1 -->
+       <header id="first-header">
+            <div id="title">HAPPY BUDDY DAY !</div>
+            <i class="fa-solid fa-wifi"></i>
+            <!-- 시계 -->
+            <div class="time">
+                <span class="hour">00</span> : <span class="min">00</span>
+                <!-- : <span class="sec">00</span>  -->
+                <span class="diff">pm</span>
+            </div>
+            <span>&nbsp</span>
+            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-comment"></i>
+            <i class="fa-solid fa-battery-full"></i>
+        </header>
+        <!-- header2 -->
+        <header id="second-header">
+            <!-- 뒤로 가기 -->
+            <a href="../photo.html">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+
+            <!-- 제목 -->
+            <h3>PHOTO : OT</h3>
+
+            <!-- 그리드 맞춤용 빈 영역 -->
+            <p></p>
+        </header>
+
+        <!-- 이미지 크게 보기 -->
+        <div class='bigPictureWrapper'>
+            <div class='bigPicture'>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div id="columns">
+                <figure>
+                  <img src="../img/photos/pic-b1/pic1.png">
+                </figure>
+            
+                <figure>
+                  <img src="../img/photos/pic-b1/pic2.png">
+                </figure>
+            
+                <figure>
+                  <img src="../img/photos/pic-b1/pic3.png">
+                </figure>
+            
+                <figure>
+                  <img src="../img/photos/pic-b1/pic4.jpg">
+                </figure>
+            
+                <figure>
+                  <img src="../img/photos/pic-b1/pic5.jpg">
+                </figure>
+            
+                <figure>
+                  <img src="../img/photos/pic-b1/pic6.jpg">
+                </figure>
+            
+                <figure>
+                  <img src="../img/photos/pic-b1/pic7.jpg">
+                </figure>
+            
+                <figure>
+                  <img src="../img/photos/pic-b1/pic8.jpg">
+                </figure>
+            
+                <figure>
+                  <img src="../img/photos/pic-b1/pic9.jpg">
+                </figure>
+
+                <figure>
+                    <img src="../img/photos/pic-b1/pic2.png">
+                  </figure>
+              
+                  <figure>
+                    <img src="../img/photos/pic-b1/pic3.png">
+                  </figure>
+              
+                  <figure>
+                    <img src="../img/photos/pic-b1/pic4.jpg">
+                  </figure>
+              
+                  <figure>
+                    <img src="../img/photos/pic-b1/pic5.jpg">
+                  </figure>
+              
+                  <figure>
+                    <img src="../img/photos/pic-b1/pic6.jpg">
+                  </figure>
+              
+                  <figure>
+                    <img src="../img/photos/pic-b1/pic7.jpg">
+                  </figure>
+              
+                  <figure>
+                    <img src="../img/photos/pic-b1/pic8.jpg">
+                  </figure>
+              
+                  <figure>
+                    <img src="../img/photos/pic-b1/pic9.jpg">
+                  </figure>
+        </div>
+
+        
+        <script>
+            $(document).ready(function (e){
+		
+            $(document).on("click","img",function(){
+                var path = $(this).attr('src')
+                showImage(path);
+            }); //end click event
+            
+            function showImage(fileCallPath){
+                
+                $(".bigPictureWrapper").css("display","flex").show();
+                
+                $(".bigPicture")
+                .html("<img src='"+fileCallPath+"' >")
+                // .animate({width: '100%', height:'100%'}, 1000);
+                
+            } //end fileCallPath
+            
+            $(".bigPictureWrapper").on("click", function(e){
+                $('.bigPictureWrapper').hide();
+                // $(".bigPicture").animate({width:'0%', height: '0%'}, 1000);
+                // setTimeout(function(){
+                // $('.bigPictureWrapper').hide();
+                // }, 1000);
+            }); //end bigWrapperClick event
+        });
+        </script>      
+    </div>
+</body>
+</html>
