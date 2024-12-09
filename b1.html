@@ -11,6 +11,9 @@
     <script type="text/javascript" src="jquery-2.2.4.min.js"></script>
     <script type="text/javascript" src="prefixfree.min.js"></script>
     <style>
+        html {
+            -webkit-tap-highlight-color: transparent;
+        }
         #first-header {
             background-color: darkgreen;
             color: white;
@@ -187,7 +190,10 @@
             border-right: 8px solid transparent; 
             border-bottom: 8px solid rgb(241, 244, 218);
         } 
-        .wrap:hover .tooltip{display: block;}
+
+        .wrap:hover .tooltip{
+            display: block;
+        }
 
         #wrap1 { top: 10px; left: 100px; }
         #wrap2 { top: 10px; left: 200px; }

@@ -47,25 +47,6 @@
             display: none;
         }
 
-        /* pair contents 설명 */
-        .exp {
-            width: 320px;
-            height: 100px;
-            border: 1px solid gray;
-            border-radius: 6px;
-            margin: 20px;
-            padding: 15px;
-            overflow-y: scroll;
-            line-height: 17px;
-            > p {
-                font-size: 12px;
-                > span {
-                    background-color: lightyellow;
-                    font-weight: 600;
-                }
-            }
-        }
-
         nav {
             width: 50px;
             height: 300px;
@@ -84,10 +65,9 @@
             width: 250px;
             height: 308px;
             position: absolute;
-            top: 200px;
+            top: 105px;
             right: 20px;
             border-radius: 6px;
-            /* border: 1px solid gray; */
             overflow: auto;
             scroll-snap-type: x mandatory;
         }
@@ -105,26 +85,93 @@
         }
 
         .mission {
-            width: 90%;
-            height: 100%;
+            width: 100%;
+            height: 95%;
             padding: 80px;
             margin: 0px 10px;
             scroll-snap-align: start;
             scroll-snap-stop: always;
+            box-shadow: 2px 2px 2px 2px gray;
+            border-radius: 10px;
+
         }
 
         #level-exp {
+            background-color: rgb(246, 244, 240);;
             width: 320px;
-            height: 100px;
-            margin: 20px;
+            height: 180px;
+            position: absolute;
+            top: 440px;
+            margin-left: 20px;
             padding: 15px;
             border-radius: 6px;
-            border: 1px solid gray;
+            padding: 20px;
+            box-shadow: 2px 2px 2px 2px gray;
             overflow: scroll;
             > p {
                 font-size: 12px;
                 line-height: 17px;
             }
+        }
+
+        .question-mark {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 20px;
+            font-size: 13px;
+            position: absolute;
+            right: 20px;
+            top: 70px;
+            background-color: brown;
+            color: white;
+        }
+
+        /* 툴팁 */
+        .tooltip{
+            position:absolute; 
+            width: 300px;
+            right:0px; 
+            top: 100px; 
+            background-color: black;
+            opacity: 0.8;
+            color: white; 
+            padding: 10px; 
+            border-radius:5px; 
+            font-weight: 500; 
+            display: none;
+            font-size: 13px;
+            line-height: 20px;
+            margin-right: 10px;
+            text-align: left;
+            z-index: 10;
+            padding: 20px;
+            > p > span {
+                background-color: lightyellow;
+                color: black;
+                font-style: italic;
+                font-weight: 600;
+            }
+        }
+
+        .tooltip:after {
+            display: block; 
+            content: ''; 
+            position: absolute; 
+            top: -7px; 
+            right: 12px; 
+            width: 0px; 
+            height: 0px; 
+            border-top: 8px solid none; 
+            border-left: 8px solid transparent; 
+            border-right: 8px solid transparent; 
+            border-bottom: 8px solid black;
+            z-index: 10
+        } 
+
+        .wrap:hover .tooltip{
+            display: block;
         }
     </style>
 </head>
@@ -158,19 +205,31 @@
             <!-- 그리드 맞춤용 빈 영역 -->
             <a href="img/missionBoard.png" download><i class="fa-solid fa-download"></i></a>
         </header>
-        <div class="exp">
-            <h3>What is Pair Contents?</h3><br>
-            <p>
-                &nbsp&nbsp&nbsp&nbsp&nbsp&nbspPair content consists of 24 missions composed by the BUDDY team.
-                The mission level is divided into three: <span>low (Happy), medium (Buddy), and high (Day).</span>
-                The minimum number of missions that must be completed to obtain a certificate issued by OIAM is <b>18</b>.
-                Get closer to your pair through the fun missions of pair content!<br><br>
-                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp페어 콘텐츠는 BUDDY팀이 직접 구성한 24개의 미션으로 이루어져 있습니다.
-                미션의 난이도는 <span>하(Happy)·중(Buddy)·상(Day)</span> 3개로 나뉘어져 있습니다.
-                OIAM에서 발급하는 수료증을 얻기 위해 수행해야 미션의 최소 개수는 <b>18개</b>입니다.
-                페어 콘텐츠의 즐거운 미션들을 통해 페어에게 더 가까이 다가가 보세요!
-            </p>
-        </div>
+        <!-- <div class="exp">
+            
+        </div> -->
+
+        <!-- <div class="question-mark">
+
+        </div> -->
+
+        <div class="wrap">
+            <i class="fa-solid fa-question question-mark"></i>
+            <div class="tooltip">
+                <h3>What is Pair Contents?</h3><br>
+                <p>
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbspPair content consists of 24 missions composed by the BUDDY team.
+                    The mission level is divided into three: <span>&nbsplow (Happy), medium (Buddy), and high (Day).&nbsp</span>
+                    The minimum number of missions that must be completed to obtain a certificate issued by OIAM is <b>18</b>.
+                    Get closer to your pair through the fun missions of pair content!<br><br>
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp페어 콘텐츠는 BUDDY팀이 직접 구성한 24개의 미션으로 이루어져 있습니다.
+                    미션의 난이도는 <span>&nbsp하(Happy)·중(Buddy)·상(Day)&nbsp</span> 3개로 나뉘어져 있습니다.
+                    OIAM에서 발급하는 수료증을 얻기 위해 수행해야 미션의 최소 개수는 <b>18개</b>입니다.
+                    페어 콘텐츠의 즐거운 미션들을 통해 페어에게 더 가까이 다가가 보세요!
+                </p>
+            </div>
+        </div><br>
+        
 
         <nav>
             <button class="btn" id="btn-happy"><a href="#" class="happy"><div class="btn-happy non-click">H<br>A<br>P<br>P<br>Y</div></a></button><br>
