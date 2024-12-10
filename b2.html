@@ -169,17 +169,39 @@
 
 
         /* 4. MISSION : 카드 */
-        #mission img {
+        #mission {
             width: 100%;
             height: 490px;
+            background-color: rgb(203, 145, 140);
             position: absolute;
-            top: 60px;
+            top: 55px;
             left: 0px;
-            object-fit: cover;
+            overflow-y: scroll;
+        }
+
+        #mission img {
+            position: relative;
+            width: 160px;
+            border-radius: 10px;
+        }
+
+        #mission h2 {
+            /* background-color: pink; */
+            margin-left: 20px;
+            text-shadow: 1px 1px 1px gray;
+            color: white;
+        }
+
+        #mission #middle {
+            background: white;
+            height: 1px;
+            width: 250px;
+            margin-left: 60px;
+            border: 0;
         }
 
         table {
-            height: 350px;
+            height: 370px;
             perspective: 3000px;
         }
 
@@ -188,27 +210,9 @@
             margin-left: 3px;
         }
 
-        .notice {
-            width: 300px;
-            height: 143px;
-            background-color: white;
-            opacity: 0.95;
-            color: rgb(64, 63, 63);
-            font-size: 11px; 
-            line-height: 17px;
-            text-align: left;
-            padding: 20px;
-            border-radius: 10px;
-            overflow-y: scroll;
-        }
-
-        h1 {
-            color: rgb(42, 42, 173);
-        }
-
         .card {
-            width: 140px;
-            height: 140px;
+            width: 160px;
+            height: 160px;
             margin-top: 8px;
             transform-style: preserve-3d;
             transition: all 1s ease;
@@ -218,19 +222,14 @@
 
         .front, .back {
             position: absolute;
-            width: 140px;
-            height: 140px;
-            background-color: whitesmoke;
+            width: 160px;
+            height: 160px;
             opacity: 0.8;
-            border: black solid 1px;
             border-radius: 10px;
             box-shadow: 2px 2px 5px;
             backface-visibility: hidden;
-            margin: 0;
+            margin: 0px;
             padding: 0;
-            font-size: 9px;
-            line-height: 11px;
-            color: black;
             > h1 {
                 font-size: 16px;
                 line-height: 80px;
@@ -238,11 +237,13 @@
         }
 
         .back {
+            background-color: whitesmoke;
             transform: rotateX(180deg);
             backface-visibility: hidden;
             opacity: 1;
             padding: 10px;
-            font-size: 9px;
+            font-size: 11px;
+            line-height: 14px;
             text-align: left;
             overflow-y: scroll;
             > h3 {
@@ -253,6 +254,72 @@
                 height: 1px;
                 border: 0;
             }
+        }
+
+        .question-mark {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 20px;
+            font-size: 13px;
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            background-color: brown;
+            color: white;
+        }
+
+        /* 툴팁 */
+        .tooltip{
+            position:absolute; 
+            width: 350px;
+            right: -5px; 
+            top: 40px; 
+            background-color: black;
+            opacity: 0.8;
+            color: white; 
+            padding: 10px; 
+            border-radius:5px; 
+            font-weight: 500; 
+            display: none;
+            font-size: 11px;
+            line-height: 17px;
+            margin-right: 10px;
+            text-align: left;
+            z-index: 10;
+            padding: 20px;
+            > p > span {
+                background-color: lightyellow;
+                color: black;
+                font-style: italic;
+                font-weight: 600;
+            }
+        }
+
+        .tooltip:after {
+            display: block; 
+            content: ''; 
+            position: absolute; 
+            top: -7px; 
+            right: 12px; 
+            width: 0px; 
+            height: 0px; 
+            border-top: 8px solid none; 
+            border-left: 8px solid transparent; 
+            border-right: 8px solid transparent; 
+            border-bottom: 8px solid black;
+            z-index: 10
+        } 
+
+        .wrap:hover .tooltip{
+            display: block;
+        }
+
+        #second-header i:active {
+            transform: scale(1.3);
+            color: brown;
+            transition: all 0.3s;
         }
     </style>
 </head>
@@ -467,40 +534,35 @@
 
             <!-- 4. MISSION -->
 
-            <div class="wallpaper" id="mission">
+            <div id="mission">
+                <div class="wrap">
+                    <i class="fa-solid fa-question question-mark"></i>
+                    <div class="tooltip">
+                        <h3>[ NOTICE | 공지 ]</h3><br>
+                        <p>
+                            1. This daily mission is not included in the BUDDY program completion requirements.<br><br>
+                            2. Farewell Day snacks will be provided to all pairs who complete 4 daily missions.<br><br>
+                            3. All mission locations except #GAME are recommended by the Buddy team leaders, and you may perform them elsewhere.<br><br>
+                            4. Mission certification must be done by a Korean participant, and certification is not possible after 23:59 PM.<br>
+                            <hr style="background-color: gray; height: 0.5px; border: 0">
+                            1. 본 데일리 미션은 BUDDY 프로그램 수료조건에 포함되지 않습니다.<br><br>
+                            2. 데일리 미션 4개를 수행한 모든 페어에게 페어웰날 간식이 제공될 예정입니다.<br><br>
+                            3. #GAME을 제외한 모든 미션 장소는 팀장단의 추천일 뿐, 다른 곳에서 수행하셔도 무방합니다.<br><br>
+                            4. 미션 인증은 한국인 참가자가 진행하며, 당일 오후 23:59분 이후에는 인증이 불가능합니다.<br><br>
+                        </p>
+                    </div>
+                </div><br>
 
-                <img src="img/b2/background6.jpg">
+                <h2>Daily Mission 1 : <br>B-Day Keyword Mission</h2>
 
                 <table> 
-                    <tr>
-                        <td colspan="2">
-                            <div class="notice">
-                                <h3>[ NOTICE ]</h3><br>
-                                1. This daily mission is not included in the BUDDY program completion requirements.<br><br>
-                                2. Fairwell Day snacks will be provided to all pairs who complete 4 daily missions.<br><br>
-                                3. All mission locations except #GAME are recommended by the Buddy team leaders, and you may perform them elsewhere.<br><br>
-                                4. Certification is not possible after 23:59 PM.<br><br>
-                                5. Mission certification must be done by a Korean participant.<br><br>
-                                <hr style="background-color: gray; height: 0.5px; border: 0">
-                                <br><h3>[ 공지 ]</h3><br>
-                                1. 본 데일리 미션은 BUDDY 프로그램 수료조건에 포함되지 않습니다.<br><br>
-                                2. 데일리 미션 4개를 수행한 모든 페어에게 페어웰날 간식이 제공될 예정입니다.<br><br>
-                                3. #GAME을 제외한 모든 미션 장소는 팀장단의 추천일 뿐, 다른 곳에서 수행하셔도 무방합니다.<br><br>
-                                4. 당일 오후 23:59분 이후에는 인증이 불가능합니다.<br><br>
-                                5. 미션 인증은 한국인 참가자가 진행합니다.
-                            </div>
-                        </td>
-                    </tr>
-
                     <br>
 
                     <tr>
                         <td>
                             <div class="card" id="mission-game">
                                 <div class="front">
-                                    <br><br><br><h1>#GAME</h1>
-                                    Seoul Craft Museum<br>
-                                    서울 공예 박물관
+                                    <img src="img/b2/daily1.jpg">
                                 </div>
                                 <div class="back">
                                     <h3>Treasure Hunt</h3><br><br>
@@ -516,9 +578,7 @@
                         <td>
                             <div class="card" id="mission-letter">
                                 <div class="front">
-                                    <br><br><br><h1>#LETTER</h1>
-                                    Seoul Craft Museum<br>
-                                    서울 공예 박물관
+                                    <img src="img/b2/daily2.jpg">
                                 </div>
                                 <div class="back">
                                     <h3>Write a letter</h3><br><br>
@@ -536,9 +596,7 @@
                         <td>
                             <div class="card" id="mission-food">
                                 <div class="front">
-                                    <br><br><br><h1>#FOOD</h1>
-                                    Hello, Insa-dong<br>
-                                    안녕, 인사동
+                                    <img src="img/b2/daily3.jpg">
                                 </div>
                                 <div class="back">
                                         <h3>Dinner with Fair </h3><br><br>
@@ -554,9 +612,7 @@
                         <td>
                             <div class="card" id="mission-gift">
                                 <div class="front">
-                                    <br><br><br><h1>#GIFT</h1>
-                                    Hello, Insa-dong<br>
-                                    안녕, 인사동
+                                    <img src="img/b2/daily4.jpg">
                                 </div>
                                 <div class="back">
                                     <h3>Gift to Fair</h3><br><br>
@@ -571,6 +627,10 @@
                         </td>
                     </tr>
                 </table>
+
+                <hr id="middle"><br>
+                <h2>Daily Mission 2 : <br>Instagram Tag Mission</h2>
+                <div><br><br></div>
 
             </div>
         </div>
