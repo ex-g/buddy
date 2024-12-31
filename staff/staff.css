@@ -1,8 +1,17 @@
-.container {
-    background-color: rgb(129, 23, 23);
+.box {
+    background-color: rgb(255, 255, 255);
+    width: 150px;
+    height: 150px;
+    margin: 5px;
+    position: relative;
+    line-height: 14px;
 }
+
+h6 {
+    padding: 10px;
+}
+
 .wrapper {
-    /* background-color: pink; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,7 +50,6 @@ img {
     width: 200px;
     height: 117px;
     border-radius: 10px;
-
 }
 
 .front {
@@ -66,10 +74,8 @@ img {
     }
 }
 
-.box {
-    width: 150px;
-    height: 150px;
-    background-color: rgb(244, 232, 220);
-    margin: 5px;
-    position: relative;
+/* 그리드 */
+p {
+    font-size: 8px;
+    padding: 10px;
 }

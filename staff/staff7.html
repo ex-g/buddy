@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,40 +10,71 @@
     <script src="https://kit.fontawesome.com/77dc09b73f.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../buddy.js"></script>
     <style>
+        .container {
+            background-color: black;
+        }
+        .box {
+            background-color: white;
+        }
+        h6 {
+            padding: 10px;
+        }
         .intro-grid {
             width: 320px;
             height: 320px;
             margin-left: 0px;
             /* background-color: pink; */
             > #box1 {
-                width: 140px;
-                height: 160px;
-                border-top-left-radius: 20px;
-                border-top-right-radius: 20px;
+                width: 170px;
+                height: 190px;
+                border-top-right-radius: 40px;
+                overflow: hidden;
+                > .staff-pic {
+                    border-radius: 0;
+                    width: 100%;
+                    height: 100%;
+                    transform: scale(1.3) translate(0px, 15px);
+                    object-fit: contain;
+                }
             }
             > #box2 {
-                width: 160px;
-                height: 180px;
-                top: -165px;
-                left: 150px;
-                border-top-right-radius: 30px;
+                width: 130px;
+                height: 100px;
+                top: -195px;
+                left: 180px;
+                border-top-left-radius: 40px;
+                overflow-y: scroll;
+                > p {
+                    font-size: 8px;
+                    padding: 10px;
+                }
             }
             > #box3 {
-                width: 150px;
-                height: 230px;
+                width: 170px;
+                height: 110px;
                 border-bottom-left-radius: 20px;
-                top: -255px;
-                left: -5px;
-                border-radius: 100px;
-                border: 10px solid rgb(129, 23, 23);
-
+                top: -100px;
+                border-bottom-right-radius: 40px;
+                overflow-y: scroll;
+                > p {
+                    font-size: 8px;
+                    padding: 10px
+                }
             }
             > #box4 {
-                width: 160px;
-                height: 120px;
-                top: -395px;
-                left: 150px;
-                border-bottom-right-radius: 30px;
+                width: 130px;
+                height: 200px;
+                top: -305px;
+                left: 180px;
+                border-bottom-left-radius: 40px;
+                overflow: hidden;
+                > .staff-pic {
+                    border-radius: 0;
+                    width: 100%;
+                    height: 100%;
+                    transform: scale(1.6) translate(5px, 0px);
+                    object-fit: contain;
+                }
             }
         }
     </style>
@@ -72,7 +104,7 @@
             </a>
 
             <!-- 제목 -->
-            <h3>BUDDY Leader</h3>
+            <h3>Group 5</h3>
 
             <!-- 그리드 맞춤용 빈 영역 -->
             <p></p>
@@ -86,13 +118,35 @@
             </div>
         </div>
 
-        <!-- 그리드 -->
+        <!-- 그리드 영역 -->
         <div class="wrapper">
             <div class="intro-grid">
-                <div class="box" id="box1"></div>
-                <div class="box" id="box2"></div>
-                <div class="box" id="box3"></div>
-                <div class="box" id="box4"></div>
+                <div class="box" id="box1">
+                    <img src="../img/staff/staffPic/pic7_1.jpeg" class="staff-pic">
+                </div>
+                <div class="box" id="box2">
+                    <p>
+                        Listening to music: I love listening to all genres of music! So my playlist consists of various genres of music.
+Watching sports: I really like watching sports matches like Soccer, NBA, NFL. So I also like collecting uniforms from various teams.
+Traveling: I'm really interested in overseas trip. But actually, i don't have much experience traveling abroad yet. So someday I want to visit all over the world.
+Meeting new friends: I like meeting and having a conversation with new friends. So whenever I share my thoughts with new friends, I get so excited.
+
+음악 감상: 저는 모든 장르의 음악을 듣는 것을 좋아합니다! 그래서 제 플레이리스트는 다양한 장르의 음악들로 구성되어 있습니다.
+스포츠 보기: 저는 축구, NBA, NFL 같은 스포츠 경기들을 보는 것을 정말 좋아합니다. 그래서 다양한 팀의 유니폼 수집 또한 좋아합니다.
+여행: 저는 해외여행에 정말 관심이 있습니다. 하지만 사실, 저는 아직 해외 여행을 해본 경험은 많이 없습니다. 그래서 언젠가 전 세계를 가보고 싶습니다.
+새로운 친구 만나기: 저는 새로운 친구들을 만나 대화를 나누는 것을 좋아합니다. 그래서 새로운 친구들과 서로 생각을 공유할 때 마다 너무 신이 납니다.
+                    </p>
+                </div>
+                <div class="box" id="box3">
+                    <h6>INTRODUCTION</h6>
+                    <p>
+                        Hello, everyone! welcome to our buddy program! I'm so excited to meet you. Let`s make wonderful experiences and unforgettable memories together through the Buddy program!<br><br>
+                        여러분 안녕하세요! 버디 프로그램에 오신 걸 환영합니다! 여러분을 만날 생각에 너무 신이 납니다. 버디 프로그램을 통해 멋진 경험과 잊지 못할 추억을 함께 만들어요!
+                    </p>
+                </div>
+                <div class="box" id="box4">
+                    <img src="../img/staff/staffPic/pic7_2.jpeg" class="staff-pic">
+                </div>
             </div>
         </div>
 

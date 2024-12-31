@@ -9,40 +9,78 @@
     <script src="https://kit.fontawesome.com/77dc09b73f.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../buddy.js"></script>
     <style>
+        .container {
+            background-color: rgb(180, 99, 139);
+        }
+        .box {
+            background-color: rgb(253, 232, 246);
+        }
+        h6 {
+            padding: 10px;
+        }
         .intro-grid {
             width: 320px;
             height: 320px;
             margin-left: 0px;
             /* background-color: pink; */
             > #box1 {
-                width: 100px;
-                height: 200px;
-                border-top-right-radius: 50px;
-                border-bottom-left-radius: 50px;
+                width: 190px;
+                height: 180px;
+                > p {
+                    width: 100%;
+                    height: 60px;
+                    padding: 10px;
+                    font-size: 8px;
+                    overflow-y: scroll;
+                }
             }
             > #box2 {
-                width: 200px;
+                width: 110px;
                 height: 200px;
-                top: -205px;
-                left: 110px;
-                border-top-left-radius: 50px;
+                top: -185px;
+                left: 200px;
+                border-top-right-radius: 20px;
+                border-bottom-left-radius: 20px;
+                overflow: hidden;
+                > .staff-pic {
+                    border-radius: 0;
+                    width: 100%;
+                    height: 100%;
+                    transform: scale(1.4);
+                    object-fit: contain;
+                }
             }
             > #box3 {
-                width: 100px;
-                height: 100px;
-                border-bottom-left-radius: 20px;
-                top: -200px;
+                width: 210px;
+                height: 230px;
                 border-top-left-radius: 50%;
-                border-bottom-left-radius: 50%;
-                border-bottom-right-radius: 50%;
-
+                border-top-right-radius: 50%;
+                top: -290px;
+                left: -10px;
+                border: 10px solid rgb(180, 99, 139);
+                overflow: hidden;
+                > .staff-pic {
+                    border-radius: 0;
+                    width: 100%;
+                    height: 100%;
+                    transform: scale(1.3) translate(0px, -25px);
+                    object-fit: contain;
+                }
             }
             > #box4 {
-                width: 200px;
-                height: 100px;
-                top: -305px;
-                left: 110px;
-                border-bottom-left-radius: 50px;
+                width: 110px;
+                height: 110px;
+                top: -415px;
+                left: 200px;
+                border-top-left-radius: 20px;
+                border-bottom-left-radius: 40px;
+                border-bottom-right-radius: 20px;
+                overflow-y: scroll;
+                > p {
+                    padding: 10px;
+                    
+                    font-size: 8px;
+                }
             }
         }
     </style>
@@ -78,7 +116,7 @@
             <p></p>
         </header>
 
-        <!-- 카드 영역 -->
+        <!-- 카드 -->
         <div class="flip-outer">
             <div class="flip-inner">
                 <img src="../img/staff/back.png" class="front">
@@ -86,13 +124,36 @@
             </div>
         </div>
 
-        <!-- 그리드 영역 -->
+        <!-- 그리드 -->
         <div class="wrapper">
             <div class="intro-grid">
-                <div class="box" id="box1"></div>
-                <div class="box" id="box2"></div>
-                <div class="box" id="box3"></div>
-                <div class="box" id="box4"></div>
+                <div class="box" id="box1">
+                    <h6>INTRODUCTION</h6>
+                    <p>
+                        Hello! I‘m 20 years old, majoring in Thai language department.
+                        I'm so happy to be able to host the Buddy program with you guys♡ I will actively help and cheer for you so that this activity can be a fun and new memory! Thank you :)<br><br>
+                        안녕하세요!! 저는 태국어과 23학번 04년생이고,
+                        여러분들과 함께 버디 프로그램을 진행할 수 있게 되어 너무 행복합니다 ♡ 이번 활동이 여러분들께 즐겁고 새로운 추억이 될 수 있도록 적극적으로 돕고 응원할게요! 감사합니다 :)
+                    </p>
+                </div>
+                <div class="box" id="box2">
+                    <img src="../img/staff/staffPic/pic8_1.jpeg" class="staff-pic">
+                </div>
+                <div class="box" id="box3">
+                    <img src="../img/staff/staffPic/pic8_2.jpeg" class="staff-pic">
+                </div>
+                <div class="box" id="box4">
+                    <p>
+                        제 취미는 집에서 편하게 누워 넷플릭스를 보는 것입니다! 제일 좋아하는 영화로는 '어바웃 타임'과 '나의 소녀시대'가 떠오르네요. '어바웃 타임'은 설렘과 감동을 모두 느낄 수 있는 로맨스 영화라 다들 한번쯤은 꼭 보셨으면 좋겠어요!🫶🏻
+                        나의 소녀시대는 청춘영화 좋아하시면 무조건 좋아하실거에요. 저는 여러 번 봤는데, 볼 때마다 눈물을 펑펑 흘렸답니당 ㅎㅎ..!
+                        여러분들과도 많이 친해져서 나중에 편하게 영화 한 편 볼 수 있는 사이가 되길 바래봅니다!!
+
+                        My hobby is to lie down at home comfortably and watch Netflix!
+                        My favorite movies are 'About Time' and ‘Our Times'. 'About Time' is a romance movie that can make you feel both excited and touched, so I hope you all watch it at least once! 🫶🏻
+                        You will definitely like 'Our Times' if you like youth movies. I've watched it many times, but I cried a lot every time I watched it XD.
+                        I hope that we can get to know each other and watch movies together later!!
+                    </p>
+                </div>
             </div>
         </div>
 

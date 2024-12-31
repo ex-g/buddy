@@ -9,38 +9,76 @@
     <script src="https://kit.fontawesome.com/77dc09b73f.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../buddy.js"></script>
     <style>
+        .container {
+            background-color: rgb(98, 51, 123);
+        }
+        .box {
+            background-color: rgb(255, 255, 255);
+        }
+        h6 {
+            padding: 10px;
+        }
         .intro-grid {
             width: 320px;
             height: 320px;
             margin-left: 0px;
             /* background-color: pink; */
             > #box1 {
-                width: 180px;
-                height: 220px;
-                border-top-right-radius: 50px;
-                border-bottom-right-radius: 50px;
+                width: 140px;
+                height: 160px;
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
+                > p {
+                    width: 100%;
+                    height: 55px;
+                    font-size: 8px;
+                    padding: 10px;
+                    overflow-y: scroll;
+                }
             }
             > #box2 {
-                width: 120px;
-                height: 220px;
-                top: -225px;
-                left: 190px;
-                border-top-left-radius: 50px;
-                border-top-right-radius: 20px;
-                border-bottom-left-radius: 50px;
+                width: 160px;
+                height: 180px;
+                top: -165px;
+                left: 150px;
+                border-top-right-radius: 30px;
+                overflow: hidden;
+                > .staffPic {
+                    border-radius: 0;
+                    width: 100%;
+                    height: 100%;
+                    transform: scale(1.6);
+                    object-fit: contain;
+                }
             }
             > #box3 {
-                width: 200px;
-                height: 80px;
+                width: 150px;
+                height: 230px;
                 border-bottom-left-radius: 20px;
-                top: -220px;
+                top: -255px;
+                left: -5px;
+                border-radius: 100px;
+                border: 10px solid rgb(98, 51, 123);
+                overflow: hidden;
+                > .staffPic {
+                    border-radius: 0;
+                    width: 100%;
+                    height: 100%;
+                    transform: scale(1.5) translate(10px, -20px);
+                    object-fit: contain;
+                }
             }
             > #box4 {
-                width: 200px;
-                height: 80px;
-                top: -305px;
-                left: 110px;
-                border-bottom-right-radius: 20px;
+                width: 160px;
+                height: 120px;
+                top: -395px;
+                left: 150px;
+                border-bottom-right-radius: 30px;
+                overflow-y: scroll;
+                > p {
+                    padding: 10px;
+                    font-size: 8px;
+                }
             }
         }
     </style>
@@ -76,7 +114,7 @@
             <p></p>
         </header>
 
-        <!-- 카드 -->
+        <!-- 카드 영역 -->
         <div class="flip-outer">
             <div class="flip-inner">
                 <img src="../img/staff/back.png" class="front">
@@ -84,12 +122,31 @@
             </div>
         </div>
 
+        <!-- 그리드 -->
         <div class="wrapper">
             <div class="intro-grid">
-                <div class="box" id="box1"></div>
-                <div class="box" id="box2"></div>
-                <div class="box" id="box3"></div>
-                <div class="box" id="box4"></div>
+                <div class="box" id="box1">
+                    <h6>INTRODUCTION</h6>
+                    <p>
+                        Hi! It’s ahrim :) I always bring positive energy and love meeting new people. I can’t wait to join our activities and make unforgettable memories together!<br><br>
+                        안녕하세요! 항상 밝은 에너지로 열정을 가지고 활동하겠습니다! 같이 즐거운 추억 많이 만들어요 :) 
+                    </p>
+                </div>
+                <div class="box" id="box2">
+                    <img src="../img/staff/staffPic/pic5_1.jpeg" class="staffPic">
+                </div>
+                <div class="box" id="box3">
+                    <img src="../img/staff/staffPic/pic5_2.jpeg" class="staffPic">
+                </div>
+                <div class="box" id="box4">
+                    <h6>HOBBY</h6>
+                    <p>
+                        -음악 : 다양한 장르의 음악을 좋아해요! 한국 가수 중에는 악동뮤지션 노래를 많이 들어요
+                        -영화 : 영화 The Notebook을 좋아합니다
+                        -스포츠 : 배드민턴 치기를 좋아하고, 축구 보는 것도 좋아해요! 같이 축구 봐요 :)
+                        -여행 : 여행을 좋아하고 새로운 음식을 먹고 신기한 경험을 하는 것에서 행복을 느껴요. 체코어를 잠시 배웠던 적이 있는데 그래서 기회가 된다면 체코에 가보고 싶어요!
+                    </p>
+                </div>
             </div>
         </div>
 

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,44 +10,83 @@
     <script src="https://kit.fontawesome.com/77dc09b73f.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../buddy.js"></script>
     <style>
+        .container {
+            background-color: rgb(109, 142, 121);
+        }
+        .box {
+            background-color: rgb(226, 231, 235);
+        }
+        h6 {
+            padding: 10px;
+        }
         .intro-grid {
             width: 320px;
             height: 320px;
             margin-left: 0px;
+            /* background-color: pink; */
             > #box1 {
-                width: 130px;
-                height: 130px;
-                border-top-left-radius: 50%;
-                border-bottom-left-radius: 50%;
-                border-bottom-right-radius: 50%;
-                border: 10px solid rgb(129, 23, 23);
-                z-index: 2;
-                left: -5px;
+                width: 180px;
+                height: 180px;
+                border-top-right-radius: 10px;
+                overflow: hidden;
+                > .staff-pic {
+                    border-radius: 0;
+                    width: 100%;
+                    height: 100%;
+                    transform: scale(1.5) translate(5px, -17px);
+                    object-fit: contain;
+                }
             }
             > #box2 {
-                width: 180px;
-                height: 220px;
-                top: -125px;
-                left: 130px;
+                width: 120px;
+                height: 200px;
+                top: -185px;
+                left: 190px;
+                border-top-left-radius: 10px;
                 border-top-right-radius: 10px;
-                border-bottom-left-radius: 10px;
-                border-bottom-right-radius: 10px;
+                /* overflow-y: scroll; */
+                > p {
+                    width: 100%;
+                    height: 85px;
+                    overflow-y: scroll;
+                    padding: 10px;
+                    font-size: 8px;
+                }
             }
             > #box3 {
-                width: 120px;
-                height: 260px;
+                width: 180px;
+                height: 120px;
                 border-bottom-left-radius: 20px;
-                top: -300px;
+                top: -200px;
+                border-bottom-left-radius: 50px;
+                > p {
+                    width: 100%;
+                    height: 70px;
+                    overflow-y: scroll;
+                    padding: 10px 5px 10px 15px;
+                    font-size: 8px;
+                }
+
             }
             > #box4 {
-                width: 180px;
-                height: 80px;
-                top: -385px;
-                left: 130px;
-                border-top-right-radius: 10px;
-                border-bottom-left-radius: 10px;
+                width: 140px;
+                height: 200px;
+                top: -390px;
+                left: 180px;
+                border-radius: 100px;
+                overflow: hidden;
+                border: 10px solid rgb(109, 142, 121);
+                > .staff-pic {
+                    border-radius: 0;
+                    width: 100%;
+                    height: 100%;
+                    transform: scale(1.5) translate(5px, -17px);
+                    object-fit: contain;
+                }
             }
         }
+
+
     </style>
 </head>
 <body>
@@ -74,7 +114,7 @@
             </a>
 
             <!-- 제목 -->
-            <h3>BUDDY Leader</h3>
+            <h3>Group 4</h3>
 
             <!-- 그리드 맞춤용 빈 영역 -->
             <p></p>
@@ -88,13 +128,31 @@
             </div>
         </div>
 
-        <!-- 그리드 -->
+        <!-- 그리드 영역 -->
         <div class="wrapper">
             <div class="intro-grid">
-                <div class="box" id="box1"></div>
-                <div class="box" id="box2"></div>
-                <div class="box" id="box3"></div>
-                <div class="box" id="box4"></div>
+                <div class="box" id="box1">
+                    <img src="../img/staff/staffPic/pic6_1.jpeg" class="staff-pic">
+                </div>
+                <div class="box" id="box2">
+                    <h6>HOBBY</h6>
+                    <p>
+                        I love K-POP music. I usually listen to idol songs or Korean band music. I also enjoy taking pictures, so I often visit beautiful boutiques.<br><br>
+                        저는 kpop 음악을 좋아해요! 보통 아이돌 노래나 한국밴드 노래 자주 들어요. 그리고 사진 찍는 것도 좋아해서 예쁜 소품들이나 아름다운 풍경이 있는 곳을 자주 가요.
+                    </p>
+                </div>
+                <div class="box" id="box3">
+                    <h6>INTRODUCTION</h6>
+                    <p>
+                        Hi, nice to meet you. I’m Jaeyeon but you can also call me Ellie.
+                        I’m happy to be on the same team with all of you. I hope we all have a memorable and enjoyable semester😁<br><br>
+                        안녕하세요 저는 이번 학기 버디팀 조장 정재연입니다! 먼저 같은 조가 되어 너무너무 반갑습니다😄
+                        한학기동안 많은 추억 함께 만들어가면 좋겠어요!!
+                    </p>
+                </div>
+                <div class="box" id="box4">
+                    <img src="../img/staff/staffPic/pic6_2.jpeg" class="staff-pic">
+                </div>
             </div>
         </div>
 

@@ -158,7 +158,7 @@
             <!-- 두 번째 줄 -->
             <tr>
                 <td class="sm-pic"><a href="about.html"><img src="img/widgets/widget04.png"></a></td>
-                <td class="sm-pic"><a href="staff.html"><img src="img/widgets/widget05.png"></a></td>
+                <td class="sm-pic"><a href="update.html"><img src="img/widgets/widget05.png"></a></td>
                 <td rowspan="3" colspan="2"><a href="b2.html"><img src="img/widgets/widget03.jpg"></a></td>
             </tr>
             <tr>
@@ -201,11 +201,19 @@
         const makeCalendar = (date) => {
             const currentYear = new Date(date).getFullYear();
             const currentMonth = new Date(date).getMonth() + 1;
-            const currentDate = new Date(date).getDate() ;
-            const currentDay = new Date(date).getDay() ;
+            const currentDate = new Date(date).getDate();
+            const currentDay = new Date(date).getDay();
             const lastDay = new Date(currentYear, currentMonth, 0).getDate();
 
+            // 현재 월의 1일 정보
+            var firstDate = new Date(currentYear, currentMonth - 1, 1);
+            var firstDay = firstDate.getDay();
+            
             let htmlDummy = '';
+
+            for (let i = 0; i < firstDay; i++) {
+                htmlDummy += '<div></div>'
+            }
 
             for (let i = 1; i <= lastDay; i++) {
 

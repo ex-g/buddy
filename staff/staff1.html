@@ -9,12 +9,17 @@
     <script src="https://kit.fontawesome.com/77dc09b73f.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../buddy.js"></script>
     <style>
+        .container {
+            background-color: rgb(129, 23, 23);
+        }
+
         .intro-grid {
             width: 320px;
             height: 320px;
             > #box1 {
                 width: 200px;
                 height: 110px;
+                overflow-y: scroll;
             }
             > #box2 {
                 width: 100px;
@@ -24,12 +29,28 @@
                 border-top-right-radius: 50px;
                 border-bottom-left-radius: 50px;
                 border-bottom-right-radius: 50px;
+                overflow: hidden;
+                > .staff-pic {
+                    border-radius: 0;
+                    width: 100%;
+                    height: 100%;
+                    transform: scale(2.1) translate(20px, 0px);
+                    object-fit: contain;
+                }
             }
             > #box3 {
                 width: 200px;
                 height: 190px;
                 border-bottom-right-radius: 50px;
                 top: -200px;
+                overflow: hidden;
+                > .staff-pic {
+                    border-radius: 0;
+                    width: 100%;
+                    height: 100%;
+                    transform: scale(1.9);
+                    object-fit: contain;
+                }
             }
             > #box4 {
                 top: -310px;
@@ -83,10 +104,24 @@
         <!-- 그리드 -->
         <div class="wrapper">
             <div class="intro-grid">
-                <div class="box" id="box1"></div>
-                <div class="box" id="box2"></div>
-                <div class="box" id="box3"></div>
-                <div class="box" id="box4"></div>
+                <div class="box" id="box1">
+                    <h6>INTRODUCTION</h6>
+                    <p>
+                        Hello Every BUDDY! I'm Yeji Kim, the leader of BUDDY team of this semester.
+                        Hope you guys all enjoy this magnificent BUDDY program! I will always do my best to make your unforgettable memories with your buddy through this program :)<br><br>
+                        안녕하세요! 이번 ISO BUDDY 팀장을 맡은 김예지입니다. 여러분들이 버디와 함께 잊지 못할 소중한 추억을 쌓으실 수 있도록 BUDDY 팀이 열심히 노력하고 있으니, 모두 즐겨주시면 감사하겠습니다 :)
+                    </p>
+                </div>
+                <div class="box" id="box2">
+                    <img src="../img/staff/staffPic/pic1_2.jpg" class="staff-pic">
+
+                </div>
+                <div class="box" id="box3">
+                    <img src="../img/staff/staffPic/pic1_1.jpg" class="staff-pic">
+                </div>
+                <div class="box" id="box4">
+                    
+                </div>
             </div>
         </div>
     </div>
