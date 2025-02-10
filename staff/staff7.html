@@ -4,22 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yeji Kim</title>
+    <title>Jeonghyeon Cha</title>
     <link rel="stylesheet" href="../buddy.css">
     <link rel="stylesheet" href="staff.css">
     <script src="https://kit.fontawesome.com/77dc09b73f.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../buddy.js"></script>
     <style>
         .container {
-            background-color: black;
+            background-color: rgb(69, 68, 68);
         }
         .box {
-            background-color: white;
-        }
-        h6 {
-            padding: 10px;
+            background-color: rgb(172, 167, 167);
         }
         .intro-grid {
+            z-index: 6;
             width: 320px;
             height: 320px;
             margin-left: 0px;
@@ -77,6 +75,104 @@
                 }
             }
         }
+
+        /* 투명 버튼 */
+        #trans-btn1 {
+            width: 40px;
+            height: 140px;
+            top: 65%;
+            left: 40px;
+            border-radius: 30px;
+            > p {
+                transform: rotate(-90deg);
+                position: relative;
+                font-size: 20px;
+                top: 64px;
+            }
+        }
+
+        #trans-btn3 {
+            width: 40px;
+            height: 140px;
+            border-radius: 30px;
+            top: 43%;
+            right: 40px;
+            line-height: 50px;
+            > p {
+                transform: rotate(-90deg);
+                position: relative;
+                font-size: 20px;
+                top: 50px;
+            }
+        }
+
+        /* modal overflow (Hobby) */
+        #modal3 .modal_popup {
+            height: 500px;
+            overflow-y: scroll;
+        }
+
+        .sticker {
+            position: absolute; width: 80px; height: 80px;
+            top: 275px;
+            right: 60px;
+            z-index: 8;
+            animation: fa-ani 15s 0s both infinite;
+        }
+
+        .fa-cloud {
+            position: absolute; color: white;
+            font-size: 30px; z-index: 8; opacity: 0.7;
+        }
+
+        #cloud1 {
+            animation: fa-ani2 7s linear 0s both infinite;
+            top: 480px;
+            left: 60px;
+        }
+
+        #cloud2 {
+            animation: fa-ani3 7s linear 0s both infinite;
+            top: 520px;
+            left: 150px;
+        }
+
+        .fa-plane {
+            position: absolute; color: white;
+            font-size: 30px;
+            top: 500px; left: 109px;
+            z-index: 8; opacity: 0.9;
+        }
+
+        @keyframes fa-ani {
+            0% {
+                transform: rotate(0deg);
+            } 50% {
+                transform: rotate(360deg);
+            } 100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        @keyframes fa-ani2 {
+            0% {
+                transform: translateY(20px);
+            } 50% {
+                transform: translateY(-5px);
+            }100% {
+                transform: translateY(20px);
+            }
+        }
+
+        @keyframes fa-ani3 {
+            0% {
+                transform: translateY(-20px);
+            } 50% {
+                transform: translateY(5px);
+            } 100% {
+                transform: translateY(-20px);
+            }
+        }
     </style>
 </head>
 <body>
@@ -113,8 +209,54 @@
         <!-- 카드 영역 -->
         <div class="flip-outer">
             <div class="flip-inner">
-                <img src="../img/staff/back.png" class="front">
-                <img src="../img/staff/front.png" class="back">
+                <img src="../img/staff/isoCard/back.png" class="front">
+                <img src="../img/staff/isoCard/front7.png" class="back">
+            </div>
+        </div>
+         
+        <!-- 모달 팝업 -->
+        <div class="modal" id="modal1">
+            <div class="modal_popup">
+                <h3>Message</h3>
+                <p>
+                    Hello, everyone! welcome to our buddy program! I'm so excited to meet you. Let`s make wonderful experiences and unforgettable memories together through the Buddy program!<br><br>
+                    여러분 안녕하세요! 버디 프로그램에 오신 걸 환영합니다! 여러분을 만날 생각에 너무 신이 납니다. 버디 프로그램을 통해 멋진 경험과 잊지 못할 추억을 함께 만들어요!
+                </p>
+                <button type="button" class="close_btn" id="close1">닫기</button>
+            </div>
+        </div>
+
+        <!-- 모달 팝업2 -->
+        <div class="modal" id="modal2">
+            <div class="modal_popup">
+                <h3>Photo</h3>
+                <p>
+                    It’s really fun to see Patrick‘s funny expression!<br><br>
+
+                    뚱이의 웃긴 표정을 보는 건 정말 재밌습니다!
+                </p>
+                <button type="button" class="close_btn" id="close2">닫기</button>
+            </div>
+        </div>
+
+        <!-- 모달 팝업3 -->
+        <div class="modal" id="modal3">
+            <div class="modal_popup">
+                <h3>Hobby</h3>
+                <p>
+                    <b>Listening to music</b>: I love listening to all genres of music! So my playlist consists of various genres of music.<br><br>
+                    <b>Watching sports</b>: I really like watching sports matches like Soccer, NBA, NFL. So I also like collecting uniforms from various teams.<br><br>
+                    <b>Traveling</b>: I'm really interested in overseas trip. But actually, i don't have much experience traveling abroad yet. So someday I want to visit all over the world.<br><br>
+                    <b>Meeting new friends</b>: I like meeting and having a conversation with new friends. So whenever I share my thoughts with new friends, I get so excited.<br>
+                </p>
+                <hr>
+                <p>
+                    <b>음악 감상</b>: 저는 모든 장르의 음악을 듣는 것을 좋아합니다! 그래서 제 플레이리스트는 다양한 장르의 음악들로 구성되어 있습니다.<br><br>
+                    <b>스포츠 보기</b>: 저는 축구, NBA, NFL 같은 스포츠 경기들을 보는 것을 정말 좋아합니다. 그래서 다양한 팀의 유니폼 수집 또한 좋아합니다.<br><br>
+                    <b>여행</b>: 저는 해외여행에 정말 관심이 있습니다. 하지만 사실, 저는 아직 해외 여행을 해본 경험은 많이 없습니다. 그래서 언젠가 전 세계를 가보고 싶습니다.<br><br>
+                    <b>새로운 친구 만나기</b>: 저는 새로운 친구들을 만나 대화를 나누는 것을 좋아합니다. 그래서 새로운 친구들과 서로 생각을 공유할 때 마다 너무 신이 납니다.
+                </p>
+                <button type="button" class="close_btn" id="close3">닫기</button>
             </div>
         </div>
 
@@ -125,31 +267,53 @@
                     <img src="../img/staff/staffPic/pic7_1.jpeg" class="staff-pic">
                 </div>
                 <div class="box" id="box2">
-                    <p>
-                        Listening to music: I love listening to all genres of music! So my playlist consists of various genres of music.
-Watching sports: I really like watching sports matches like Soccer, NBA, NFL. So I also like collecting uniforms from various teams.
-Traveling: I'm really interested in overseas trip. But actually, i don't have much experience traveling abroad yet. So someday I want to visit all over the world.
-Meeting new friends: I like meeting and having a conversation with new friends. So whenever I share my thoughts with new friends, I get so excited.
-
-음악 감상: 저는 모든 장르의 음악을 듣는 것을 좋아합니다! 그래서 제 플레이리스트는 다양한 장르의 음악들로 구성되어 있습니다.
-스포츠 보기: 저는 축구, NBA, NFL 같은 스포츠 경기들을 보는 것을 정말 좋아합니다. 그래서 다양한 팀의 유니폼 수집 또한 좋아합니다.
-여행: 저는 해외여행에 정말 관심이 있습니다. 하지만 사실, 저는 아직 해외 여행을 해본 경험은 많이 없습니다. 그래서 언젠가 전 세계를 가보고 싶습니다.
-새로운 친구 만나기: 저는 새로운 친구들을 만나 대화를 나누는 것을 좋아합니다. 그래서 새로운 친구들과 서로 생각을 공유할 때 마다 너무 신이 납니다.
-                    </p>
                 </div>
                 <div class="box" id="box3">
-                    <h6>INTRODUCTION</h6>
-                    <p>
-                        Hello, everyone! welcome to our buddy program! I'm so excited to meet you. Let`s make wonderful experiences and unforgettable memories together through the Buddy program!<br><br>
-                        여러분 안녕하세요! 버디 프로그램에 오신 걸 환영합니다! 여러분을 만날 생각에 너무 신이 납니다. 버디 프로그램을 통해 멋진 경험과 잊지 못할 추억을 함께 만들어요!
-                    </p>
                 </div>
                 <div class="box" id="box4">
-                    <img src="../img/staff/staffPic/pic7_2.jpeg" class="staff-pic">
+                    <img src="../img/staff/staffPic/pic7_2.jpeg" class="staff-pic" id="trans-btn2">
                 </div>
             </div>
         </div>
 
+        <img class="star" src="../img/staff/constellation/처녀자리.png" alt="">
+        <div class="transparent" id="trans-btn1">
+            <p>Message</p>
+            <!-- <i class="fa-brands fa-galactic-republic"></i> -->
+        </div>
+        <div class="transparent" id="trans-btn3">
+            <p>Hobby</p>
+        </div>
+        <img class="stamp" src="../img/staff/staffStamp/stamp7.png" alt="">
+
+        <i class="fa-solid fa-cloud" id="cloud1"></i>
+        <i class="fa-solid fa-plane"></i>
+        <i class="fa-solid fa-cloud" id="cloud2"></i>
+        <img src="../img/staff/sticker/농구공.png" alt="" class="sticker">
+
     </div>
+
+    <script>
+        // modal1 (Message)
+        const Modal1 = document.querySelector('#modal1');
+        const ModalOpen1 = document.querySelector('#trans-btn1');
+        const ModalClose1 = document.querySelector('#close1');
+        ModalOpen1.addEventListener('click',function(){ Modal1.style.display = 'block'; });
+        ModalClose1.addEventListener('click',function(){ Modal1.style.display = 'none'; });
+
+        // modal2 (Photo exp)
+        const Modal2 = document.querySelector('#modal2');
+        const ModalOpen2 = document.querySelector('#trans-btn2');
+        const ModalClose2 = document.querySelector('#close2');
+        ModalOpen2.addEventListener('click',function(){ Modal2.style.display = 'block'; });
+        ModalClose2.addEventListener('click',function(){ Modal2.style.display = 'none'; });
+
+        // modal3 (Hobby)
+        const Modal3 = document.querySelector('#modal3');
+        const ModalOpen3 = document.querySelector('#trans-btn3');
+        const ModalClose3 = document.querySelector('#close3');
+        ModalOpen3.addEventListener('click',function(){ Modal3.style.display = 'block'; });
+        ModalClose3.addEventListener('click',function(){ Modal3.style.display = 'none'; });
+    </script>
 </body>
 </html>

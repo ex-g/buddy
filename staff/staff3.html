@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yeji Kim</title>
+    <title>Suhyeon Woo</title>
     <link rel="stylesheet" href="../buddy.css">
     <link rel="stylesheet" href="staff.css">
     <script src="https://kit.fontawesome.com/77dc09b73f.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../buddy.js"></script>
     <style>
+        .container {
+            background-color: rgb(244, 208, 164);
+        }
+        .box {
+            background-color: rgb(229, 170, 93);
+        }
         .intro-grid {
             width: 320px;
             height: 320px;
@@ -19,7 +25,7 @@
                 border-top-left-radius: 50%;
                 border-bottom-left-radius: 50%;
                 border-bottom-right-radius: 50%;
-                border: 10px solid rgb(129, 23, 23);
+                border: 10px solid rgb(244, 208, 164);
                 z-index: 2;
                 left: -5px;
             }
@@ -31,12 +37,28 @@
                 border-top-right-radius: 10px;
                 border-bottom-left-radius: 10px;
                 border-bottom-right-radius: 10px;
+                overflow: hidden;
+                > .staff-pic {
+                    border-radius: 0;
+                    width: 100%;
+                    height: 100%;
+                    transform: scale(2.2) translate(-2px, 0px);
+                    object-fit: contain;
+                }
             }
             > #box3 {
                 width: 120px;
                 height: 260px;
                 border-bottom-left-radius: 20px;
                 top: -300px;
+                overflow: hidden;
+                > .staff-pic {
+                    border-radius: 0;
+                    width: 100%;
+                    height: 100%;
+                    transform: scale(1.5) translate(0px, 10px);
+                    object-fit: contain;
+                }
             }
             > #box4 {
                 width: 180px;
@@ -46,6 +68,69 @@
                 border-top-right-radius: 10px;
                 border-bottom-left-radius: 10px;
             }
+        }
+
+        /* 투명 버튼 */
+        #trans-btn1 {
+            width: 80px;
+            height: 80px;
+            top: 45%;
+            left: 46px;
+            border-radius: 50px;
+            > p {
+                position: relative;
+                font-size: 20px;
+                top: 6px;
+            }
+        }
+
+        #trans-btn3 {
+            width: 180px;
+            height: 50px;
+            top: 76%;
+            left: 140px;
+            border-bottom-left-radius:40px;
+            border-bottom-right-radius: 15px;
+            border-top-right-radius: 40px;
+            border-top-left-radius: 15px;
+            > p {
+                position: relative;
+                font-size: 20px;
+                top: 1px;
+            }
+        }
+
+        .sticker {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 190px;
+            right: -10px;
+        }
+
+        .fa-star, .fa-star-half-stroke, .fa-regular {
+            position: absolute;
+            color: white;
+            top: 240px;
+            left: 40px;
+            font-size: 20px;
+            opacity: 0.7;
+        }
+
+        .fa-star-half-stroke {
+            left: 70px;
+        }
+
+        .fa-regular {
+            left:100px;
+        }
+
+        #black-i {
+            position: absolute;
+            bottom: 80px;
+            right: 150px;
+            opacity: 0.5;
+            font-size: 40px;
         }
     </style>
 </head>
@@ -83,8 +168,39 @@
         <!-- 카드 영역 -->
         <div class="flip-outer">
             <div class="flip-inner">
-                <img src="../img/staff/back.png" class="front">
-                <img src="../img/staff/front.png" class="back">
+                <img src="../img/staff/isoCard/back.png" class="front">
+                <img src="../img/staff/isoCard/front3.png" class="back">
+            </div>
+        </div>
+
+        <!-- 모달 팝업 -->
+        <div class="modal" id="modal1">
+            <div class="modal_popup">
+                <h3>Message</h3>
+                <p>
+                    반짝반짝 함께 빛나는 순간을 만들어가요
+                </p>
+                <button type="button" class="close_btn" id="close1">닫기</button>
+            </div>
+        </div>
+
+        <!-- 모달 팝업2 -->
+        <div class="modal" id="modal2">
+            <div class="modal_popup">
+                <h3>Photo</h3>
+                <p>반짝반짝</p>
+                <button type="button" class="close_btn" id="close2">닫기</button>
+            </div>
+        </div>
+
+        <!-- 모달 팝업3 -->
+        <div class="modal" id="modal3">
+            <div class="modal_popup">
+                <h3>Hobby</h3>
+                <p>
+                    음악 듣기
+                </p>
+                <button type="button" class="close_btn" id="close3">닫기</button>
             </div>
         </div>
 
@@ -92,12 +208,53 @@
         <div class="wrapper">
             <div class="intro-grid">
                 <div class="box" id="box1"></div>
-                <div class="box" id="box2"></div>
-                <div class="box" id="box3"></div>
+                <div class="box" id="box2">
+                    <img src="../img/staff/staffPic/pic3_2.jpeg" alt="" class="staff-pic" id="trans-btn2">
+                </div>
+                <div class="box" id="box3">
+                    <img src="../img/staff/staffPic/pic3_1.jpeg" alt="" class="staff-pic">
+                </div>
                 <div class="box" id="box4"></div>
             </div>
         </div>
-
+        <img class="star" src="../img/staff/constellation/물고기자리.png" alt="">
+        <div class="transparent" id="trans-btn1">
+            <p>Hi!</p>
+            <!-- <i class="fa-brands fa-galactic-republic"></i> -->
+        </div>
+        <div class="transparent" id="trans-btn3">
+            <p>Hobby</p>
+        </div>
+        <img class="stamp" src="../img/staff/staffStamp/stamp3.png" alt="">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star-half-stroke"></i>
+        <i class="fa-regular fa-star"></i>
+        <img src="../img/staff/sticker/헤드폰.png" alt="" class="sticker">
+        <i class="fa-solid fa-star-and-crescent" id="black-i"></i>
     </div>
+
+    <script>
+        // modal1 (Message)
+        const Modal1 = document.querySelector('#modal1');
+        const ModalOpen1 = document.querySelector('#trans-btn1');
+        const ModalClose1 = document.querySelector('#close1');
+        ModalOpen1.addEventListener('click',function(){ Modal1.style.display = 'block'; });
+        ModalClose1.addEventListener('click',function(){ Modal1.style.display = 'none'; });
+
+        // modal2 (Photo exp)
+        const Modal2 = document.querySelector('#modal2');
+        const ModalOpen2 = document.querySelector('#trans-btn2');
+        const ModalClose2 = document.querySelector('#close2');
+        ModalOpen2.addEventListener('click',function(){ Modal2.style.display = 'block'; });
+        ModalClose2.addEventListener('click',function(){ Modal2.style.display = 'none'; });
+
+        // modal3 (Hobby)
+        const Modal3 = document.querySelector('#modal3');
+        const ModalOpen3 = document.querySelector('#trans-btn3');
+        const ModalClose3 = document.querySelector('#close3');
+        ModalOpen3.addEventListener('click',function(){ Modal3.style.display = 'block'; });
+        ModalClose3.addEventListener('click',function(){ Modal3.style.display = 'none'; });
+    </script>
+
 </body>
 </html>

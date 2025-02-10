@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yeji Kim</title>
+    <title>Jihye Park</title>
     <link rel="stylesheet" href="../buddy.css">
     <link rel="stylesheet" href="staff.css">
     <script src="https://kit.fontawesome.com/77dc09b73f.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../buddy.js"></script>
+    <script type="text/javascript" src="staff.js"></script>
     <style>
         .container {
-            background-color: rgb(96, 128, 160);
+            background-color: rgb(188, 219, 250);
         }
         .box {
-            background-color: rgb(226, 231, 235);
+            background-color: rgb(255, 255, 255);
         }
         .intro-grid {
+            z-index: 3;
             width: 320px;
             height: 320px;
             margin-left: 0px;
@@ -59,11 +61,15 @@
                 z-index: 5;
                 > h5 {
                     padding: 10px;
-                    padding-bottom: 0
+                    padding-bottom: 0;
+                    font-family: "DM Serif Text", serif;
+                    letter-spacing: 0.5px;
+                    font-style: italic;
                 }
                 > p {
-                    font-size: 8px;
+                    font-size: 12px;
                     padding: 10px;
+                    font-family: "Gaegu", serif;
                 }
             }
             > #box4 {
@@ -72,6 +78,41 @@
                 top: -305px;
                 left: 110px;
                 border-bottom-right-radius: 20px;
+            }
+        }
+
+        #first-header {
+            color: black;
+            > .fa-solid {
+                color: black;
+            }
+        }
+
+        .sticker {
+            width: 100px; height: 100px;
+            /* z-index: 5; */
+            position: absolute;
+            top: 170px;
+            right: 10px;
+            transform: rotate(50deg);
+        }
+
+        .fa-clover {
+            position: absolute;
+            font-size: 30px;
+            color: white;
+            left: 30px;
+            bottom: 20px;
+            animation: fa-ani 10s linear infinite 0s both;
+        }
+
+        @keyframes fa-ani {
+            0% {
+                transform: translateX(-20px);
+            } 50% {
+                transform: translateX(100px) rotate(180deg);
+            } 100% {
+                transform: translateX(-20px);
             }
         }
     </style>
@@ -110,15 +151,33 @@
         <!-- 카드 -->
         <div class="flip-outer">
             <div class="flip-inner">
-                <img src="../img/staff/back.png" class="front">
-                <img src="../img/staff/front.png" class="back">
+                <img src="../img/staff/isoCard/back.png" class="front">
+                <img src="../img/staff/isoCard/front10.png" class="back">
+            </div>
+        </div>
+
+        <!-- 모달 팝업 -->
+        <div class="modal wish">
+            <div class="modal_popup">
+                <h3>My Wish</h3>
+                <p>이번 여름에는 꼭 브라질로 여름 계절학기를 가고 싶어요 😆</p>
+                <button type="button" class="close_btn wish_btn">닫기</button>
+            </div>
+        </div>
+
+        <!-- 모달 팝업2 -->
+        <div class="modal photo-exp">
+            <div class="modal_popup">
+                <h3>Photo</h3>
+                <p>옥스포드 갔을 때 찍은 사진. 평화롭고 아름다운 풍경이라 찍음.</p>
+                <button type="button" class="close_btn photo_exp_btn">닫기</button>
             </div>
         </div>
 
         <div class="wrapper">
             <div class="intro-grid">
                 <div class="box" id="box1">
-                    <img src="../img/staff/staffPic/pic10_2.jpg" class="staffPic">
+                    <img src="../img/staff/staffPic/pic10_2.jpg" class="staffPic favPic">
                 </div>
                 <div class="box" id="box2">
                     <img src="../img/staff/staffPic/pic10_1.jpg" class="staffPic">
@@ -126,14 +185,54 @@
                 <div class="box" id="box3">
                     <h5>NICE TO MEET YOU</h5>
                     <p>
-                        Let's have a great together!<br>
+                        Let's have a great time together!<br>
                         같이 즐겁고 신나는 시간 보내요! 😉
                     </p>
                 </div>
                 <div class="box" id="box4"></div>
             </div>
         </div>
+        <img class="star" src="../img/staff/constellation/게자리.png" alt="">
+        <div class="transparent" id="trans-btn1">
+            <i class="fa-brands fa-galactic-republic"></i>
+        </div>
+        <div class="transparent" id="trans-btn2">
+            My Wish
+        </div>
+        <img class="stamp" src="../img/staff/staffStamp/stamp10.png" alt="">
+        <img src="../img/staff/sticker/클로버.png" alt="" class="sticker">
+        <i class="fa-solid fa-clover"></i>
+    </div> 
+    
 
-    </div>
+
+    <script>
+        // My Wish 모달
+        const wishModal = document.querySelector('.wish');
+        const wishModalOpen = document.querySelector('#trans-btn2');
+        const wishModalClose = document.querySelector('.wish_btn');
+
+        wishModalOpen.addEventListener('click',function(){
+            console.log("hi");
+            wishModal.style.display = 'block';
+        });
+
+        wishModalClose.addEventListener('click',function(){
+            wishModal.style.display = 'none';
+        });
+
+        // photo-exp 모달
+        const photoExpModal = document.querySelector('.photo-exp');
+        const photoExpModalOpen = document.querySelector('.favPic');
+        const photoExpModalClose = document.querySelector('.photo_exp_btn');
+
+        photoExpModalOpen.addEventListener('click',function(){
+            photoExpModal.style.display = 'block';
+        });
+
+        photoExpModalClose.addEventListener('click',function(){
+            photoExpModal.style.display = 'none';
+        });
+    </script>
 </body>
 </html>

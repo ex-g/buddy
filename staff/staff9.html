@@ -9,6 +9,12 @@
     <script src="https://kit.fontawesome.com/77dc09b73f.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../buddy.js"></script>
     <style>
+        .container {
+            background-color: rgb(191, 218, 245);
+        }
+        .box {
+            background-color: rgb(227, 105, 162);
+        }
         .intro-grid {
             width: 320px;
             height: 320px;
@@ -17,6 +23,14 @@
             > #box1 {
                 height: 210px;
                 border-top-left-radius: 50px;
+                overflow: hidden;
+                > .staff-pic {
+                    border-radius: 0;
+                    width: 100%;
+                    height: 100%;
+                    transform: scale(1.4) translate(0px, -5px);
+                    object-fit: contain;
+                }
             }
             > #box2 {
                 height: 240px;
@@ -33,8 +47,71 @@
                 height: 160px;
                 top: -390px;
                 left: 155px;
-                border: 10px solid rgb(129, 23, 23);
+                border: 10px solid rgb(191, 218, 245);
                 border-radius: 50%;
+                overflow: hidden;
+                > .staff-pic {
+                    border-radius: 0;
+                    width: 100%;
+                    height: 100%;
+                    transform: scale(1.4) translate(0px, -5px);
+                    object-fit: contain;
+                }
+            }
+        }
+
+        /* 투명 버튼 */
+        #trans-btn1 {
+            width: 170px;
+            height: 50px;
+            top: 45%;
+            left: 140px;
+            border-radius: 30px;
+            > p {
+                position: relative;
+                font-size: 20px;
+                top: -10px;
+            }
+        }
+
+        #trans-btn3 {
+            width: 120px;
+            height: 50px;
+            border-radius: 30px;
+            top: 73%;
+            left: 50px;
+            line-height: 50px;
+            > p {
+                position: relative;
+                font-size: 20px;
+                top: -10px;
+            }
+        }
+
+        .sticker {
+            position: absolute; width: 130px; height: 190px;
+            top: 230px;
+            right: 20px;
+            transform: rotate(20deg);
+        }
+
+        .fa-mug-hot {
+            position: absolute; color: white;
+            opacity: 0.7; top: 530px;
+            left: 80px;
+            font-size: 30px;
+            animation: fa-ani 7s 0s both infinite;
+        }
+
+        @keyframes fa-ani {
+            0% {
+                transform: rotate(0deg);
+            } 30% {
+                transform: rotate(10deg);
+            } 60% {
+                transform: rotate(-10deg);
+            } 100% {
+                transform: rotate(0deg);
             }
         }
     </style>
@@ -74,19 +151,83 @@
         <!-- 카드 -->
         <div class="flip-outer">
             <div class="flip-inner">
-                <img src="../img/staff/back.png" class="front">
-                <img src="../img/staff/front.png" class="back">
+                <img src="../img/staff/isoCard/back.png" class="front">
+                <img src="../img/staff/isoCard/front9.png" class="back">
+            </div>
+        </div>
+
+        <!-- 모달 팝업 -->
+        <div class="modal" id="modal1">
+            <div class="modal_popup">
+                <h3>Message</h3>
+                <p>
+                    Hello! I’m Jung Hyun, someone who loves traveling and exploring!<br>
+                    I enjoy experiencing new cultures and taking photos during my trips. I also love visiting beautiful cafes!<br>
+                    If any of you have a cafe you’d like to visit, feel free to let me know—we can go together!<br><br>
+
+                    안녕하세요! 여행을 좋아하고, 사랑하는 구정현입니다. <br>
+                    여행가서 새로운 문화를 접하고! 사진을 찍는 것을 상당히 좋아해요! 이쁜 카페 가는 것을 좋아합니다!<br>
+                    만약 여러분들 중 가고 싶은 카페가 있다면 편하게 같이 가자고 말해주세요!
+                </p>
+                <button type="button" class="close_btn" id="close1">닫기</button>
+            </div>
+        </div>
+
+        <!-- 모달 팝업3 -->
+        <div class="modal" id="modal3">
+            <div class="modal_popup">
+                <h3>Hobby</h3>
+                <p>
+                    여행지 추천 - 프라하, 겨울에 코트입고 스냅사진 찍으면 좋아요!! <br>
+                    다들 굴뚝빵 먹을 때 초콜릿 조심하시길~~<br><br>
+
+                    Recommended travel destination: Prague! <br>
+                    It’s perfect for taking winter snapshots in a stylish coat. <br>
+                    Just a heads-up—when everyone’s enjoying chimney cakes, be cautious with the chocolate!
+                </p>
+                <button type="button" class="close_btn" id="close3">닫기</button>
             </div>
         </div>
 
         <div class="wrapper">
             <div class="intro-grid">
-                <div class="box" id="box1"></div>
+                <div class="box" id="box1">
+                    <img src="../img/staff/staffPic/pic9_1.jpeg" alt="" class="staff-pic">
+                </div>
                 <div class="box" id="box2"></div>
                 <div class="box" id="box3"></div>
-                <div class="box" id="box4"></div>
+                <div class="box" id="box4">
+                    <img src="../img/staff/staffPic/pic9_2.jpeg" alt="" class="staff-pic">
+                </div>
             </div>
         </div>
+
+        <img class="star" src="../img/staff/constellation/처녀자리.png" alt="">
+        <div class="transparent" id="trans-btn1">
+            <p>Message</p>
+        </div>
+        <div class="transparent" id="trans-btn3">
+            <p>Hobby</p>
+        </div>
+        <img class="stamp" src="../img/staff/staffStamp/stamp9.png" alt="">
+
+        <img src="../img/staff/sticker/여권.png" alt="" class="sticker">
+        <i class="fa-solid fa-mug-hot"></i>
     </div>
+    <script>
+        // modal1 (Message)
+        const Modal1 = document.querySelector('#modal1');
+        const ModalOpen1 = document.querySelector('#trans-btn1');
+        const ModalClose1 = document.querySelector('#close1');
+        ModalOpen1.addEventListener('click',function(){ Modal1.style.display = 'block'; });
+        ModalClose1.addEventListener('click',function(){ Modal1.style.display = 'none'; });
+
+        // modal3 (Hobby)
+        const Modal3 = document.querySelector('#modal3');
+        const ModalOpen3 = document.querySelector('#trans-btn3');
+        const ModalClose3 = document.querySelector('#close3');
+        ModalOpen3.addEventListener('click',function(){ Modal3.style.display = 'block'; });
+        ModalClose3.addEventListener('click',function(){ Modal3.style.display = 'none'; });
+    </script>
 </body>
 </html>

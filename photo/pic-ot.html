@@ -22,15 +22,17 @@
 
          #columns{
           position: absolute;
-            padding: 20px 15px;
-            width: 360px;
-            column-width: 150px;
-            column-gap: 15px;
+          padding: 20px 15px;
+          width: 360px;
+          column-width: 150px;
+          column-gap: 15px;
         }
+
         #columns figure{
             display: inline-block;
             border-radius: 10px;
         }
+
         #columns figure img{
             width: 160px;
             border-radius: 15px;
@@ -140,31 +142,24 @@
             </div>
         </div>        
         <script>
-            $(document).ready(function (e){
-		
-            $(document).on("click","img",function(){
-                var path = $(this).attr('src')
-                showImage(path);
-            }); //end click event
-            
-            function showImage(fileCallPath){
-                
-                $(".bigPictureWrapper").css("display","flex").show();
-                
-                $(".bigPicture")
-                .html("<img src='"+fileCallPath+"' >")
-                
-            } //end fileCallPath
-            
-            $(".bigPictureWrapper").on("click", function(e){
-                $('.bigPictureWrapper').hide();
-                $('bigPicture').hide();
-                // $(".bigPicture").animate({width:'0%', height: '0%'}, 1000);
-                // setTimeout(function(){
-                // $('.bigPictureWrapper').hide();
-                // }, 1000);
-            }); //end bigWrapperClick event
-        });
+            $(document).ready(function (e) {
+                // 이미지 클릭 이벤트
+                $(document).on("click", "img", function () {
+                    var route = $(this).attr("src"); // 클릭된 이미지의 src 가져오기
+                    showImage(route); // 이미지 표시 함수 호출
+                });
+        
+                function showImage(file) {
+                    $(".bigPictureWrapper").css("display", "flex"); // bigPictureWrapper 보이기
+                    $(".bigPicture").html("<img src='" + file + "'>"); // bigPicture에 이미지 삽입
+                }
+        
+                // 배경 클릭 이벤트
+                $(".bigPictureWrapper").on("click", function (e) {
+                    $(".bigPictureWrapper").hide(); // 배경 숨기기
+                    $(".bigPicture").html(""); // bigPicture 내용 제거
+                });
+            });
         </script>      
     </div>
 </body>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>staff2</title>
+    <title>Minjoo Seo</title>
     <link rel="stylesheet" href="../buddy.css">
     <link rel="stylesheet" href="staff.css">
     <script src="https://kit.fontawesome.com/77dc09b73f.js" crossorigin="anonymous"></script>
@@ -13,11 +13,9 @@
             background-color: rgb(144, 165, 220);
         }
         .box {
-            background-color: rgb(255, 255, 255);
+            background-color: rgb(119, 119, 175);
         }
-        h6 {
-            padding: 10px;
-        }
+
         .intro-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -31,17 +29,108 @@
                 border-top-left-radius: 20px;
                 border-top-right-radius: 20px;
                 border-bottom-right-radius: 20px;
+                overflow: hidden;
+                > .staff-pic {
+                    border-radius: 0;
+                    width: 100%;
+                    height: 100%;
+                    transform: scale(1.4) translate(0px, -10px);
+                    object-fit: contain;
+                }
             }
             > #box3 {
                 border-top-left-radius: 20px;
                 border-bottom-left-radius: 20px;
                 border-bottom-right-radius: 20px;
+                overflow: hidden;
+                > .staff-pic {
+                    border-radius: 0;
+                    width: 100%;
+                    height: 100%;
+                    transform: scale(1.8) translate(0px, -5px);
+                    object-fit: contain;
+                }
             }
             > #box4 {
                 border-top-right-radius: 50%;
                 border-bottom-left-radius: 50%;
                 border-bottom-right-radius: 50%;
             }
+        }
+
+        /* 투명 버튼 */
+        #trans-btn1 {
+            width: 90px;
+            height: 90px;
+            top: 47%;
+            left: 64px;
+            border-radius: 50px;
+            > p {
+                position: relative;
+                font-size: 20px;
+                top: 10px;
+            }
+        }
+
+        #trans-btn3 {
+            width: 90px;
+            height: 90px;
+            top: 70%;
+            left: 210px;
+            border-radius: 50px;
+            > p {
+                position: relative;
+                font-size: 20px;
+                top: 20px;
+            }
+        }
+
+        .deco-text {
+            width: 220px;
+            font-size: 12px;
+            opacity: 0.2;
+            line-height: 15px;
+            position: absolute;
+            top: 140px;
+            right: -5px;
+            font-style: italic;
+            letter-spacing: 1px;
+            text-align: right;
+            transform: rotate(5deg);
+            > i {
+                position: absolute;
+                font-size: 15px;
+                bottom: -10px;
+                right: 55px;
+            }
+        }
+
+        .fa-person-swimming {
+            position: absolute;
+            color: white;
+            top: 350px;
+            left: 40px;
+            font-size: 30px;
+            animation: fa-ani 5s linear infinite 0s both;
+            opacity: 0.5;
+        }
+
+        @keyframes fa-ani {
+            0% {
+                transform: scale(1) rotate(0deg);
+            } 50% {
+                transform: scale(1.4) rotate(0deg);
+            } 100% {
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        .sticker {
+            position: absolute;
+            width: 80px;
+            top: 400px;
+            right: 0px;
+            transform: rotate(-20deg);
         }
     </style>
 </head>
@@ -79,20 +168,118 @@
         <!-- 카드 -->
         <div class="flip-outer">
             <div class="flip-inner">
-                <img src="../img/staff/back.png" class="front">
-                <img src="../img/staff/front.png" class="back">
+                <img src="../img/staff/isoCard/back.png" class="front">
+                <img src="../img/staff/isoCard/front2.png" class="back">
+            </div>
+        </div>
+
+        <!-- 모달 팝업 -->
+        <div class="modal" id="modal1">
+            <div class="modal_popup">
+                <h3>Message</h3>
+                <p>
+                    HAPPY BUDDY DAY TO YOU!<br>
+                    25-1 BUDDY 부팀장을 맡은 서민주입니다 :)<br>
+                    재미있는 활동 많이 기획했으니 즐겨주세요!<br><br>
+
+                    HAPPY BUDDY DAY TO YOU!<br>
+                    I'm Minjoo Seo, 25-1 BUDDY team vice leader.<br>
+                    We've planned lots of fun activities, so enjoy them! :)
+                </p>
+                <button type="button" class="close_btn" id="close1">닫기</button>
+            </div>
+        </div>
+
+        <!-- 모달 팝업2 -->
+        <div class="modal" id="modal2">
+            <div class="modal_popup">
+                <h3>Photo</h3>
+                <p>프라하의 노을</p>
+                <button type="button" class="close_btn" id="close2">닫기</button>
+            </div>
+        </div>
+
+        <!-- 모달 팝업3 -->
+        <div class="modal" id="modal3">
+            <div class="modal_popup">
+                <h3>Hobby</h3>
+                <p>
+                    <b>음악</b><br>
+                    《Levitating》- Dua Lipa<br>
+                    《Toxic till the end》- Rosé<br><br>
+                    <b>스포츠</b><br>
+                    스키 (만 4세부터 탔어요!)<br>
+                    수영 (바나나보트 타다가 한강에 빠진 이후로 배웠답니다)<br>
+                </p>
+                <hr>
+                <p>
+                    <b>Music</b><br>
+                    《Levitating》- Dua Lipa<br>
+                    《Toxic till the end》- Rosé<br><br>
+                    <b>Sports</b><br>
+                    Skiing (I've been skiing since I was 4!)<br>
+                    Swimming (I learned after falling into the Han River while riding a banana boat..)<br><br>
+                </p>
+                <button type="button" class="close_btn" id="close3">닫기</button>
             </div>
         </div>
 
         <div class="wrapper">
             <div class="intro-grid">
                 <div class="box" id="box1"></div>
-                <div class="box" id="box2"></div>
-                <div class="box" id="box3"></div>
+                <div class="box" id="box2">
+                    <img src="../img/staff/staffPic/pic2_1.jpg" alt="" class="staff-pic">
+                </div>
+                <div class="box" id="box3">
+                    <img src="../img/staff/staffPic/pic2_2.jpg" alt="" class="staff-pic" id="trans-btn2">
+                </div>
                 <div class="box" id="box4"></div>
             </div>
         </div>
 
+        <img class="star" src="../img/staff/constellation/궁수자리.png" alt="">
+        <div class="transparent" id="trans-btn1">
+            <p>Hi!</p>
+            <!-- <i class="fa-brands fa-galactic-republic"></i> -->
+        </div>
+        <div class="transparent" id="trans-btn3">
+            <p>Hobby</p>
+        </div>
+        <img class="stamp" src="../img/staff/staffStamp/stamp2.png" alt="">
+
+        <div class="deco-text">
+            Uh huh<br>
+            Cuz even when I said it was over<br>
+            You heard Baby can you pull me in closer<br>
+            You were<br>
+            Plotting how to stay in my head<br>
+            We were toxic till the end
+        </div>
+        <img src="../img/staff/sticker/스키.png" alt="" class="sticker">
+        <i class="fa-solid fa-person-swimming"></i>
     </div>
+
+    <script>
+        // modal1 (Message)
+        const Modal1 = document.querySelector('#modal1');
+        const ModalOpen1 = document.querySelector('#trans-btn1');
+        const ModalClose1 = document.querySelector('#close1');
+        ModalOpen1.addEventListener('click',function(){ Modal1.style.display = 'block'; });
+        ModalClose1.addEventListener('click',function(){ Modal1.style.display = 'none'; });
+
+        // modal2 (Photo exp)
+        const Modal2 = document.querySelector('#modal2');
+        const ModalOpen2 = document.querySelector('#trans-btn2');
+        const ModalClose2 = document.querySelector('#close2');
+        ModalOpen2.addEventListener('click',function(){ Modal2.style.display = 'block'; });
+        ModalClose2.addEventListener('click',function(){ Modal2.style.display = 'none'; });
+
+        // modal3 (Hobby)
+        const Modal3 = document.querySelector('#modal3');
+        const ModalOpen3 = document.querySelector('#trans-btn3');
+        const ModalClose3 = document.querySelector('#close3');
+        ModalOpen3.addEventListener('click',function(){ Modal3.style.display = 'block'; });
+        ModalClose3.addEventListener('click',function(){ Modal3.style.display = 'none'; });
+    </script>
 </body>
 </html>

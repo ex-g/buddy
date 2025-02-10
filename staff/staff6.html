@@ -4,20 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yeji Kim</title>
+    <title>Jaeyeon Jeong</title>
     <link rel="stylesheet" href="../buddy.css">
     <link rel="stylesheet" href="staff.css">
     <script src="https://kit.fontawesome.com/77dc09b73f.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../buddy.js"></script>
     <style>
         .container {
-            background-color: rgb(109, 142, 121);
+            background-color: rgb(86, 142, 106);
         }
         .box {
-            background-color: rgb(226, 231, 235);
-        }
-        h6 {
-            padding: 10px;
+            background-color: rgb(190, 210, 201);
         }
         .intro-grid {
             width: 320px;
@@ -33,7 +30,7 @@
                     border-radius: 0;
                     width: 100%;
                     height: 100%;
-                    transform: scale(1.5) translate(5px, -17px);
+                    transform: scale(1.5) translate(-8px, -17px);
                     object-fit: contain;
                 }
             }
@@ -87,6 +84,80 @@
         }
 
 
+        /* 투명 버튼 */
+        #trans-btn1 {
+            width: 70px;
+            height: 70px;
+            top: 77%;
+            left: 40px;
+            border-radius: 50px;
+            > p {
+                position: relative;
+                font-size: 20px;
+            }
+        }
+
+        #trans-btn3 {
+            width: 50px;
+            height: 240px;
+            border-radius: 30px;
+            top: 47%;
+            left: 150px;
+            line-height: 50px;
+            > p {
+                transform: rotate(-90deg);
+                position: relative;
+                font-size: 20px;
+                top: 90px;
+            }
+        }
+
+        .sticker {
+            position: absolute; 
+            width: 110px;
+            height: 80px;
+            top: 220px;
+            right: -5px;
+            transform: rotate(10deg);
+        }
+
+        .fa-music {
+            position: absolute;
+            font-size: 20px;
+            animation: fa-ani2 7s linear 0s both infinite;
+        }
+
+        .fa-compact-disc {
+            position: absolute; color: white;
+            font-size: 50px;
+            top: 320px;
+            right: 60px;
+            opacity: 0.7;
+            animation: fa-ani 7s linear 0s both infinite;
+        }
+
+        @keyframes fa-ani {
+            0% {
+                transform: rotate(0deg);
+            } 50% {
+                transform: rotate(360deg);
+            } 100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        @keyframes fa-ani2 {
+            0% {
+                transform: translate(250px, -250px) rotate(0deg);
+                opacity: 1;
+            } 50% {
+                transform: translate(150px, -150px) rotate(40deg);
+            } 100% {
+                transform: translate(100px, -100px) rotate(0deg);
+                opacity: 0;
+            }
+        }
+        
     </style>
 </head>
 <body>
@@ -123,8 +194,43 @@
         <!-- 카드 영역 -->
         <div class="flip-outer">
             <div class="flip-inner">
-                <img src="../img/staff/back.png" class="front">
-                <img src="../img/staff/front.png" class="back">
+                <img src="../img/staff/isoCard/back.png" class="front">
+                <img src="../img/staff/isoCard/front6.png" class="back">
+            </div>
+        </div>
+
+        <!-- 모달 팝업 -->
+        <div class="modal" id="modal1">
+            <div class="modal_popup">
+                <h3>Message</h3>
+                <p>
+                    Hi, nice to meet you. I’m Jaeyeon but you can also call me Ellie.
+                    I’m happy to be on the same team with all of you. I hope we all have a memorable and enjoyable semester😁<br><br>
+                    안녕하세요 저는 이번 학기 버디팀 조장 정재연입니다! 먼저 같은 조가 되어 너무너무 반갑습니다😄
+                    한학기동안 많은 추억 함께 만들어가면 좋겠어요!!
+                </p>
+                <button type="button" class="close_btn" id="close1">닫기</button>
+            </div>
+        </div>
+
+        <!-- 모달 팝업2 -->
+        <div class="modal" id="modal2">
+            <div class="modal_popup">
+                <h3>Photo</h3>
+                <p>코알라 자는 모습을 좋아합니다!</p>
+                <button type="button" class="close_btn" id="close2">닫기</button>
+            </div>
+        </div>
+
+        <!-- 모달 팝업3 -->
+        <div class="modal" id="modal3">
+            <div class="modal_popup">
+                <h3>Hobby</h3>
+                <p>
+                    I love K-POP music. I usually listen to idol songs or Korean band music. I also enjoy taking pictures, so I often visit beautiful boutiques.<br><br>
+                    저는 kpop 음악을 좋아해요! 보통 아이돌 노래나 한국밴드 노래 자주 들어요. 그리고 사진 찍는 것도 좋아해서 예쁜 소품들이나 아름다운 풍경이 있는 곳을 자주 가요.
+                </p>
+                <button type="button" class="close_btn" id="close3">닫기</button>
             </div>
         </div>
 
@@ -135,27 +241,51 @@
                     <img src="../img/staff/staffPic/pic6_1.jpeg" class="staff-pic">
                 </div>
                 <div class="box" id="box2">
-                    <h6>HOBBY</h6>
-                    <p>
-                        I love K-POP music. I usually listen to idol songs or Korean band music. I also enjoy taking pictures, so I often visit beautiful boutiques.<br><br>
-                        저는 kpop 음악을 좋아해요! 보통 아이돌 노래나 한국밴드 노래 자주 들어요. 그리고 사진 찍는 것도 좋아해서 예쁜 소품들이나 아름다운 풍경이 있는 곳을 자주 가요.
-                    </p>
                 </div>
                 <div class="box" id="box3">
-                    <h6>INTRODUCTION</h6>
-                    <p>
-                        Hi, nice to meet you. I’m Jaeyeon but you can also call me Ellie.
-                        I’m happy to be on the same team with all of you. I hope we all have a memorable and enjoyable semester😁<br><br>
-                        안녕하세요 저는 이번 학기 버디팀 조장 정재연입니다! 먼저 같은 조가 되어 너무너무 반갑습니다😄
-                        한학기동안 많은 추억 함께 만들어가면 좋겠어요!!
-                    </p>
                 </div>
                 <div class="box" id="box4">
-                    <img src="../img/staff/staffPic/pic6_2.jpeg" class="staff-pic">
+                    <img src="../img/staff/staffPic/pic6_2.jpeg" class="staff-pic" id="trans-btn2">
                 </div>
             </div>
         </div>
 
+        <img class="star" src="../img/staff/constellation/궁수자리.png" alt="">
+        <div class="transparent" id="trans-btn1">
+            <p>Hi!</p>
+            <!-- <i class="fa-brands fa-galactic-republic"></i> -->
+        </div>
+        <div class="transparent" id="trans-btn3">
+            <p>Hobby</p>
+        </div>
+        <img class="stamp" src="../img/staff/staffStamp/stamp6.png" alt="">
+
+        <i class="fa-solid fa-music"></i>
+        <i class="fa-solid fa-compact-disc"></i>
+        <img src="../img/staff/sticker/카메라.png" alt="" class="sticker">
+
+        <script>
+            // modal1 (Message)
+            const Modal1 = document.querySelector('#modal1');
+            const ModalOpen1 = document.querySelector('#trans-btn1');
+            const ModalClose1 = document.querySelector('#close1');
+            ModalOpen1.addEventListener('click',function(){ Modal1.style.display = 'block'; });
+            ModalClose1.addEventListener('click',function(){ Modal1.style.display = 'none'; });
+    
+            // modal2 (Photo exp)
+            const Modal2 = document.querySelector('#modal2');
+            const ModalOpen2 = document.querySelector('#trans-btn2');
+            const ModalClose2 = document.querySelector('#close2');
+            ModalOpen2.addEventListener('click',function(){ Modal2.style.display = 'block'; });
+            ModalClose2.addEventListener('click',function(){ Modal2.style.display = 'none'; });
+    
+            // modal3 (Hobby)
+            const Modal3 = document.querySelector('#modal3');
+            const ModalOpen3 = document.querySelector('#trans-btn3');
+            const ModalClose3 = document.querySelector('#close3');
+            ModalOpen3.addEventListener('click',function(){ Modal3.style.display = 'block'; });
+            ModalClose3.addEventListener('click',function(){ Modal3.style.display = 'none'; });
+        </script>
     </div>
 </body>
 </html>

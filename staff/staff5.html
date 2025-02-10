@@ -3,20 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yeji Kim</title>
+    <title>Ahrim Lee</title>
     <link rel="stylesheet" href="../buddy.css">
     <link rel="stylesheet" href="staff.css">
     <script src="https://kit.fontawesome.com/77dc09b73f.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../buddy.js"></script>
     <style>
         .container {
-            background-color: rgb(98, 51, 123);
+            background-color: rgb(105, 55, 132);
         }
         .box {
-            background-color: rgb(255, 255, 255);
-        }
-        h6 {
-            padding: 10px;
+            background-color: rgb(206, 182, 213);
         }
         .intro-grid {
             width: 320px;
@@ -81,6 +78,60 @@
                 }
             }
         }
+
+        /* 투명 버튼 */
+        #trans-btn1 {
+            width: 70px;
+            height: 70px;
+            top: 40%;
+            left: 40px;
+            border-radius: 50px;
+            > p {
+                position: relative;
+                font-size: 20px;
+            }
+        }
+
+        #trans-btn3 {
+            width: 40px;
+            height: 180px;
+            border-radius: 30px;
+            top: 62%;
+            left: 160px;
+            line-height: 50px;
+            > p {
+                transform: rotate(-90deg);
+                position: relative;
+                font-size: 20px;
+                top: 70px;
+            }
+        }
+
+        .sticker {
+            position: absolute;
+            width: 90px;
+            top: 440px;
+            right: 55px;
+            transform: rotate(-10deg);
+        }
+
+        .fa-futbol {
+            position: absolute; color: white;
+            top: 300px;
+            left: 50px;
+            font-size: 30px;
+            animation: fa-ani 7s linear 0s both infinite;
+        }
+
+        @keyframes fa-ani {
+            0% {
+                transform: scale(1) translate(90px, 50px) rotate(0deg);
+            } 50% {
+                transform: scale(1.2) translate(-10px, 10px) rotate(180deg);
+            } 100% {
+                transform: scale(1) translate(90px, 50px) rotate(0deg);
+            }
+        }
     </style>
 </head>
 <body>
@@ -108,7 +159,7 @@
             </a>
 
             <!-- 제목 -->
-            <h3>BUDDY Leader</h3>
+            <h3>Group 3</h3>
 
             <!-- 그리드 맞춤용 빈 영역 -->
             <p></p>
@@ -117,8 +168,43 @@
         <!-- 카드 영역 -->
         <div class="flip-outer">
             <div class="flip-inner">
-                <img src="../img/staff/back.png" class="front">
-                <img src="../img/staff/front.png" class="back">
+                <img src="../img/staff/isoCard/back.png" class="front">
+                <img src="../img/staff/isoCard/front5.png" class="back">
+            </div>
+        </div>
+
+        <!-- 모달 팝업 -->
+        <div class="modal" id="modal1">
+            <div class="modal_popup">
+                <h3>Message</h3>
+                <p>
+                    Hi! It’s ahrim :) I always bring positive energy and love meeting new people. I can’t wait to join our activities and make unforgettable memories together!<br><br>
+                    안녕하세요! 항상 밝은 에너지로 열정을 가지고 활동하겠습니다! 같이 즐거운 추억 많이 만들어요 :) 
+                </p>
+                <button type="button" class="close_btn" id="close1">닫기</button>
+            </div>
+        </div>
+
+        <!-- 모달 팝업2 -->
+        <div class="modal" id="modal2">
+            <div class="modal_popup">
+                <h3>Photo</h3>
+                <p>제가 정말 좋아하는 저희 집 강아지와 바다가 같이 나와있는 사진입니다</p>
+                <button type="button" class="close_btn" id="close2">닫기</button>
+            </div>
+        </div>
+
+        <!-- 모달 팝업3 -->
+        <div class="modal" id="modal3">
+            <div class="modal_popup">
+                <h3>Hobby</h3>
+                <p>
+                    <b>음악</b> : 다양한 장르의 음악을 좋아해요! 한국 가수 중에는 악동뮤지션 노래를 많이 들어요<br><br>
+                    <b>영화</b> : 영화 The Notebook을 좋아합니다<br><br>
+                    <b>스포츠</b> : 배드민턴 치기를 좋아하고, 축구 보는 것도 좋아해요! 같이 축구 봐요 :)<br><br>
+                    <b>여행</b> : 여행을 좋아하고 새로운 음식을 먹고 신기한 경험을 하는 것에서 행복을 느껴요. 체코어를 잠시 배웠던 적이 있는데 그래서 기회가 된다면 체코에 가보고 싶어요!
+                </p>
+                <button type="button" class="close_btn" id="close3">닫기</button>
             </div>
         </div>
 
@@ -126,30 +212,52 @@
         <div class="wrapper">
             <div class="intro-grid">
                 <div class="box" id="box1">
-                    <h6>INTRODUCTION</h6>
-                    <p>
-                        Hi! It’s ahrim :) I always bring positive energy and love meeting new people. I can’t wait to join our activities and make unforgettable memories together!<br><br>
-                        안녕하세요! 항상 밝은 에너지로 열정을 가지고 활동하겠습니다! 같이 즐거운 추억 많이 만들어요 :) 
-                    </p>
                 </div>
                 <div class="box" id="box2">
                     <img src="../img/staff/staffPic/pic5_1.jpeg" class="staffPic">
                 </div>
                 <div class="box" id="box3">
-                    <img src="../img/staff/staffPic/pic5_2.jpeg" class="staffPic">
+                    <img src="../img/staff/staffPic/pic5_2.jpeg" class="staffPic" id="trans-btn2">
                 </div>
                 <div class="box" id="box4">
-                    <h6>HOBBY</h6>
-                    <p>
-                        -음악 : 다양한 장르의 음악을 좋아해요! 한국 가수 중에는 악동뮤지션 노래를 많이 들어요
-                        -영화 : 영화 The Notebook을 좋아합니다
-                        -스포츠 : 배드민턴 치기를 좋아하고, 축구 보는 것도 좋아해요! 같이 축구 봐요 :)
-                        -여행 : 여행을 좋아하고 새로운 음식을 먹고 신기한 경험을 하는 것에서 행복을 느껴요. 체코어를 잠시 배웠던 적이 있는데 그래서 기회가 된다면 체코에 가보고 싶어요!
-                    </p>
                 </div>
             </div>
         </div>
 
+        <img class="star" src="../img/staff/constellation/천칭자리.png" alt="">
+        <div class="transparent" id="trans-btn1">
+            <p>Hi!</p>
+            <!-- <i class="fa-brands fa-galactic-republic"></i> -->
+        </div>
+        <div class="transparent" id="trans-btn3">
+            <p>Hobby</p>
+        </div>
+        <img class="stamp" src="../img/staff/staffStamp/stamp5.png" alt="">
+        <i class="fa-solid fa-futbol"></i>
+        <img src="../img/staff/sticker/노트북.jpg" alt="" class="sticker">
+
+        <script>
+            // modal1 (Message)
+            const Modal1 = document.querySelector('#modal1');
+            const ModalOpen1 = document.querySelector('#trans-btn1');
+            const ModalClose1 = document.querySelector('#close1');
+            ModalOpen1.addEventListener('click',function(){ Modal1.style.display = 'block'; });
+            ModalClose1.addEventListener('click',function(){ Modal1.style.display = 'none'; });
+    
+            // modal2 (Photo exp)
+            const Modal2 = document.querySelector('#modal2');
+            const ModalOpen2 = document.querySelector('#trans-btn2');
+            const ModalClose2 = document.querySelector('#close2');
+            ModalOpen2.addEventListener('click',function(){ Modal2.style.display = 'block'; });
+            ModalClose2.addEventListener('click',function(){ Modal2.style.display = 'none'; });
+    
+            // modal3 (Hobby)
+            const Modal3 = document.querySelector('#modal3');
+            const ModalOpen3 = document.querySelector('#trans-btn3');
+            const ModalClose3 = document.querySelector('#close3');
+            ModalOpen3.addEventListener('click',function(){ Modal3.style.display = 'block'; });
+            ModalClose3.addEventListener('click',function(){ Modal3.style.display = 'none'; });
+        </script>
     </div>
 </body>
 </html>

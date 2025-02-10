@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>staff1</title>
+    <title>Yeji Kim</title>
     <link rel="stylesheet" href="../buddy.css">
     <link rel="stylesheet" href="staff.css">
     <script src="https://kit.fontawesome.com/77dc09b73f.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../buddy.js"></script>
     <style>
         .container {
-            background-color: rgb(129, 23, 23);
+            background-color: rgb(122, 202, 224);
+        }
+
+        .box {
+            background-color: rgb(36, 65, 113);
         }
 
         .intro-grid {
@@ -60,6 +64,85 @@
                 border-radius: 50%;
             }
         }
+
+        /* 별자리 */
+        .star {
+            width: 120px;
+            height: 120px;
+            top: 7%;
+            left: -20px;
+            opacity: 0.7;
+        }
+
+        /* 투명 버튼 */
+        #trans-btn1 {
+            width: 70px;
+            height: 70px;
+            top: 77%;
+            left: 145px;
+            border-radius: 50px;
+            > p {
+                position: relative;
+                font-size: 20px;
+            }
+        }
+
+        #trans-btn3 {
+            width: 140px;
+            height: 40px;
+            border-radius: 30px;
+            top: 47%;
+            left: 145px;
+            > p {
+                position: relative;
+                font-size: 20px;
+                top: -5px;
+            }
+        }
+
+        .sticker {
+            position: absolute; width: 80px; height: 110px;
+            top: 250px;
+            left: 130px;
+            transform: rotate(10deg);
+        }
+
+        .fa-guitar {
+            position: absolute; color: white; opacity: 0.7;
+            top: 500px; right: 55px; font-size: 40px; z-index: 3;
+            animation: fa-ani 5s 0s both infinite;
+        }
+
+        .deco-text {
+            position: absolute; color: white; opacity: 0.7;
+            font-family: "gaegu";
+            font-size: 10px;
+            line-height: 14px;
+            top: 270px; transform: rotate(5deg);
+
+        }
+
+        #modal3 li {
+            font-size: 12px;
+        }
+
+        /* modal overflow (Hobby) */
+        #modal3 .modal_popup {
+            height: 500px;
+            overflow-y: scroll;
+        }
+
+        @keyframes fa-ani {
+            0% {
+                transform: rotate(0deg);
+            } 30% {
+                transform: rotate(20deg);
+            } 60% {
+                transform: rotate(-20deg);
+            } 100% {
+                transform: rotate(0deg);
+            }
+        }
     </style>
 </head>
 <body>
@@ -96,8 +179,76 @@
         <!-- 카드 -->
         <div class="flip-outer">
             <div class="flip-inner">
-                <img src="../img/staff/back.png" class="front">
-                <img src="../img/staff/front.png" class="back">
+                <img src="../img/staff/isoCard/back.png" class="front">
+                <img src="../img/staff/isoCard/front1.png" class="back">
+            </div>
+        </div>
+
+        <!-- 모달 팝업 -->
+        <div class="modal" id="modal1">
+            <div class="modal_popup">
+                <h3>Message</h3>
+                <p>
+                    Hello Every BUDDY! I'm Yeji Kim, the leader of BUDDY team of this semester.
+                    Hope you guys all enjoy this magnificent BUDDY program! I will always do my best to make your unforgettable memories with your buddy through this program :)<br><br>
+                    안녕하세요! 이번 ISO BUDDY 팀장을 맡은 김예지입니다. 여러분들이 버디와 함께 잊지 못할 소중한 추억을 쌓으실 수 있도록 BUDDY 팀이 열심히 노력하고 있으니, 모두 즐겨주시면 감사하겠습니다 :)
+                </p>
+                <button type="button" class="close_btn" id="close1">닫기</button>
+            </div>
+        </div>
+
+        <!-- 모달 팝업2 -->
+        <div class="modal" id="modal2">
+            <div class="modal_popup">
+                <h3>Fav Movie</h3>
+                <p>
+                    I really love to watch Disney movies, and especially my favorite one is "Moana"!
+                    I cannot help loving this adorable baby~<br><br>
+
+                    디즈니 영화 보는 걸 좋아하는데 그 중 "모아나"를 가장 좋아해요.
+                    모아나가 바다와 처음으로 소통하는 장면이 정말 예쁜 것 같아요!
+                </p>
+                <button type="button" class="close_btn" id="close2">닫기</button>
+            </div>
+        </div>
+
+        <!-- 모달 팝업3 -->
+        <div class="modal" id="modal3">
+            <div class="modal_popup">
+                <h3>Hobby</h3>
+                <p>
+                    <b>Diary</b><br>
+                    I started writing a diary when I was 16, It's already been been 8 years!
+                    I enjoy writing because the more I write, the more I learn about myself and can get fun from reflecting on each day.
+                    I like recording my day through videos or pictures too.<br><br>
+                    <b>Guitar</b><br>
+                    I started playing acoustic guitar after watching the movie <i>Sing Street</i>!
+                    I feel really happy when I learn how to play the accompaniment of the music I like.<br><br>
+                    <b>Music</b><br>
+                    I like both listening to and singing music.
+                    My Playlist!   
+                    <li>FKJ - Ylang ylang</li>
+                    <li>Famie - Feels Like You</li>
+                    <li>ONE OK ROCK - One Way Ticket</li>
+                </p>
+                <hr><br>
+                <p>
+                    <b>일기</b><br>
+                    중학교 3학년 때부터 일기를 쓰기 시작했는데 벌써 8년째에요!
+                    글 쓰는 걸 좋아하기도 하고, 일기를 쓸수록 점점 저에 대해 알게 되고 매일을 성찰하게 되는 것에서 재미를 느껴요.
+                    영상이나 그림을 통해 하루를 기록하는 걸 좋아해요.<br><br>
+                    <b>기타</b><br>
+                    영화 Sing Street를 보고 통기타를 치기 시작했어요!
+                    원하는 음악의 반주를 직접 연주할 때 정말 행복해요.<br><br>
+                    <b>음악</b><br>
+                    음악은 듣는 것도 부르는 것도 모두 좋아해요.
+                    추천곡은!
+                    <li>FKJ - Ylang ylang</li>
+                    <li>Famie - Feels Like You</li>
+                    <li>ONE OK ROCK - One Way Ticket</li>
+
+                </p>
+                <button type="button" class="close_btn" id="close3">닫기</button>
             </div>
         </div>
 
@@ -105,15 +256,9 @@
         <div class="wrapper">
             <div class="intro-grid">
                 <div class="box" id="box1">
-                    <h6>INTRODUCTION</h6>
-                    <p>
-                        Hello Every BUDDY! I'm Yeji Kim, the leader of BUDDY team of this semester.
-                        Hope you guys all enjoy this magnificent BUDDY program! I will always do my best to make your unforgettable memories with your buddy through this program :)<br><br>
-                        안녕하세요! 이번 ISO BUDDY 팀장을 맡은 김예지입니다. 여러분들이 버디와 함께 잊지 못할 소중한 추억을 쌓으실 수 있도록 BUDDY 팀이 열심히 노력하고 있으니, 모두 즐겨주시면 감사하겠습니다 :)
-                    </p>
                 </div>
                 <div class="box" id="box2">
-                    <img src="../img/staff/staffPic/pic1_2.jpg" class="staff-pic">
+                    <img src="../img/staff/staffPic/pic1_2.jpg" class="staff-pic" id="trans-btn2">
 
                 </div>
                 <div class="box" id="box3">
@@ -124,6 +269,52 @@
                 </div>
             </div>
         </div>
+
+
+        <img class="star" src="../img/staff/constellation/천칭자리.png" alt="">
+        <div class="transparent" id="trans-btn1">
+            <p>Hi!</p>
+            <!-- <i class="fa-brands fa-galactic-republic"></i> -->
+        </div>
+        <div class="transparent" id="trans-btn3">
+            <p>Hobby</p>
+        </div>
+        <img class="stamp" src="../img/staff/staffStamp/stamp1.png" alt="">
+
+        <div class="deco-text">
+            Mmm I know it looks like it's too far<br>
+            But it's nothing compared to how far we've come<br>
+            Walking down this boulevard<br>
+            When the darkest times come right before the sun<br><br>
+
+            We're almost there baby one more step<br>
+            Woah, left, right, left, right, left
+        </div>
+        <i class="fa-solid fa-guitar"></i>
+        <img src="../img/staff/sticker/다이어리.png" alt="" class="sticker">
     </div>
+
+    <script>
+        // modal1 (Message)
+        const Modal1 = document.querySelector('#modal1');
+        const ModalOpen1 = document.querySelector('#trans-btn1');
+        const ModalClose1 = document.querySelector('#close1');
+        ModalOpen1.addEventListener('click',function(){ Modal1.style.display = 'block'; });
+        ModalClose1.addEventListener('click',function(){ Modal1.style.display = 'none'; });
+
+        // modal2 (Photo exp)
+        const Modal2 = document.querySelector('#modal2');
+        const ModalOpen2 = document.querySelector('#trans-btn2');
+        const ModalClose2 = document.querySelector('#close2');
+        ModalOpen2.addEventListener('click',function(){ Modal2.style.display = 'block'; });
+        ModalClose2.addEventListener('click',function(){ Modal2.style.display = 'none'; });
+
+        // modal3 (Hobby)
+        const Modal3 = document.querySelector('#modal3');
+        const ModalOpen3 = document.querySelector('#trans-btn3');
+        const ModalClose3 = document.querySelector('#close3');
+        ModalOpen3.addEventListener('click',function(){ Modal3.style.display = 'block'; });
+        ModalClose3.addEventListener('click',function(){ Modal3.style.display = 'none'; });
+    </script>
 </body>
 </html>
