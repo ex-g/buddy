@@ -128,7 +128,44 @@
             width: 100%;
             height: 495px;
             background-color: darkgreen;
-            overflow: hidden;
+            overflow-y: scroll;
+        }
+
+        #game-card {
+            width: 300px;
+            height: 330px;
+            background-color: beige;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            margin-left: 30px;
+            box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
+                0 2px 2px rgba(0,0,0,0.11), 
+                0 4px 4px rgba(0,0,0,0.11), 
+                0 8px 8px rgba(0,0,0,0.11), 
+                0 16px 16px rgba(0,0,0,0.11), 
+                0 32px 32px rgba(0,0,0,0.11);
+        }
+
+        #game-card:nth-child(1) {
+            top: 30px;
+        }
+
+        #game-card:nth-child(2) {
+            top: 400px;
+            height: 420px;
+        }
+
+        #game-card:nth-child(3) {
+            top: 850px;
+            height: 470px;
+        }
+
+        #game-exp {
+            position: relative;
+            font-size: 12px;
+            top: 20px;
         }
 
         /* 4. MISSION */
@@ -174,7 +211,7 @@
             font-weight: 700;
             text-align: center; 
             display: none;
-            font-size: 10px;
+            font-size: 9px;
         }
 
         .tooltip:after {
@@ -201,9 +238,16 @@
         #wrap4 { top: 130px; left: 200px; }
         #wrap5 { top: 250px; left: 100px; }
         #wrap6 { top: 250px; left: 200px; }
-        #wrap7 { top: 380px; left: 100px; }
-        #wrap8 { top: 380px; left: 200px; }
+        #wrap7 { top: 370px; left: 100px; }
+        #wrap8 { top: 370px; left: 200px; }
 
+
+        hr {
+            height: 0.8px;
+            border: 0;
+            background: white;
+            margin: 20px;
+        }
     </style>
 </head>
 <body>
@@ -287,9 +331,17 @@
             
             <!-- 2. PLAN -->
             <div class="wrapper">
-                <ul id="plan">
-                    <li style="height: 120px;">
+                <ul id="plan" style="margin-top: 1500px">
+                    <!-- B1 일정 1 -->
+                    <li style="height: 270px;">
                         <div>
+                            <div class="title">Warm-up</div>
+                            <div class="info">
+                                - Event Intro. & Oath (10m)<br>
+                                - Practicing and Presenting Slogans (10m)<br>
+                                - Warm-up Exercises
+                            </div>
+                            <hr style="opacity: 0.3;">
                             <div class="title">행사 준비</div>
                             <div class="info">
                                 - 행사 소개 및 선서 (10m)<br>
@@ -305,15 +357,22 @@
                         </span>
                     </li>
                     
-                    <li style="height: 240px;">
+                    <!-- B1 일정 2 -->
+                    <li style="height: 260px;">
                         <div>
+                            <div class="title">Group Games</div>
+                            <div class="info">
+                                - Mat-Turning<br>
+                                - Chasing Tails<br>
+                                - Group Jump Rope
+                            </div>
+                            <hr style="opacity: 0.3;">
                             <div class="title">조별 대항전</div>
                             <div class="info">
-                                - 게임 1<br>
-                                - 게임 2<br>
-                                - 게임 3
+                                - 장판 뒤집기<br>
+                                - 꼬리 잡기<br>
+                                - 단체 줄넘기
                             </div>
-                            <!-- <div class="type">oh yeah</div> -->
                         </div>
         
                         <span class="number">
@@ -322,12 +381,20 @@
                         </span>
                     </li>
         
-                    <li style="height: 120px;">
+                    <!-- B1 일정 3 -->
+                    <li style="height: 250px;">
                         <div>
-                            <div class="title">점심 시간</div>
+                            <div class="title">Lunch</div>
                             <div class="info">
+                                - Vegan: Veggie (Subway)<br>
+                                - Non-vegan: Pork cutlet chicken meat (Hansot)
                             </div>
-                            <!-- <div class="type"></div>     -->
+                            <hr style="opacity: 0.3;">
+                            <div class="title">점심</div>
+                            <div class="info">
+                                - 비건: 베지 (서브웨이)<br>
+                                - 논비건: 돈치고기고기 (한솥)
+                            </div>
                         </div>
         
                         <span class="number">
@@ -336,11 +403,35 @@
                         </span>
                     </li>
     
-                    <li style="height: 120px;">
+                    <!-- B1 일정 4 -->
+                    <li style="height: 550px;">
                         <div>
+                            <div class="title">Pair Booths</div>
+                            <div class="info">
+                                Participate in the booth and receive a raffle ticket!<br><br>
+                                [Booths]<br>
+                                - Stone Knockdown<br>
+                                - Photo booth<br>
+                                - Spoon Race<br>
+                                - Hula Hoop<br>
+                                - Charades<br>
+                                - Jegi<br>
+                                - One Voice Game<br>
+                                - Writing a Letter
+                            </div>
+                            <hr style="opacity: 0.3;">
                             <div class="title">페어 대항전</div>
                             <div class="info">
-                                - 부스 참여하고 추첨권 받기!
+                                부스 참여하고 추첨권 받기!<br><br>
+                                [부스]<br>
+                                - 비석치기<br>
+                                - 포토부스<br>
+                                - 숟가락 달리기<br>
+                                - 훌라후프<br>
+                                - 몸으로 말해요<br>
+                                - 제기차기<br>
+                                - 이구동성<br>
+                                - 편지쓰기
                             </div>
                             <!-- <div class="type"></div>     -->
                         </div>
@@ -351,12 +442,12 @@
                         </span>
                     </li>
     
-                    <li style="height: 60px;">
+                    <!-- B1 일정 5 -->
+                    <li style="height: 150px;">
                         <div>
+                            <div class="title" style="margin-top: 15px">Wrap up & Winning Prizes</div>
+                            <hr style="opacity: 0.3;">
                             <div class="title" style="margin-top: 15px">마무리 및 시상식</div>
-                            <div class="info">
-                            </div>
-                            <!-- <div class="type"></div>     -->
                         </div>
         
                         <span class="number">
@@ -369,43 +460,108 @@
             </div>
 
             <!-- 3. GAME -->
-            <div id="game">                
-             </div>
+            <div id="game">
+
+                <!-- Game 1 -->
+                <section id="game-card">
+                    <h5>1. Mat Turning | 장판 뒤집기</h5>
+                    <p id="game-exp">
+                        <b>Format</b>: Tournament (7 rounds in total)<br>
+                        <b>Description</b>: Flip the mat to the shape of your group (cake or gift box) as instructed by the leader! The team that turns it over more times wins.<br>
+                        <b>Caution</b>: It is a foul to turn the mat over after the game is over or to stay in one place for more than 5 seconds.<br><br>
+
+                        <b>방식</b> : 토너먼트 (총 7회 진행)<br>
+                        <b>설명</b> : 조장이 안내하는 우리 조의 모양(케이크 or 선물상자)으로 장판을 뒤집어주세요! 더 많이 뒤집은 팀이 승리합니다.<br>
+                        <b>주의</b> : 게임 종료 후에 장판을 뒤집거나, 한 곳에 5초 이상 머무를 시 반칙입니다.
+                    </p>
+                </section>
+
+                <!-- Game 2 -->
+                <section id="game-card">
+                    <h5>2. Chasing Tails | 꼬리잡기</h5>
+                    <p id="game-exp">
+                        <b>Format</b>: The top 2 teams from groups 1-4 and the top 2 teams from groups 5-8 are selected and the 4 teams advance to the finals.<br>
+                        <b>Description</b>: Hold onto the clothes around the waist of the person in front of you and move as one body with the 8 game participants! If you steal the tail that the person in the other group is wearing, you succeed!<br>
+                        <b>Caution</b>: You will lose if you go out of half the court or lose your line by losing both hands of the person in front of you.<br><br>
+
+                        <b>방식</b> : 1~4조에서 상위 2팀, 5~8조에서 상위 2팀을 뽑아 4팀이 결승전 진행<br>
+                        <b>설명</b> : 앞 사람 허리춤의 옷을 잡고, 게임 참여자 8명이서 한 몸이 되어 움직여주세요! 다른 조의 꼬리에 있는 사람이 차고 있는 꼬리를 뺏으면 성공!<br>
+                        <b>주의</b> : 운동장 반 코트를 벗어나거나, 앞 사람의 옷을 양손 다 놓쳐 대열이 망가지면 패배합니다.
+                    </p>
+                </section>
+
+                <!-- Game 3 -->
+                <section id="game-card">
+                    <h5>3. Group Jump Rope | 단체줄넘기</h5>
+                    <p id="game-exp">
+                        <b>Format</b>: The top 2 teams from groups 1-4 and the top 2 teams from groups 5-8 are selected and the 4 teams advance to the finals.<br>
+                        <b>Description</b>: The team selects two rope spinners, five people to run in the first half, and five people to run in the second half. After the first half and the second half each last 2 minutes and 30 seconds, the result is determined by the maximum score of the first half + the maximum score of the second half.<br>
+                        <b>Caution</b>: Participants must enter the line in advance and wait, and if their foot gets caught in the line, the count starts again from 0.<br><br>
+
+                        <b>방식</b> : 1~4조에서 상위 2팀, 5~8조에서 상위 2팀을 뽑아 4팀이 결승전 진행<br>
+                        <b>설명</b> : 팀에서 줄 돌리는 사람 2명, 전반부에 뛰는 사람 5명, 후반부에 뛰는 사람 5명을 뽑습니다. 전반부와 후반부 각 2분 30초씩 진행 후, 전반부의 최대점수 + 후반부의 최대점수로 결과가 정해집니다.<br>
+                        <b>주의</b> : 참가자들은 줄에 미리 들어가서 대기하며, 중간에 줄이 발에 걸리면 0부터 다시 카운트합니다.
+                    </p>
+                </section>               
+            </div>
 
             <!-- 4. MISSION -->
             <div id="mission">
                 <img src="img/b1/background3.png">
                 <div class="wrap" id="wrap1">
-                    <i class="fa-brands fa-superpowers booth"></i>
-                    <div class="tooltip">부스1 : 제기 차기</div>
+                    <i class="fa-solid fa-square booth"></i>
+                    <div class="tooltip">
+                        Booth1 : Stone knockdown<br>
+                        부스1 : 비석 치기
+                    </div>
                 </div>
                 <div class="wrap" id="wrap2">
-                    <i class="fa-solid fa-child-reaching booth"></i>
-                    <div class="tooltip">부스2 : 몸으로 말해요</div>
+                    <i class="fa-solid fa-camera booth"></i>
+                    <div class="tooltip">
+                        Booth2 : PhotoBooth<br>
+                        부스2 : 포토부스
+                    </div>
                 </div>
                 <div class="wrap" id="wrap3">
-                    <i class="fa-regular fa-circle-check booth"></i>
-                    <div class="tooltip">부스3 : 젤리 맛 맞추기</div>
+                    <i class="fa-solid fa-spoon booth"></i>
+                    <div class="tooltip">
+                        Booth3 : Spoon Race<br>
+                        부스3 : 숟가락 달리기</div>
                 </div>
                 <div class="wrap" id="wrap4">
-                    <i class="fa-solid fa-hat-wizard booth"></i>
-                    <div class="tooltip">부스4 : 페어와 마법상자</div>
+                    <i class="fa-regular fa-circle booth"></i>
+                    <div class="tooltip">
+                        Booth4 : Hula Hoop<br>
+                        부스4 : 훌라후프 오래 돌리기
+                    </div>
                 </div>
                 <div class="wrap" id="wrap5">
-                    <i class="fa-solid fa-0 booth"></i>
-                    <div class="tooltip">부스5 : 스도쿠</div>
+                    <i class="fa-solid fa-child-reaching booth"></i>
+                    <div class="tooltip">
+                        Booth5 : Charades<br>
+                        부스5 : 몸으로 말해요
+                    </div>
                 </div>
                 <div class="wrap" id="wrap6">
                     <i class="fa-solid fa-pen-clip booth"></i>
-                    <div class="tooltip">부스6 : 페어에게 편지쓰기</div>
+                    <div class="tooltip">
+                        Booth6 : Jegi<br>
+                        부스6 : 제기차기
+                    </div>
                 </div>
                 <div class="wrap" id="wrap7">
-                    <i class="fa-solid fa-camera booth"></i>
-                    <div class="tooltip">부스7 : 페어와 사진찍기</div>
+                    <i class="fa-solid fa-face-surprise booth"></i>
+                    <div class="tooltip">
+                        Booth7 : One Voice Game<br>
+                        부스7 : 이구동성
+                    </div>
                 </div>
                 <div class="wrap" id="wrap8">
-                    <i class="fa-solid fa-wand-magic-sparkles booth"></i>
-                    <div class="tooltip">부스8 : 투호 던지기</div>
+                    <i class="fa-solid fa-envelope booth"></i>
+                    <div class="tooltip">
+                        Booth8 : Writing A Letter<br>
+                        부스8 : 페어에게 편지쓰기
+                    </div>
                 </div>
             </div>
         </div>
